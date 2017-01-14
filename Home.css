@@ -29,6 +29,16 @@ hr {
     border-top: 1px solid #ccc;
 }
 
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid;
+    width: 200px;
+    font-size: 25px;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
 
 .monospace {
 	font-family: 'Roboto Mono', sans-serif;
