@@ -372,3 +372,107 @@ span[contenteditable=true] {
 	
 	table-layout: fixed;
 }
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.dark {
+	color: #1f122d;
+}
+
+.primary {
+	color: #f15d3b;
+}
+
+.secondary1 {
+	color: #4da4db;
+}
+
+.secondary2 {
+	color: #4dc0b3;
+}
+
+.secondary3 {
+	color: #ffd95d;
+}
+
+.secondary4 {
+	color: #9bcb3c;
+}
+
+.secondary5 {
+	color: #f92672
+}
+
+.type {
+	color: #4da4db;
+}
+
+.identifier {
+	color: #9bcb3c;
+}
+
+.text {
+	color: #ffd95d;
+}
+
+.modifier {
+	color: #f92672;
+}
+
+.comment {
+	color: #aaa;
+}
+
+.dark-border {
+	border-color: #1f122d;
+}
+
+.primary-border {
+	border-color: #f15d3b;
+}
+
+.secondary1-border {
+	border-color: #4da4db;
+}
+
+.secondary2-border {
+	border-color: #4dc0b3;
+}
+
+.secondary3-border {
+	border-color: #ffd95d;
+}
+
+.secondary4-border {
+	color: #9bcb3c;
+}
+
+.dark-background {
+	background-color: #1f122d;
+}
+
+.primary-background {
+	background-color: #f15d3b;
+}
+
+.secondary1-background {
+	background-color: #4da4db;
+}
+
+.secondary2-background {
+	background-color: #4dc0b3;
+}
+
+.secondary3-background {
+	background-color: #ffd95d;
+}
+
+.secondary4-background {
+	background-color: #9bcb3c;
+}
