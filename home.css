@@ -298,6 +298,11 @@ span[contenteditable=true] {
 	padding: 50px 0;
 }
 
+#code-example .indent {
+    margin-left: 45px;
+    text-indent: -45px;
+}
+
 #code-example p, #code-example h2 {
 	padding: 0 50px;
 }
