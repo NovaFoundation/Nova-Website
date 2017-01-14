@@ -421,7 +421,7 @@ span[contenteditable=true] {
 }
 
 #code-comparisons .code hr {
-	width: 60%;
+	width: 80%;
 	margin: auto;
 }
 
@@ -430,7 +430,11 @@ span[contenteditable=true] {
 	padding: 5px 0px;
 }
 
-#code-comparisons p {
+/*#code-comparisons .explanation h3 {
+	text-align: center;
+}*/
+
+#code-comparisons .explanation p {
 	color: #f15d3b;
 	
 	font-size: 22px;
@@ -450,24 +454,76 @@ span[contenteditable=true] {
 	width: 100%;
 }
 
-#code-comparisons .code:before {
-	content: '';
-    position: absolute;
+.l.bracket-container {
     left: 0;
-    width: 20px;
-    border: 3px solid #f15d3b;
-    border-right: none;
-    top: 0;
-    bottom: 0;
 }
 
-#code-comparisons .code:after {
-	content: '';
-    position: absolute;
+.r.bracket-container {
     right: 0;
+}
+
+.bracket-container {
+	background-color: #1f122d;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    
+    width: 50%;
+}
+
+.bracket-cover {
+	content: '';
+	
+	position: absolute;
+	
+	left: 0;
+	top: 0;
+	bottom: 0;
+    
+    width: 50%;
+	
+	background-color: #1f122d;
+	
+	z-index: 2;
+}
+
+.slide.visible .hack.transition:not(.on-active),
+.slide.active .hack.transition.on-active {
+	width: 0%;
+}
+
+.bracket-cover, .bracket-container {
+	-webkit-transition: 1s ease all;
+	transition: 1s ease all;
+	
+    -webkit-transition-property: width;
+    transition-property: width;
+	
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	
+	-webkit-perspective: 1000;
+	perspective: 1000;
+}
+
+.l.bracket {
+    left: 100%;
+    border-right: none;
+}
+
+.r.bracket {
+    right: 100%;
+    border-left: none;
+}
+
+.bracket {
+    position: absolute;
     width: 20px;
     border: 3px solid #f15d3b;
-    border-left: none;
     top: 0;
     bottom: 0;
 }
@@ -475,27 +531,46 @@ span[contenteditable=true] {
 #code-comparisons .code {
 	position: relative;
 	
-	width: 50%;
+	max-width: 50%;
 	
 	margin: auto;
 	
 	overflow: hidden;
 }
 
-#code-comparisons .code td {
-	padding: 0 25px;
-	
+#code-comparisons .code .container > div:nth-of-type(1),
+#code-comparisons .code .container > div:nth-of-type(3) {
+	padding: 15px 0;
+}
+
+#code-comparisons .code .container > div {
 	overflow: hidden;
 }
 
 #code-comparisons .code p {
-	color: #99CA3C;
+	padding: 0 25px;
+	
+	line-height: 1.3;
+	
+	margin-top: 0;
+	margin-bottom: 0;
+	
+	font-size: 13px;
+}
+
+#code-comparisons .code .indent {
+    margin-left: 31px;
+    text-indent: -31px;
 }
 
 @media (min-width: 1100px) {
 	#code-comparisons .comparison:nth-child(odd) > div:first-of-type,
 	#code-comparisons .comparison:nth-child(even) > div:last-of-type {
 		order: 1;
+	}
+	
+	#code-comparisons .comparison:nth-child(odd) > .explanation {
+		text-align: right;
 	}
 	
 	#code-comparisons .comparison:nth-child(even) > div:first-of-type,
@@ -509,13 +584,21 @@ span[contenteditable=true] {
 	}
 
 	#code-comparisons .comparison > div {
-		display: block;
-		width: 100%;
 		box-sizing: border-box;
 	}
 	
 	#code-comparisons .explanation {
 		text-align: center;
+		display: block;
+		width: 100%;
+	}
+	
+	#code-comparisons .code {
+		display: inline-block;
+		max-width: 90%;
+		
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 
