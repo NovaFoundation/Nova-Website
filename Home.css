@@ -178,8 +178,8 @@ span[contenteditable=true] {
 	border-bottom-left-radius: 0;
 }
 
-#something > table {
-	width: 100%;
+#aspects {
+	white-space: nowrap;
 }
 
 .section {
