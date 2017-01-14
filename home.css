@@ -273,7 +273,7 @@ span[contenteditable=true] {
 }
 
 .stay-up-to-date > .content {
-	margin: 25px;
+	margin: 50px;
 	padding: 0px 25px;
 	
 	border-width: 2px;
@@ -324,12 +324,22 @@ span[contenteditable=true] {
 }
 
 #code-comparisons {
-	padding: 0;
+	padding: 0 50px;
 	margin: 0;
 }
 
 #code-comparisons h3 {
 	color: white;
+}
+
+#code-comparisons .code hr {
+	width: 60%;
+	margin: auto;
+}
+
+#code-comparisons .explanation {
+	width: 45%;
+	padding: 5px 30px;
 }
 
 #code-comparisons p {
@@ -338,30 +348,23 @@ span[contenteditable=true] {
 	font-size: 22px;
 }
 
+#code-comparisons .comparison {
+	display: flex;
+}
+
+#code-comparisons .comparison > div {
+	align-self: center;
+}
+
 #code-comparisons table {
 	width: 100%;
-}
-
-#code-comparisons table:nth-child(odd) td:first-of-type {
-	width: 70%;
-}
-
-#code-comparisons table:nth-child(odd) td:first-of-type .code {
-	margin-right: 15px;
-}
-
-#code-comparisons table:nth-child(even) td:last-of-type {
-	width: 70%;
-}
-
-#code-comparisons table:nth-child(even) td:last-of-type .code {
-	margin-left: 15px;
 }
 
 #code-comparisons .code {
 	border: 3px solid #f15d3b;
 	
-	margin: 50px 150px;
+	width: 55%;
+	
 	padding: 50px 30px;
 }
 
@@ -369,8 +372,39 @@ span[contenteditable=true] {
 	color: #99CA3C;
 }
 
-#code-comparisons .explanation {
-	padding: 50px;
+@media (min-width: 1100px) {
+	#code-comparisons .comparison:nth-child(odd) > div:first-of-type,
+	#code-comparisons .comparison:nth-child(even) > div:last-of-type {
+		order: 1;
+	}
+	
+	#code-comparisons .comparison:nth-child(even) > div:first-of-type,
+	#code-comparisons .comparison:nth-child(odd) > div:last-of-type {
+		order: 2;
+	}
+
+	#code-comparisons .comparison:nth-child(odd) .code {
+		margin-right: 15px;
+	}
+	
+	#code-comparisons .comparison:nth-child(even) .code {
+		margin-left: 15px;
+	}
+}
+@media (max-width: 1100px) {
+	#code-comparisons .comparison {
+		display: block;
+	}
+
+	#code-comparisons .comparison > div {
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	
+	#code-comparisons .explanation {
+		text-align: center;
+	}
 }
 
 #downloads {
