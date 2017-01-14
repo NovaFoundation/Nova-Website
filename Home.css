@@ -248,6 +248,15 @@ span[contenteditable=true] {
 	border-style: solid;
 }
 
+.indent {
+    margin-left: 105px;
+    text-indent: -105px;
+}
+
+.indent * {
+	text-indent: 0;
+}
+
 .stay-up-to-date hr {
 	border-width: 2px;
 }
