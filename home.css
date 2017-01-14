@@ -89,7 +89,32 @@ span[contenteditable=true] {
 	font-family: 'Roboto Mono', sans-serif;
 }
 
+#splashscreen:before {
+	content: '';
+	
+	position: absolute;
+	
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	
+	opacity: 0.15;
+	
+	background-image: url(Shared/Images/code.jpg);
+	background-size: cover;
+	background-position: left;
+}
+
 #splashscreen {
+	position: relative;
+	
 	text-align: center;
 	
 	background-color: #1f122d;
@@ -161,6 +186,8 @@ span[contenteditable=true] {
 	border-spacing: 25px;
 	
 	table-layout: fixed;
+	
+	white-space: nowrap;
 }
 
 .downloads > a {
@@ -289,8 +316,31 @@ span[contenteditable=true] {
 	text-indent: 0;
 }
 
-.code {
-	color: white;
+#code-example:before {
+	content: '';
+	
+	position: absolute;
+	
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	-webkit-filter: blur(4px);
+	-moz-filter: blur(4px);
+	-o-filter: blur(4px);
+	-ms-filter: blur(4px);
+	filter: blur(4px);
+	
+	opacity: 0.15;
+	
+	z-index: -1;
+	
+	background-color: #fff;
+	
+	background-image: url(Shared/Images/code2.jpg);
+	background-size: cover;
+	background-position: left;
 }
 
 #code-example {
