@@ -387,6 +387,10 @@ span[contenteditable=true] {
 	color: #1f122d;
 }
 
+.white {
+	color: #fff;
+}
+
 .primary {
 	color: #f15d3b;
 }
