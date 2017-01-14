@@ -101,8 +101,8 @@
 	-webkit-transition: 1s ease all;
 	transition: 1s ease all;
 	
-    -webkit-transition-property: transform, opacity;
-    transition-property: transform, opacity;
+    -webkit-transition-property: transform, opacity, width, height;
+    transition-property: transform, opacity, width, height;
 	
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
