@@ -228,13 +228,32 @@ span[contenteditable=true] {
 
 #aspects {
 	white-space: nowrap;
+	
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#aspects > div {
+	display: flex;
+}
+
+#aspects > div > div:nth-of-type(1) {
+	order: 1;
+}
+
+#aspects > div > div:nth-of-type(2) {
+	order: 2;
+}
+
+#aspects > div > div:nth-of-type(3) {
+	order: 3;
 }
 
 .section {
 	width: 27vw;
 	height: 27vw;
 	
-	margin: 50px 2vw;
+	margin: 50px 3vw;
 	
 	border: 3px solid;
 	
@@ -270,6 +289,15 @@ span[contenteditable=true] {
 @media (max-width: 1100px) {
 	#aspects {
 		
+	}
+	
+	#aspects > div {
+		flex-direction: column;
+	}
+	
+	.section:nth-of-type(2) {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	
 	.section {
