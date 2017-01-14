@@ -97,6 +97,19 @@ span[contenteditable=true] {
 	color: white;
 }
 
+.nova-text {
+	letter-spacing: 35px;
+	
+	margin: 0;
+	
+	position: absolute;
+	
+	left: 20px;
+	top: 10px;
+	
+	text-shadow: 0 0 25px #f15d3b;
+}
+
 #logo-main {
 	height: 30%;
 }
