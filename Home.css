@@ -39,6 +39,51 @@ input {
     font-family: 'Roboto Mono', sans-serif;
 }
 
+@-webkit-keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    48% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    98% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+[contenteditable=true].cursor:focus:before {
+	color: transparent;
+}
+
+[contenteditable=true].cursor:empty:before {
+	content: '';
+	
+	border-left: 1px solid;
+	animation: blinking 1s linear infinite;
+	-webkit-animation: blinking 1s linear infinite;
+}
+
+[contenteditable=true]:empty:after {
+	content: attr(placeholder);
+	display: inline-block; /* For Firefox */
+
+	/*text-decoration: underline;*/
+}
+
+/* */
+
+span[contenteditable=true] {
+  outline: none;
+  padding: 5px;
+  cursor: text;
+  display: inline-block; /* For Firefox */
+}
 
 .monospace {
 	font-family: 'Roboto Mono', sans-serif;
