@@ -301,8 +301,6 @@ span[contenteditable=true] {
 	}
 	
 	.section {
-		display: block;
-		
 		width: 80vw;
 		height: 80vw;
 		
@@ -383,6 +381,9 @@ span[contenteditable=true] {
 
 .code {
 	color: white;
+    font-family: 'Roboto Mono', sans-serif;
+	
+	word-break: break-word;
 }
 
 #code-example p, #code-example h2 {
