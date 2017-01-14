@@ -133,19 +133,35 @@ span[contenteditable=true] {
 	text-align: center;
 	
 	margin: auto;
+	
+	width: 90%;
+	
+	display: table;
+	border-spacing: 25px;
+	
+	table-layout: fixed;
 }
 
-.downloads > div {
+.downloads > a {
+	display: table-cell;
+}
+
+.downloads > a > div {
 	background-color: #f15d3b;
-	width: 42%;
 	
-	display: inline-block;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 8px #f15d3b;
+	border-radius: 25px;
 	
-	border-radius: 30px;
+	line-height: 0.8;
 	
-	line-height: 0.3;
+	padding: 18px;
 	
-	padding: 20px 0;
+	color: #fff;
+}
+
+.downloads * {
+	text-decoration: none;
 }
 
 .downloads .stable {
