@@ -1,0 +1,484 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html, body {
+	width: 100%;
+	height: 100%;
+	
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+p {
+	margin: 10px 0;
+}
+
+hr {
+    margin: 10px 0;
+    padding: 0;
+    
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid;
+    width: 200px;
+    font-size: 25px;
+    font-family: 'Roboto Mono', sans-serif;
+}
+
+@-webkit-keyframes blinking {
+    0% {
+        opacity: 0;
+    }
+    48% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    98% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+[contenteditable=true].cursor:focus:before {
+	color: transparent;
+}
+
+[contenteditable=true].cursor:empty:before {
+	content: '';
+	
+	border-left: 1px solid;
+	animation: blinking 1s linear infinite;
+	-webkit-animation: blinking 1s linear infinite;
+}
+
+[contenteditable=true]:empty:after {
+	content: attr(placeholder);
+	display: inline-block; /* For Firefox */
+
+	/*text-decoration: underline;*/
+}
+
+/* */
+
+span[contenteditable=true] {
+  outline: none;
+  padding: 5px;
+  cursor: text;
+  display: inline-block; /* For Firefox */
+}
+
+.monospace {
+	font-family: 'Roboto Mono', sans-serif;
+}
+
+#splashscreen {
+	text-align: center;
+	
+	background-color: #1f122d;
+	
+	color: white;
+}
+
+.nova-text {
+	letter-spacing: 35px;
+	
+	margin: 0;
+	
+	position: absolute;
+	
+	left: 30px;
+	top: 16px;
+	
+	text-shadow: 0 0 25px #f15d3b;
+}
+
+#logo-main {
+	height: 38%;
+}
+
+.centered {
+	position: absolute;
+	
+	left: 50%;
+	top: 50%;
+	
+	transform: translate(-50%, -50%);
+	
+	width: 500px;
+}
+
+.full {
+	height: 100%;
+}
+
+.downloads {
+	text-align: center;
+	
+	margin: auto;
+	
+	width: 90%;
+	
+	display: table;
+	border-spacing: 25px;
+	
+	table-layout: fixed;
+}
+
+.downloads > a {
+	display: table-cell;
+}
+
+.downloads > a > div {
+	background-color: #f15d3b;
+	
+	border: 1px solid #fff;
+	box-shadow: 0 0 0 8px #f15d3b;
+	border-radius: 25px;
+	
+	line-height: 0.8;
+	
+	padding: 18px;
+	
+	color: #fff;
+}
+
+.downloads * {
+	text-decoration: none;
+}
+
+.downloads .stable {
+	margin-right: 4%;
+	
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.downloads .beta {
+	margin-left: 4%;
+	
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+#aspects {
+	white-space: nowrap;
+}
+
+.section {
+	width: 27vw;
+	height: 27vw;
+	
+	margin: 50px 2vw;
+	
+	border: 3px solid;
+	
+	display: inline-block;
+	
+	text-align: center;
+	
+	white-space: normal;
+}
+
+.section > table {
+	color: inherit;
+	text-align: inherit;
+	
+	width: 100%;
+	height: 100%;
+	padding: 0 5%;
+}
+
+.section > table tr:nth-of-type(1) {
+	height: 50%;
+}
+
+.section > table tr:nth-of-type(1) td {
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+.section > table tr:nth-of-type(2) {
+	/*vertical-align: top;*/
+}
+
+@media (max-width: 900px) {
+	#aspects {
+		
+	}
+	
+	.section {
+		display: block;
+		
+		width: 80vw;
+		height: 80vw;
+		
+		max-width: 400px;
+		max-height: 400px;
+		
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.stay-up-to-date {
+	font-size: 25px;
+	
+	color: white;
+	
+	padding: 0;
+}
+
+.stay-up-to-date > .content {
+	margin: 25px;
+	padding: 0px 25px;
+	
+	border-width: 2px;
+	border-style: solid;
+}
+
+.indent {
+    margin-left: 105px;
+    text-indent: -105px;
+}
+
+.indent * {
+	text-indent: 0;
+}
+
+.code {
+	color: white;
+}
+
+#code-example {
+	margin: 0;
+	padding: 50px 0;
+}
+
+#code-example p, #code-example h2 {
+	padding: 0 50px;
+}
+
+#code-example .code p {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#code-example .code {
+	width: 55%;
+	/*height: 80%;
+	max-height: 300px;*/
+	
+	padding: 30px;
+	margin-left: 50px;
+	
+	border-top-left-radius: 45px;
+	border-bottom-left-radius: 45px; 
+	
+	float: right;
+	
+	line-height: 1.1;
+}
+
+#code-comparisons {
+	padding: 0;
+	margin: 0;
+}
+
+#code-comparisons h3 {
+	color: white;
+}
+
+#code-comparisons p {
+	color: #f15d3b;
+	
+	font-size: 22px;
+}
+
+#code-comparisons table {
+	width: 100%;
+}
+
+#code-comparisons table:nth-child(odd) td:first-of-type {
+	width: 70%;
+}
+
+#code-comparisons table:nth-child(odd) td:first-of-type .code {
+	margin-right: 15px;
+}
+
+#code-comparisons table:nth-child(even) td:last-of-type {
+	width: 70%;
+}
+
+#code-comparisons table:nth-child(even) td:last-of-type .code {
+	margin-left: 15px;
+}
+
+#code-comparisons .code {
+	border: 3px solid #f15d3b;
+	
+	margin: 50px 150px;
+	padding: 50px 30px;
+}
+
+#code-comparisons .code p {
+	color: #99CA3C;
+}
+
+#code-comparisons .explanation {
+	padding: 50px;
+}
+
+#downloads {
+	padding: 50px;
+}
+
+#downloads > .downloads {
+	width: 500px;
+}
+
+#footer {
+	padding: 120px 100px;
+	
+	background-color: #0f021d;
+}
+
+#footer a, #footer p {
+	color: #f15d3b;
+	
+	text-decoration: none;
+}
+
+#footer > table {
+	width: 100%;
+	
+	text-align: center;
+	
+	table-layout: fixed;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.dark {
+	color: #1f122d;
+}
+
+.white {
+	color: #fff;
+}
+
+.primary {
+	color: #f15d3b;
+}
+
+.secondary1 {
+	color: #4da4db;
+}
+
+.secondary2 {
+	color: #4dc0b3;
+}
+
+.secondary3 {
+	color: #ffd95d;
+}
+
+.secondary4 {
+	color: #9bcb3c;
+}
+
+.secondary5 {
+	color: #f92672
+}
+
+.type {
+	color: #4da4db;
+}
+
+.identifier {
+	color: #9bcb3c;
+}
+
+.text {
+	color: #ffd95d;
+}
+
+.modifier {
+	color: #f92672;
+}
+
+.comment {
+	color: #aaa;
+}
+
+.dark-border {
+	border-color: #1f122d;
+}
+
+.primary-border {
+	border-color: #f15d3b;
+}
+
+.secondary1-border {
+	border-color: #4da4db;
+}
+
+.secondary2-border {
+	border-color: #4dc0b3;
+}
+
+.secondary3-border {
+	border-color: #ffd95d;
+}
+
+.secondary4-border {
+	color: #9bcb3c;
+}
+
+.dark-background {
+	background-color: #1f122d;
+}
+
+.primary-background {
+	background-color: #f15d3b;
+}
+
+.secondary1-background {
+	background-color: #4da4db;
+}
+
+.secondary2-background {
+	background-color: #4dc0b3;
+}
+
+.secondary3-background {
+	background-color: #ffd95d;
+}
+
+.secondary4-background {
+	background-color: #9bcb3c;
+}
