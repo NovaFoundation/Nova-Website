@@ -240,7 +240,7 @@ span[contenteditable=true] {
 	/*vertical-align: top;*/
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 	#aspects {
 		
 	}
