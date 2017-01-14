@@ -150,106 +150,134 @@
 		<slide id="code-comparisons" class="dark-background">
 			<div class="comparison">
 				<div class="explanation">
-					<h3>NOVA > JAVASCRIPT</h3>
+					<h3>NOVA -> JAVASCRIPT</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n</p>
 				</div>
-				<div class="code transition from-no-width time08 delay0">
-					<table>
-						<tr>
-							<td>
-								<div class="transition from-bottom time08 delay08">
-									<p>iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis n</p>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<hr class="white">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<div class="transition from-top time08 delay08">
-									<p>iscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis n</p>
-								</div>
-							</td>
-						</tr>
-					</table>
+				<div class="code">
+					<div class="l bracket-container hack transition time08 delay0">
+						<div class="l bracket"></div>
+					</div>
+					<div class="container">
+						<div>
+							<div class="transition from-bottom time08 delay05">
+								<p class="indent"><span class="modifier">public static</span> <span class="identifier">main</span>() {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">let</span> <span class="identifier">names</span> = [<span class="text">"Braden"</span>, <span class="text">"Ethan"</span>, <span class="text">"George"</span>]</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">for</span> (<span class="identifier">name</span> <span class="modifier">in</span> <span class="identifier">names</span>) {</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Hello, #<span class="identifier">name</span>!"</span>)</p>
+								<p style="padding-left: 56px;">}</p>
+								<p>}</p>
+							</div>
+						</div>
+						<div>
+							<hr class="white">
+						</div>
+						<div>
+							<div class="transition from-top time08 delay05">
+								<p><span class="modifier">var</span> <span class="identifier">names</span> = <span class="modifier">new</span> <span class="type">NovaArray</span>([<span class="text">"Braden"</span>, <span class="text">"Ethan"</span>, <span class="text">"George"</span>]);</p>
+								<p><span class="modifier">var</span> <span class="identifier">iterator</span> = <span class="identifier">names</span>.<span class="identifier">iterator</span>();</p><br>
+								<p><span class="modifier">while</span> (<span class="identifier">iterator</span>.<span class="identifier">hasNext</span>()) {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">var</span> <span class="identifier">name</span> = <span class="identifier">iterator</span>.<span class="identifier">next</span>();</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">console</span>.<span class="identifier">log</span>(<span class="text">"Hello, "</span> + <span class="identifier">name</span> + <span class="text">"!"</span>);</p>
+								<p>}</p>
+							</div>
+						</div>
+					</div>
+					<div class="r bracket-container hack transition time08 delay0">
+						<div class="r bracket"></div>
+					</div>
+					<div class="bracket-cover hack transition time08 delay0"></div>
 				</div>
 			</div>
 			<div class="comparison">
 				<div class="explanation">
-					<h3>NOVA > JAVA</h3>
+					<h3>NOVA -> JAVA</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco l</p>
 				</div>
-				<div class="code transition from-no-width time08 delay02">
-					<table>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<hr class="white">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-					</table>
+				<div class="code">
+					<div class="l bracket-container hack transition time08 delay02">
+						<div class="l bracket"></div>
+					</div>
+					<div class="container">
+						<div>
+							<div class="transition from-bottom time08 delay05">
+								<p class="indent"><span class="modifier">public static</span> <span class="identifier">main</span>() {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">let</span> <span class="identifier">names</span> = [<span class="text">"Braden"</span>, <span class="text">"Ethan"</span>, <span class="text">"George"</span>]</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">for</span> (<span class="identifier">name</span> <span class="modifier">in</span> <span class="identifier">names</span>) {</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Hello, #<span class="identifier">name</span>!"</span>)</p>
+								<p style="padding-left: 56px;">}</p>
+								<p>}</p>
+							</div>
+						</div>
+						<div>
+							<hr class="white">
+						</div>
+						<div>
+							<div class="transition from-top time08 delay05">
+								<p><span class="modifier">public static void</span> <span class="identifier">main</span>(<span class="type">String</span>[] <span class="identifier">args</span>) {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">Array</span>&lt;<span class="type">String</span>&gt; <span class="identifier">names</span> = <span class="modifier">new</span> <span class="type">Array</span>&lt;&gt;(<span class="modifier">new</span> <span class="type">String</span>[] { <span class="text">"Braden"</span>, <span class="text">"Ethan"</span>, <span class="text">"George"</span> });</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">Iterator</span>&lt;<span class="type">String</span>&gt; <span class="identifier">iterator</span> = <span class="identifier">names</span>.<span class="identifier">iterator</span>();</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">while</span> (<span class="identifier">iterator</span>.<span class="identifier">hasNext</span>()) {</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">String</span> <span class="identifier">name</span> = <span class="identifier">iterator</span>.<span class="identifier">next</span>();</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">System</span>.<span class="identifier">out</span>.<span class="identifier">println</span>(<span class="text">"Hello, "</span> + <span class="identifier">name</span> + <span class="text">"!"</span>);</p>
+								<p class="indent" style="padding-left: 56px;">}</p>
+								<p>}</p>
+							</div>
+						</div>
+					</div>
+					<div class="r bracket-container hack transition time08 delay02">
+						<div class="r bracket"></div>
+					</div>
+					<div class="bracket-cover hack transition time08 delay02"></div>
 				</div>
 			</div>
 			<div class="comparison">
 				<div class="explanation">
-					<h3>NOVA > C</h3>
+					<h3>NOVA -> C</h3>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exerci</p>
 				</div>
-				<div class="code transition from-no-width time08 delay04">
-					<table>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<hr class="white">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-					</table>
-				</div>
-			</div>
-			<div class="comparison">
-				<div class="explanation">
-					<h3>SECTION TITLE</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam</p>
-				</div>
-				<div class="code transition from-no-width time08 delay06">
-					<table>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<hr class="white">
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p></p>
-							</td>
-						</tr>
-					</table>
+				<div class="code">
+					<div class="l bracket-container hack transition time08 delay04">
+						<div class="l bracket"></div>
+					</div>
+					<div class="container">
+						<div>
+							<div class="transition from-bottom time08 delay05">
+								<p class="indent"><span class="modifier">public static</span> <span class="identifier">main</span>() {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">let</span> <span class="identifier">names</span> = [<span class="text">"Braden"</span>, <span class="text">"Ethan"</span>, <span class="text">"George"</span>]</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">for</span> (<span class="identifier">name</span> <span class="modifier">in</span> <span class="identifier">names</span>) {</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Hello, #<span class="identifier">name</span>!"</span>)</p>
+								<p style="padding-left: 56px;">}</p>
+								<p>}</p>
+							</div>
+						</div>
+						<div>
+							<hr class="white">
+						</div>
+						<div>
+							<div class="transition from-top time08 delay05">
+								<p><span class="type">int</span> <span class="identifier">main</span>(<span class="type">int</span> <span class="identifier">argc</span>, <span class="type">char</span>** <span class="identifier">argvs</span>) {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">nova_Array</span>* <span class="identifier">names</span> = <span class="identifier">generate_array</span>();</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">nova_ArrayIterator</span>* <span class="identifier">iterator</span> = <span class="identifier">nova_Array_iterator</span>(<span class="identifier">names</span>, <span class="identifier">exceptionData</span>);</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">while</span> (<span class="identifier">nova_ArrayIterator_hasNext</span>(<span class="identifier">iterator</span>, <span class="identifier">exceptionData</span>)) {</p>
+								<p class="indent" style="padding-left: 87px;"><span class="type">nova_String</span>* <span class="identifier">name</span> = (<span class="type">nova_String</span>*)<span class="identifier">nova_ArrayIterator_next</span>(<span class="identifier">iterator</span>, <span class="identifier">exceptionData</span>);</p>
+								<p class="indent" style="padding-left: 87px;"><span class="identifier">nova_Console_writeLine</span>(<span class="identifier">nova_String_concat</span>(<span class="identifier">nova_String_concat</span>(<span class="identifier">nova_String_construct</span>(0, <span class="identifier">exceptionData</span>, <span class="text">"Hello, "</span>), <span class="identifier">exceptionData</span>, <span class="identifier">name</span>), <span class="identifier">nova_String_construct</span>(0, <span class="identifier">exceptionData</span>, <span class="text">"!"</span>)));</p>
+								<p class="indent" style="padding-left: 56px;">}</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">return</span> 0;</p>
+								<p>}</p><br>
+								<p class="indent"><span class="type">nova_Array</span>* <span class="identifier">generate_array</span>() {</p>
+								<p class="indent" style="padding-left: 56px;"><span class="type">nova_Nova_String</span>** <span class="identifier">temp</span> = (<span class="type">nova_String</span>**)<span class="identifier">NOVA_MALLOC</span>(<span class="modifier">sizeof</span>(<span class="type">nova_String</span>*) * 3);</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="identifier">temp</span>[0] = <span class="identifier">nova_String_construct</span>(0, <span class="identifier">exceptionData</span>, <span class="text">"Braden"</span>);</p>
+								<p class="indent" style="padding-left: 56px;"><span class="identifier">temp</span>[1] = <span class="identifier">nova_String_construct</span>(0, <span class="identifier">exceptionData</span>, <span class="text">"Ethan"</span>);</p>
+								<p class="indent" style="padding-left: 56px;"><span class="identifier">temp</span>[2] = <span class="identifier">nova_String_construct</span>(0, <span class="identifier">exceptionData</span>, <span class="text">"George"</span>);</p><br>
+								<p class="indent" style="padding-left: 56px;"><span class="modifier">return</span> <span class="identifier">nova_Array_construct</span>(0, <span class="identifier">exceptionData</span>, (<span class="type">nova_Nova_Object</span>**)<span class="identifier">l1_Nova_temp</span>, 3);</p>
+								<p>}</p>
+							</div>
+						</div>
+					</div>
+					<div class="r bracket-container hack transition time08 delay04">
+						<div class="r bracket"></div>
+					</div>
+					<div class="bracket-cover hack transition time08 delay04"></div>
 				</div>
 			</div>
 		</slide>
