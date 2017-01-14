@@ -333,7 +333,7 @@ span[contenteditable=true] {
 }
 
 #code-comparisons .code {
-	border: 2px solid #f15d3b;
+	border: 3px solid #f15d3b;
 	
 	margin: 50px 150px;
 	padding: 50px 30px;
