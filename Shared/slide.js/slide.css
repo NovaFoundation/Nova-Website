@@ -51,6 +51,19 @@
     transform: translate3d(0, 100vh, 0);
 }
 
+.transition.to-left {
+    transform: translate3d(-100vw, 0, 0);
+}
+.transition.to-right {
+    transform: translate3d(100vw, 0, 0);
+}
+.transition.to-top {
+    transform: translate3d(0, -100vh, 0);
+}
+.transition.to-bottom {
+    transform: translate3d(0, 100vh, 0);
+}
+
 .slide.visible .transition.from-left:not(.on-active),
 .slide.visible .transition.from-right:not(.on-active),
 .slide.visible .transition.from-top:not(.on-active),
