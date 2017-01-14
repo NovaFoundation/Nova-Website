@@ -630,6 +630,14 @@ span[contenteditable=true] {
 	table-layout: fixed;
 }
 
+#footer .social a {
+	margin: 0 10px;
+}
+
+#footer .social svg {
+	width: 40px;
+}
+
 .nowrap {
 	white-space: nowrap;
 }
