@@ -267,6 +267,11 @@ span[contenteditable=true] {
 	padding: 0;
 }
 
+.stay-up-to-date .header {
+	margin-top: 12px;
+	margin-bottom: 15px;
+}
+
 .stay-up-to-date > .content {
 	margin: 25px;
 	padding: 0px 25px;
