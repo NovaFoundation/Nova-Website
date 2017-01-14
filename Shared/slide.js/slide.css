@@ -64,6 +64,28 @@
     transform: translate3d(0, 100vh, 0);
 }
 
+/*.slide:not(.visible) .transition.from-no-width:not(.on-active),
+.slide.active .transition.from-no-width.on-active {
+    width: 0%;
+}
+.slide.visible .transition.from-no-height:not(.on-active),
+.slide.active .transition.from-no-height.on-active {*/
+
+.slide:not(.visible) .transition.from-no-width:not(.on-active),
+.slide:not(.active) .transition.from-no-width.on-active {
+    width: 0% !important;
+}
+.slide.visible .transition.from-no-height:not(.on-active),
+.slide.active .transition.from-no-height.on-active {
+    height: 0% !important;
+}
+.transition.to-no-width {
+    width: 0%;
+}
+.transition.to-no-height {
+    height: 0%;
+}
+
 .slide.visible .transition.from-left:not(.on-active),
 .slide.visible .transition.from-right:not(.on-active),
 .slide.visible .transition.from-top:not(.on-active),
