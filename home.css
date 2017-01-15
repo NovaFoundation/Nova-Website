@@ -374,37 +374,17 @@ span[contenteditable=true] {
 	margin-left: 50px;
 }
 
-#code-example:before {
-	content: '';
-	
-	position: absolute;
-	
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-
-	-webkit-filter: blur(4px);
-	-moz-filter: blur(4px);
-	-o-filter: blur(4px);
-	-ms-filter: blur(4px);
-	filter: blur(4px);
-	
-	opacity: 0.15;
-	
-	z-index: -1;
+#code-example {
+	margin: 0;
+	padding: 0;
 	
 	background-color: #fff;
 	
-	background-image: url(Shared/Images/code2.jpg);
+	background-image: url(Shared/Images/code2.png);
 	background-size: cover;
 	background-position: left;
 }
 
-#code-example {
-	margin: 0;
-	padding: 0;
-}
 
 #code-example h1 {
 	text-align: center;
