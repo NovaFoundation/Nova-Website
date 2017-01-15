@@ -493,6 +493,10 @@ span[contenteditable=true] {
 	}
 }
 
+#code-comparisons > h1 {
+	color: white;
+}
+
 #code-comparisons {
 	padding: 0 50px;
 	margin: 0;
