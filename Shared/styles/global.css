@@ -273,6 +273,10 @@ a {
 }
 
 .white {
+    color: #f5f5f5;
+}
+
+.pure-white {
     color: #fff;
 }
 
