@@ -1,0 +1,18 @@
+<h1>CLASS TYPES</h1>
+<p>
+    Nova contains three different types of class structures:
+</p>
+<ul>
+    <li>Classes</li>
+    <li>Interfaces</li>
+    <li>Traits</li>
+</ul>
+<p>
+    Each of these has their own strengths and weaknesses. For instance, you can only inherit from one class at most. In contrast, you can inherit from as many traits and interfaces as you want. Because of this, traits and interfaces cannot have formal constructors. Traits differ from interfaces in such that traits can define method bodies and class properties. Interfaces are just like traditional Java interfaces; they only contain abstract method declarations.
+</p>
+<p>Using the code shown, you can create an instance of <span class="pre type">MyClass</span> with an instantiation as such: <span class="pre"><span class="type">let</span> <span class="identifier">myObj</span> = <span class="modifier">new</span> <span class="type">MyClass</span>()</span>. Then you can call any of the functions defined in the class or its ancestors (<span class="pre type">MyTrait</span> and <span class="pre type">MyInterface</span>). You could call:</p>
+<ul>
+    <li><span class="pre"><span class="identifier">myObj</span>.<span class="identifier">saySomething</span>()</span> which would output <span class="pre">My value is: 'my value'</span></li>
+    <li><span class="pre"><span class="identifier">myObj</span>.<span class="identifier">calculateValue</span>()</span> which returns a String <span class="pre text">"my value"</span></li>
+    <li><span class="pre"><span class="identifier">myObj</span>.<span class="identifier">plus</span>(5)</span> which adds 5 to <span class="pre"><span class="identifier">myObj</span>.<span class="identifier">id</span></span> and returns <span class="pre identifier">myObj</span></li>
+</ul>
