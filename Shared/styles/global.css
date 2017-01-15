@@ -58,6 +58,20 @@ input {
     }
 }
 
+@-webkit-keyframes flash {
+    0% {
+        background-color: rgba(241, 93, 59, 1);
+    }
+    100% {
+        background-color: rgba(241, 93, 59, 0);
+    }
+}
+
+.flash {
+    animation: flash 1.5s linear;
+    -webkit-animation: flash 1.5s linear;
+}
+
 [contenteditable=true].cursor:focus:before {
     color: transparent;
 }
