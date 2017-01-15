@@ -20,4 +20,7 @@ angular.module("nova").controller("DownloadController", ["$scope", function ($sc
         jump($scope.build);
     }
     
+    $scope.download = function () {
+        alert("Havent added downloads yet.");
+    };
 }]);
