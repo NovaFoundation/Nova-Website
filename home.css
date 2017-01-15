@@ -397,8 +397,8 @@ span[contenteditable=true] {
 }
 
 #code-example .indent {
-    margin-left: 45px;
-    text-indent: -45px;
+    margin-left: 38px;
+    text-indent: -38px;
 }
 
 .code {
