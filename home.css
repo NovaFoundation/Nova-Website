@@ -565,7 +565,7 @@ span[contenteditable=true] {
 	top: 0;
 	bottom: 0;
     
-    width: 50%;
+    width: calc(50% + 1px);
 	
 	background-color: #1f122d;
 	
