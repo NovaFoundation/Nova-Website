@@ -1,53 +1,46 @@
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="../Shared/slide.js/slide.css"></link>
-        <link rel="stylesheet" type="text/css" href="../Shared/styles/global.css"></link>
-        <link rel="stylesheet" type="text/css" href="docs.css"></link>
-        
-        <script src="../scripts/util.js"></script>
-        <script src="../scripts/angular.min.js"></script>
-        <script src="../scripts/angular-ui-router.min.js"></script>
-        <script src="../scripts/moment.js"></script>
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="../App.js"></script>
-        <script src="../Shared/slide.js/ng-slide.js"></script>
-        <script src="docs.js"></script>
-    </head>
-    <body ng-app="nova" class="white-background" ng-controller="DocsController">
-        <div class="container">
-            <div class="navigation dark-background">
-                <div class="logo-container">
-                    <img class="logo glow-logo" src="../Shared/Images/white-logo.svg" />
-                    
-                    <div class="nova-text-container">
-                        <a href="index.html">
-                            <h1 class="nova-text" style="color: rgba(0,0,0,0);">NOVA</h1>
-                            <h1 class="nova-text">NOVA</h1>
-                        </a>
-                    </div>
-                    
-                    <a href="../index.html">
-                        <h1 class="return-home">RETURN HOME</h1>
+<div class="white-background">
+    <div class="container">
+        <div class="navigation dark-background">
+            <div class="logo-container">
+                <a ui-sref="home">
+                    <img style="max-width: 20vw;" class="logo glow-logo" src="/Shared/Images/white-logo.svg" />
+                </a>
+                
+                <div class="nova-text-container">
+                    <a ui-sref="home">
+                        <h1 class="nova-text" style="color: rgba(0,0,0,0);">NOVA</h1>
+                        <h1 class="nova-text">NOVA</h1>
                     </a>
                 </div>
-            </div>
-            <div class="content">
-                <div class="content-header-container dark-border" ng-if="page">
-                    <table>
-                        <tr>
-                            <td>
-                                <h1 class="content-header" ng-bind="page.header"></h1>
-                                <h2 class="content-subheader" ng-bind="page.subheader" ng-if="page.subheader"></h2>
-                            </td>
-                            <td class="export-options">
-                                <h2 class="share-link" ng-click="sharePage(page)">SHARE PAGE <img class="share" src="../Shared/Images/share.svg" /></h2>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="content-view" ui-view></div>
+                
+                <a ui-sref="home">
+                    <h1 class="return-home">RETURN HOME</h1>
+                </a>
             </div>
         </div>
-    </body>
-</html>
+        <div class="content">
+            <div class="content-header-container dark-border" ng-if="page">
+                <table>
+                    <tr>
+                        <td>
+                            <h1 class="content-header" ng-bind="page.header"></h1>
+                            <h2 class="content-subheader" ng-bind="page.subheader" ng-if="page.subheader"></h2>
+                        </td>
+                        <td class="export-options">
+                            <h2 class="share-link" ng-click="sharePage(page)">SHARE PAGE <img class="share" src="/Shared/Images/share.svg" /></h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-show="page" class="content-view" ui-view></div>
+            <div ng-if="!page" class="default-view">
+                <h1>DOCUMENTATION</h1>
+                <hr>
+                <h2>QUICK LINKS</h2>
+                <ul>
+                    <li><a ui-sref="docs.hello-world">"Hello, world!" program</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
