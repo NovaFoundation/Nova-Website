@@ -169,6 +169,8 @@ span[contenteditable=true] {
 
 #logo-main {
 	height: 38%;
+	
+	max-width: calc(100% - 40px);
 }
 
 .centered {
@@ -179,7 +181,7 @@ span[contenteditable=true] {
 	
 	transform: translate(-50%, -50%);
 	
-	width: 500px;
+	width: 460px;
 }
 
 .full {
@@ -200,7 +202,7 @@ span[contenteditable=true] {
 	
 	margin: auto;
 	
-	width: 90%;
+	width: 100%;
 	
 	display: table;
 	border-spacing: 25px;
@@ -217,7 +219,7 @@ span[contenteditable=true] {
 .downloads > a > div {
 	background-color: #f15d3b;
 	
-	border: 1px solid #fff;
+	border: 1.5px solid #fff;
 	box-shadow: 0 0 0 8px #f15d3b;
 	border-radius: 25px;
 	
