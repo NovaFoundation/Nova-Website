@@ -4,6 +4,11 @@
     font-size: 1.6em;
 }
 
+h1 {
+    font-size: 70px;
+    margin: 10px 0;
+}
+
 .nova-text-container {
     margin-top: 20px;
 }
