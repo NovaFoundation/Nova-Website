@@ -14,22 +14,85 @@
         <script src="Shared/slide.js/ng-slide.js"></script>
         <script src="DownloadController.js"></script>
     </head>
-    <body ng-app="nova" ng-controller="DownloadController">
-        <slide id="downloads" class="full dark-background">
-            <table id="header">
-                <tr>
-                    <td>
+    <body ng-app="nova" class="white-background" ng-controller="DownloadController">
+        <table id="header">
+            <tr>
+                <td>
+                    <a href="index.html">
                         <img class="logo" src="Shared/Images/white-logo.svg" />
-                    </td>
-                    <td>
-                        <div class="nova-text-container">
+                    </a>
+                </td>
+                <td>
+                    <div class="nova-text-container">
+                        <a href="index.html">
                             <h1 class="nova-text" style="color: rgba(0,0,0,0);">NOVA</h1>
                             <h1 class="nova-text">NOVA</h1>
-                        </div>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <slide id="downloads">
+            <div><h1 class="primary">DOWNLOAD</h1></div>
+            <hr>
+            <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
+            <div id="stable">
+                <h2>STABLE <span class="show-all gray" ng-click="showAll('stable')">show all</span></h2>
+                <button ng-click="download()" ng-repeat="stableOs in stableOses" class="download-button">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="icon-container"><img ng-src="Shared/Images/{{stableOs}}.svg" /></div>
+                            </td>
+                            <td>
+                                {{ stableOs | capitalize }} build
+                            </td>
+                        </tr>
+                    </table>
+                </button>
+            </div>
+            <div id="beta">
+                <h2>BETA <span class="show-all gray" ng-click="showAll('beta')">show all</span></h2>
+                <button ng-click="download()" ng-repeat="betaOs in betaOses" class="download-button">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="icon-container"><img ng-src="Shared/Images/{{betaOs}}.svg" /></div>
+                            </td>
+                            <td>
+                                {{ betaOs | capitalize }} build
+                            </td>
+                        </tr>
+                    </table>
+                </button>
+            </div>
+        </slide>
+        <slide id="installation">
+            <div><h1 class="primary">INSTALLATION</h1></div>
+            <hr>
+            <h4>Pre-requisites</h4>
+            <ul>
+                <li>Java 1.8 or later</li>
+                <li>Windows/Mac/Linux</li>
+            </ul>
+            <table>
+                <tr>
+                    <td class="step-number">
+                        <h1 class="secondary1">1</h1>
+                    </td>
+                    <td class="instructions">
+                        After <a href="#downloads">downloading</a> the binaries,
+                    </td>
+                </tr>
+                <tr>
+                    <td class="step-number">
+                        <h1 class="secondary1">2</h1>
+                    </td>
+                    <td class="instructions">
+                        Now you are ready to <a href="docs/helloworld">write your first program</a>.
                     </td>
                 </tr>
             </table>
-            
         </slide>
     </body>
 </html>
