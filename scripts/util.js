@@ -220,3 +220,27 @@ function getQueryString(params) {
 }
 
 var queryParams = getQueryParams();
+
+function jump(h) {
+    var url = location.href;               //Save down the URL without hash.
+    location.href = "#"+h;                 //Go to the target element.
+    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+    
+    document.getElementById(h).classList.remove("flash");
+    document.getElementById(h).classList.add("flash");
+}
+
+window.addEventListener("load", function () {
+    function checkHash() {
+        if (window.location.hash && document.getElementById(window.location.hash.substring(1))) {
+            var element = document.getElementById(window.location.hash.substring(1));
+            
+            element.classList.remove("flash");
+            element.classList.add("flash");
+        }
+    }
+    
+    checkHash();
+    
+    window.addEventListener("hashchange", checkHash, false);
+});
