@@ -135,6 +135,10 @@ a {
     display: inline-block;
 }
 
+.nova-text-container a {
+    text-decoration: none;
+}
+
 .nova-text:nth-of-type(2) {
     position: absolute;
     
