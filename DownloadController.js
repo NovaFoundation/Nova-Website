@@ -10,6 +10,14 @@ angular.module("nova").controller("DownloadController", ["$scope", function ($sc
     $scope.stableOses = [$scope.lowerOs];
     $scope.betaOses = [$scope.lowerOs];
     
+    $scope.showAll = function (type) {
+        validOses.forEach(function (os) {
+            if ($scope[type + "Oses"].indexOf(os) < 0) {
+                $scope[type + "Oses"].push(os);
+            }
+        });
+    };
+    
     if (queryParams.version) {
         var index = queryParams.version.indexOf(':');
         index = index < 0 ? queryParams.version.length : index;
