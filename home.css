@@ -410,6 +410,7 @@ span[contenteditable=true] {
 
 #code-example p {
 	padding: 0 50px;
+	font-size: 16px;
 }
 
 #code-example .code p {
