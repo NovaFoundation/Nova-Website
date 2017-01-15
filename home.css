@@ -766,6 +766,7 @@ span[contenteditable=true] {
 
 .type {
 	color: #4da4db;
+	font-weight: bold;
 }
 
 .identifier {
