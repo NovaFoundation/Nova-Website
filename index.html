@@ -86,7 +86,7 @@
 							<td>
 								<h2>NOVA IS PORTABLE!</h2>
 								<p>
-									Nova can be compiled to many different languages, and <span class="bold">can be ran on virtually any device</span> imaginable, making it one of the most portable languages that has ever existed.
+									Nova has the ability to be compiled to many different languages, and <span class="bold">can be ran on virtually any device</span> imaginable, making it one of the most portable languages that has ever existed.
 								</p>
 							</td>
 						</tr>
@@ -130,8 +130,9 @@
 						Nova's List data structure makes processing lists of data easy. With the use of lambda expressions, the code to perform operations can be concise. Like many other modern languages, Nova lets you use lambda expressions and functions as first class values. Nova is smart enough to infer the type of the variables that were defined with the use of the "let" and "var" modifiers.
 					</p>
 					<p>
-						In the code example on the right, you can see string interpolation in action. The strings passed to <span class="pre"><span class="type">Console</span>.<span class="identifier">writeLine</span>()</span> show this. String interpolation makes injecting variable values into strings effortless. You just use <span class="pre">#{ expression }</span> within a string literal and the compiler does the rest for you.
+						In the code example on the right, you can see string interpolation in action. The strings passed to <span class="pre"><span class="type">Console</span>.<span class="identifier">writeLine</span>()</span> show this. String interpolation makes injecting variable values into strings effortless. You just use <span class="pre">#{ expression }</span> (or even just <span class="pre">#variable</span>, if it is just accessing an attribute) within a string literal and the compiler does the rest for you.
 					</p>
+					<p>One cool thing about the way List's are implemented in Nova is that because it is a trait, any class can implement it and they only have to define an Iterator for the class for it to gain access to all of the functional capabilities of a List.</span></p>
 				</div>
 				<div class="code-container">
 					<div class="code dark-background indent-children">
