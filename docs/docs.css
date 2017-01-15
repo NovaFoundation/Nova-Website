@@ -33,6 +33,8 @@
     padding-bottom: 0;
     
     box-sizing: border-box;
+    
+    overflow-y: auto;
 }
 
 .navigation .logo-container {
