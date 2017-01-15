@@ -385,8 +385,7 @@ span[contenteditable=true] {
 	background-position: left;
 }
 
-
-#code-example h1 {
+.slide > h1 {
 	text-align: center;
 	margin-top: 40px;
 	margin-bottom: 50px;
