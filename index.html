@@ -159,12 +159,17 @@
 			</div>
 			<div class="example traits">
 				<div class="description">
-					<h2>Traits</h2>
+					<h2>Class types</h2>
 					<p>
-						Nova's List data structure makes processing lists of data easy. With the use of lambda expressions, the code to perform operations can be concise. Like many other modern languages, Nova lets you use lambda expressions and functions as first class values. Nova is smart enough to infer the type of the variables that were defined with the use of the "let" and "var" modifiers.
+						Nova contains three different types of class structures:
 					</p>
+						<ul>
+							<li>Classes</li>
+							<li>Interfaces</li>
+							<li>Traits</li>
+						</ul>
 					<p>
-						In the code example on the right, you can see string interpolation in action. The strings passed to <span class="pre"><span class="type">Console</span>.<span class="identifier">writeLine</span>()</span> show this. String interpolation makes injecting variable values into strings effortless. You just use <span class="pre">#{ expression }</span> within a string literal and the compiler does the rest for you.
+						Each of these has their own strengths and weaknesses. For instance, you can only inherit from one class at most. In contrast, you can inherit from as many traits and interfaces as you want. Because of this, traits and interfaces cannot have formal constructors. Traits differ from interfaces in such that traits can define method bodies and class properties. Interfaces are just like traditional Java interfaces; they only contain abstract method declarations.
 					</p>
 				</div>
 				<div class="code-container">
