@@ -1,0 +1,117 @@
+.nova-text {
+    color: #fff;
+    
+    font-size: 1.6em;
+}
+
+.nova-text-container {
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    
+    height: 100%;
+}
+
+.navigation {
+    order: 1;
+    
+    width: 320px;
+    height: 100%;
+    
+    max-width: 35vw;
+    
+    color: white;
+    
+    padding: 5vh 20px;
+    padding-bottom: 0;
+    
+    box-sizing: border-box;
+}
+
+.navigation .logo-container {
+    text-align: center;
+}
+
+.navigation .logo {
+    width: 70%;
+}
+
+.return-home {
+    border: 2px solid #fff;
+    
+    margin-top: 50px;
+    
+    padding: 8px 12px;
+    
+    display: inline-block;
+    
+    font-weight: bold;
+    font-size: 26px;
+    
+    color: white;
+}
+
+.content {
+    order: 2;
+    
+    width: 100%;
+    height: 100%;
+    
+    padding: 50px 40px;
+    
+    box-sizing: border-box;
+    
+    overflow: auto;
+}
+
+.content-header-container {
+    border: 3px solid;
+    
+    padding: 0 20px;
+}
+
+.content-header-container .content-header,
+.content-header-container .content-subheader {
+    margin: 0;
+}
+
+.content-header-container .content-header {
+    font-size: 80px;
+    font-weight: bold;
+    
+    margin-top: 30px;
+}
+
+.content-header-container .content-subheader {
+    font-size: 50px;
+    font-weight: bold;
+    
+    margin-bottom: 50px;
+}
+
+.content-header-container > table {
+    width: 100%;
+}
+
+.content-header-container > table > tbody > tr > td:last-of-type {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.content-view {
+    padding: 20px;
+}
+
+.export-options > h2 {
+    display: inline-block;
+}
+
+.share-link {
+    cursor: pointer;
+}
+
+.share {
+    height: 20px;
+}
