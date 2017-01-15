@@ -449,10 +449,6 @@ span[contenteditable=true] {
 	text-align: center;
 }
 
-#code-example .example.tree {
-	margin-left: 50px;
-}
-
 #code-example .example .description > h2 {
 	margin-top: 0;
 }
@@ -460,10 +456,8 @@ span[contenteditable=true] {
 #code-example .tree .code {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-}
-
-#code-example .example.traits {
-	margin-right: 50px;
+	
+	margin-left: 50px;
 }
 
 #code-example .traits .code {
