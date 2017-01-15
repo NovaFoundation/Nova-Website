@@ -650,17 +650,17 @@ span[contenteditable=true] {
 }
 
 @media (min-width: 1100px) {
-	#code-comparisons .comparison:nth-child(odd) > div:first-of-type,
-	#code-comparisons .comparison:nth-child(even) > div:last-of-type {
+	#code-comparisons .comparison:nth-of-type(odd) > div:first-of-type,
+	#code-comparisons .comparison:nth-of-type(even) > div:last-of-type {
 		order: 1;
 	}
 	
-	#code-comparisons .comparison:nth-child(odd) > .explanation {
+	#code-comparisons .comparison:nth-of-type(odd) > .explanation {
 		text-align: right;
 	}
 	
-	#code-comparisons .comparison:nth-child(even) > div:first-of-type,
-	#code-comparisons .comparison:nth-child(odd) > div:last-of-type {
+	#code-comparisons .comparison:nth-of-type(even) > div:first-of-type,
+	#code-comparisons .comparison:nth-of-type(odd) > div:last-of-type {
 		order: 2;
 	}
 }
