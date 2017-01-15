@@ -8,6 +8,11 @@
     margin-top: 20px;
 }
 
+.default-view > h1 {
+    margin-top: 0;
+    line-height: 1;
+}
+
 .container {
     display: flex;
     
