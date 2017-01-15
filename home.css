@@ -93,7 +93,7 @@ span[contenteditable=true] {
 #splashscreen:before {
 	content: '';
 	
-	position: absolute;
+	position: fixed;
 	
 	left: 0;
 	right: 0;
@@ -111,6 +111,10 @@ span[contenteditable=true] {
 	background-image: url(Shared/Images/code.jpg);
 	background-size: cover;
 	background-position: left;
+	
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
 }
 
 #splashscreen {
