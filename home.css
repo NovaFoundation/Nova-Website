@@ -385,7 +385,12 @@ span[contenteditable=true] {
 
 #code-example {
 	margin: 0;
-	padding: 50px 0;
+	padding: 0;
+}
+
+#code-example h1 {
+	width: 46%;
+	text-align: center;
 }
 
 #code-example .indent {
@@ -400,7 +405,7 @@ span[contenteditable=true] {
 	word-break: break-word;
 }
 
-#code-example p, #code-example h2 {
+#code-example p {
 	padding: 0 50px;
 }
 
@@ -409,20 +414,85 @@ span[contenteditable=true] {
 	padding-right: 5px;
 }
 
-#code-example .code {
-	width: 55%;
-	/*height: 80%;
-	max-height: 300px;*/
-	
+#code-example .code-container {
+	width: 50%;
+}
+
+#code-example .example .code {
 	padding: 30px;
-	margin-left: 50px;
 	
-	border-top-left-radius: 45px;
-	border-bottom-left-radius: 45px; 
-	
-	float: right;
+	border-radius: 45px;
 	
 	line-height: 1.1;
+}
+
+#code-example .example .description {
+	width: 50%;
+	
+	margin-bottom: 30px;
+	
+	align-self: center;
+}
+
+#code-example .example {
+	margin-bottom: 40px;
+	
+	display: flex;
+}
+
+#code-example .example .description > h2 {
+	text-align: center;
+}
+
+#code-example .example.tree {
+	margin-left: 50px;
+}
+
+#code-example .example .description > h2 {
+	margin-top: 0;
+}
+
+#code-example .tree .code {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#code-example .example.traits {
+	margin-right: 50px;
+}
+
+#code-example .traits .code {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	
+	margin-right: 50px;
+}
+
+#code-example .example:nth-of-type(even) .code-container {
+	order: 1;
+}
+
+#code-example .example:nth-of-type(even) .description {
+	order: 2;
+}
+
+@media (max-width: 1100px) {
+	#code-example .example {
+		flex-direction: column;
+	}
+	
+	#code-example .example .description,
+	#code-example .example .code-container {
+		width: 100%;
+	}
+	
+	#code-example .example:nth-of-type(even) .code-container {
+		order: 2;
+	}
+
+	#code-example .example:nth-of-type(even) .description {
+		order: 1;
+	}
 }
 
 #code-comparisons {
