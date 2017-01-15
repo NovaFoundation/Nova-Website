@@ -1,3 +1,7 @@
+#main-view > div {
+    height: 100%;
+}
+
 .nova-text {
     color: #fff;
 }
