@@ -147,9 +147,10 @@ a {
 }
 
 .nova-text {
-    letter-spacing: 35px;
-    
     margin: 0;
+    
+    letter-spacing: 35px;
+    margin-right: -35px;
     
     text-shadow: 0 0 25px #f15d3b;
     
