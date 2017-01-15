@@ -356,6 +356,10 @@ span[contenteditable=true] {
 	text-indent: 0;
 }
 
+#code-example ul {
+	margin-left: 50px;
+}
+
 #code-example:before {
 	content: '';
 	
