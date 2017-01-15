@@ -280,6 +280,10 @@ a {
     color: #fff;
 }
 
+.gray {
+    color: #aaa;
+}
+
 .primary {
     color: #f15d3b;
 }
@@ -329,6 +333,10 @@ a {
     border-color: #1f122d;
 }
 
+.white-border {
+    border-color: #f5f5f5;
+}
+
 .primary-border {
     border-color: #f15d3b;
 }
@@ -351,6 +359,10 @@ a {
 
 .dark-background {
     background-color: #1f122d;
+}
+
+.white-background {
+    background-color: #f5f5f5;
 }
 
 .primary-background {
