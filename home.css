@@ -393,8 +393,8 @@ span[contenteditable=true] {
 }
 
 #code-example h1 {
-	width: 46%;
 	text-align: center;
+	margin-bottom: 50px;
 }
 
 #code-example .indent {
