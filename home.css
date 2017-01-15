@@ -127,7 +127,11 @@ span[contenteditable=true] {
 	color: white;
 }
 
-.nova-text {
+.moto {
+	font-weight: normal;
+}
+
+#splashscreen .nova-text {
 	letter-spacing: 35px;
 	
 	margin: 0;
@@ -140,6 +144,8 @@ span[contenteditable=true] {
 	text-shadow: 0 0 25px #f15d3b;
 	
 	font-size: 2em;
+	
+	margin: 0;
 }
 
 .documentation-link {
