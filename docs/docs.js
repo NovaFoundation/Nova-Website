@@ -28,9 +28,7 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
     function stateUpdated() {
         var url = $rootScope.state.url.substring(1);
         
-        $scope.page = window.docsPages.find(function (d) {
-            return d.url == url;
-        });
+        $scope.page = $rootScope.state.state.data.page;
     }
     
     stateUpdated();
