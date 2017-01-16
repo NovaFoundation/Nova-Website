@@ -18,7 +18,18 @@ window.docsPages = [{
     }],
     children: [{
         header: "Lists",
-        url: "lists"
+        url: "lists",
+        references: [{
+            header: "Arrays",
+            url: "docs.data-structures.arrays"
+        }]
+    }, {
+        header: "Arrays",
+        url: "arrays",
+        references: [{
+            header: "Lists",
+            url: "docs.data-structures.lists"
+        }]
     }]
 }, {
     header: "Hello world",
