@@ -70,9 +70,35 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         addDoc(p, { name: "docs" });
     });
 }]).run(['$rootScope', function ($rootScope) {
+    function urlUpdated() {
+        updateQueryParams();
+        console.log("updateing " + window.location.href);
+        $rootScope.$safeApply(function () {
+            $rootScope.$broadcast("urlUpdated");
+        });
+    }
+    
+    window.onpopstate = function (event) {
+        if (event.state) {
+            // history changed because of pushState/replaceState
+        } else {
+            // history changed because of a page load
+        }
+        
+        urlUpdated();
+    };
+    
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
         $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5), url: state.url};//state;
         $rootScope.stateParams = params;
+    });
+    
+    $rootScope.$on("$stateChangeSuccess", function (e, state, params, fromState, fromParams) {
+        if (fromState.url == "^") {
+            // window.history.replaceState(null, null, window.originalPathname + window.originalQueryString);
+        } else {
+            urlUpdated();
+        }
         
         $rootScope.$broadcast("stateUpdated");
     });
