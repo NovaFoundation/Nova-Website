@@ -17,6 +17,8 @@ window.docsPages = [{
         url: "docs.data-structures.lists"
     }],
     children: [{
+        header: "Lists",
+        url: "lists"
     }]
 }, {
     url: "hello-world",
