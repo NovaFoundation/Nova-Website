@@ -32,6 +32,8 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
         alert("sharing " + page.header);
     };
     
+    $scope.pages = docsPages;
+    
     function stateUpdated() {
         var url = $rootScope.state.url.substring(1);
         
