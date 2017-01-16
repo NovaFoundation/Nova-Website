@@ -225,9 +225,15 @@ function jump(h) {
     var url = location.href;               //Save down the URL without hash.
     location.href = "#"+h;                 //Go to the target element.
     history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+
+function flash(id) {
+    var element = document.getElementById(id);
     
-    document.getElementById(h).classList.remove("flash");
-    document.getElementById(h).classList.add("flash");
+    element.classList.remove("flash");
+    
+    element.timeoutId = setTimeout(function () {
+        element.classList.add("flash");
+    });
 }
 
 window.addEventListener("load", function () {
