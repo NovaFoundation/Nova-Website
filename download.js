@@ -18,15 +18,18 @@ angular.module("nova").controller("DownloadController", ["$scope", function ($sc
         });
     };
     
-    if (queryParams.version) {
-        var index = queryParams.version.indexOf(':');
-        index = index < 0 ? queryParams.version.length : index;
-        
-        $scope.build = queryParams.version.substring(0, index);
-        $scope.buildVersion = queryParams.version.substring(index);
-        
-        jump($scope.build);
-    }
+    $scope.addEventListener("urlUpdated", function () {
+        console.log("searhching ", queryParams);
+        if (queryParams.version) {
+            var index = queryParams.version.indexOf(':');
+            index = index < 0 ? queryParams.version.length : index;
+            
+            $scope.build = queryParams.version.substring(0, index);
+            $scope.buildVersion = queryParams.version.substring(index);
+            
+            jump($scope.build, false);
+        }
+    })();
     
     $scope.download = function () {
         alert("Havent added downloads yet.");
