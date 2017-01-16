@@ -283,9 +283,11 @@ code.hljs,
 .hljs {
     display: inline-block;
     
-    margin: 6px;
+    margin: 0px;
     
-    min-width: 500px
+    box-sizing: border-box;
+    
+    min-width: 550px
 }
 
 .skinny .hljs {
@@ -326,6 +328,47 @@ code.hljs,
 
 .nowrap {
     white-space: nowrap;
+}
+
+.note:before {
+    content: '';
+    
+    position: absolute;
+    
+    top: 28px;
+    left: 0px;
+    right: 0px;
+    
+    border-bottom: 2px solid #1f122d;
+}
+
+.note {
+    padding: 10px;
+    padding-top: 32px;
+    
+    background-color: #fffaf5;
+    
+    border: 2px solid #1f122d;
+    border-radius: 10px;
+    
+    box-sizing: border-box;
+    
+    font-size: 15px;
+    
+    width: 550px;
+    
+    position: relative;
+}
+
+.note:after {
+    content: 'Note';
+    
+    position: absolute;
+    
+    top: 3px;
+    left: 10px;
+    
+    font-size: 16px;
 }
 
 .bold {
