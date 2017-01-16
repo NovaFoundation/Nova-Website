@@ -38,6 +38,18 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
         var url = $rootScope.state.url.substring(1);
         
         $scope.page = $rootScope.state.state.data.page;
+        
+        var current = $scope.page;
+        
+        if (current) {
+            current.selected = true;
+            
+            while (current) {
+                current.open = true;
+                
+                current = current.parent;
+            }
+        }
     }
     
     stateUpdated();
