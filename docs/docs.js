@@ -34,6 +34,17 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
     
     $scope.pages = docsPages;
     
+    function close(page) {
+        page.selected = false;
+        page.open = false;
+        
+        if (page.children) {
+            page.children.forEach(close);
+        }
+    }
+    
+    $scope.pages.forEach(close);
+    
     function stateUpdated() {
         var url = $rootScope.state.url.substring(1);
         
@@ -49,17 +60,6 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
                 
                 current = current.parent;
             }
-        } else {
-            function close(page) {
-                page.selected = false;
-                page.open = false;
-                
-                if (page.children) {
-                    page.children.forEach(close);
-                }
-            }
-            
-            $scope.pages.forEach(close);
         }
     }
     
