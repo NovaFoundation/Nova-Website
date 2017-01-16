@@ -81,6 +81,9 @@ h1 {
 .content-header-container {
     border: 3px solid;
     
+/*    border-left: none;
+    border-right: none;*/
+    
     padding: 0 20px;
 }
 
@@ -113,12 +116,41 @@ h1 {
     text-align: right;
 }
 
+.content-view-container {
+    display: flex;
+    
+    width: 100%;
+}
+
 .content-view {
     padding: 20px;
+    
+    order: 1;
+    
+    width: 100%;
 }
 
 .content-view.home {
     padding: 0;
+}
+
+.references {
+    order: 2;
+    
+    border-left: 3px solid;
+    
+    width: 360px;
+    max-width: 38vw;
+    
+    padding: 0px 20px
+}
+
+.references-list {
+    padding-left: 18px;
+}
+
+.references h2 {
+    margin-top: 10px;
 }
 
 .export-options > h2 {
