@@ -228,6 +228,7 @@ updateQueryParams();
 window.originalPathname = window.location.pathname;
 window.originalQueryString = window.location.search;
 window.originalQueryParams = window.queryParams;
+window.originalHash = window.location.hash;
 
 function jump(h, changeUrl) {
     if (changeUrl !== false) {
