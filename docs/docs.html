@@ -33,7 +33,9 @@
                 </table>
             </div>
             <div class="content-view-container">
-                <div class="content-view" ng-class="{ home: !page }" ui-view></div>
+                <div class="content-view">
+                    <div class="view" ng-class="{ home: !page }" ui-view></div>
+                </div>
                 <div class="references dark-border" ng-if="page.references && page.references.length > 0">
                     <h2>References</h2>
                     <ul class="references-list">

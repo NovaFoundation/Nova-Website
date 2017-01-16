@@ -130,6 +130,10 @@ h1 {
     width: 100%;
 }
 
+.content-view > .view {
+    max-width: 1200px;
+}
+
 .content-view.home {
     padding: 0;
 }
