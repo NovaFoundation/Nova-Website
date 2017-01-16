@@ -17,6 +17,14 @@ body {
     display: none !important;
 }
 
+[ng-click] {
+    cursor: pointer;
+}
+
+a[ng-click] {
+    text-decoration: underline;
+}
+
 #main-view {
     width: 100%;
     min-height: 100%;
