@@ -32,7 +32,17 @@
                     </tr>
                 </table>
             </div>
-            <div class="content-view" ng-class="{ home: !page }" ui-view></div>
+            <div class="content-view-container">
+                <div class="content-view" ng-class="{ home: !page }" ui-view></div>
+                <div class="references dark-border" ng-if="page.references && page.references.length > 0">
+                    <h2>References</h2>
+                    <ul class="references-list">
+                        <li ng-repeat="ref in page.references">
+                            <a ui-sref="{{ref.url}}" ng-bind="ref.header"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </body>
