@@ -1,5 +1,5 @@
-<div class="tree-browser">
-    <div ng-repeat="item in data | orderBy:'-children.length'" class="tree-item" ng-class="{ selected: item.selected }">
+<div class="tree-browser" ng-class="{ root: isRoot }">
+    <div ng-repeat="item in data | orderBy:'-children.length'" class="tree-item" ng-class="{ selected: item.selected, children: item.children && item.children.length > 0, open: item.open }">
         <table>
             <tr>
                 <td class="arrow-container">
