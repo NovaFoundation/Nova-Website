@@ -33,7 +33,6 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     });
     
     $stateProvider.state('download', {
-        url: '/download',
         url: '/download?version',
         templateUrl: '/download.html',
         controller: 'DownloadController',
