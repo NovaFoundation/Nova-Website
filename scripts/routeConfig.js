@@ -6,7 +6,11 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         }).hashPrefix('');
         
         window.originalPathname = window.originalPathname.replace(/\/$/, "");
-        window.history.replaceState(null, null, window.originalPathname + window.originalQueryString);
+        window.history.replaceState(null, null, window.originalPathname + window.originalQueryString + window.originalHash);
+        
+        window.originalPathname = null;
+        window.originalQueryString = null;
+        window.originalHash = null;
     }
     
     $urlRouterProvider.otherwise("home");
@@ -31,8 +35,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         data: {
             css: '/docs/docs.css'
         }
-    })
-    .state('docs.home', {
+    }).state('docs.home', {
         url: '',
         templateUrl: '/docs/home.html',
     });
