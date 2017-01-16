@@ -225,6 +225,10 @@ function updateQueryParams() {
 
 updateQueryParams();
 
+window.originalPathname = window.location.pathname;
+window.originalQueryString = window.location.search;
+window.originalQueryParams = window.queryParams;
+
 function jump(h, changeUrl) {
     if (changeUrl !== false) {
         var url = location.href;               //Save down the URL without hash.
