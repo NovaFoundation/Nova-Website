@@ -56,14 +56,36 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
             };
         }
         
-        page.name = 'docs.' + page.url;
+        page.parent = parent;
+        
+        var prefix = "";
+        var current = parent;
+        
+        while (current && current.parent) {
+            console.log(current)
+            prefix = current.url + "/" + prefix;
+            
+            current = current.parent;
+        }
+        
+        page.fullUrl = prefix.replace(/\//g, ".") + page.url;
+        
+        var templatePrefix = prefix;
+        
+        if (page.children && page.children.length > 0) {
+            templatePrefix += page.url + "/";
+        }
+        
+        page.name = "docs." + prefix.replace(/\//g, ".") + page.url;
         
         $stateProvider.state(page.name, {
-            url: '/' + page.url,
-            templateUrl: '/docs/' + page.url + '.html',
+            url: '/' + prefix + page.url,
+            templateUrl: '/docs/' + templatePrefix + page.url + '.html',
             controller: page.controller,
-            data: page.data,
-            parent: parent ? parent.name : undefined
+            data: {
+                page: page
+            },
+            parent: "docs"
         });
         
         if (page.children) {
@@ -74,7 +96,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     }
     
     docsPages.forEach(function (p) {
-        addDoc(p, { name: "docs" });
+        addDoc(p, { name: "docs", url: "docs" });
     });
 }]).run(['$rootScope', function ($rootScope) {
     function urlUpdated() {
@@ -96,7 +118,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     };
     
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
-        $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5), url: state.url};//state;
+        $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5), url: state.url, state: state};//state;
         $rootScope.stateParams = params;
     });
     
