@@ -25,11 +25,16 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     
     $stateProvider.state('docs', {
         url: '/docs',
+        abstract: true,
         templateUrl: '/docs/docs.html',
         controller: 'DocsController',
         data: {
             css: '/docs/docs.css'
         }
+    })
+    .state('docs.home', {
+        url: '',
+        templateUrl: '/docs/home.html',
     });
     
     $stateProvider.state('download', {
