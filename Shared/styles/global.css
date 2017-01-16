@@ -281,6 +281,14 @@ code.hljs,
 
 .hljs {
     display: inline-block;
+    
+    margin: 6px;
+    
+    min-width: 500px
+}
+
+.skinny .hljs {
+    min-width: initial;
 }
 
 #downloads > .downloads {
