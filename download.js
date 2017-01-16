@@ -1,8 +1,4 @@
 angular.module("nova").controller("DownloadController", ["$scope", "$stateParams", function ($scope, $stateParams) {
-    $scope.os = jscd.os;
-    $scope.osVersion = jscd.osVersion;
-    $scope.lowerOs = $scope.os.toLowerCase();
-    
     var validOses = ["windows", "mac", "linux"];
     
     // clean here

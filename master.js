@@ -1,5 +1,9 @@
-angular.module("nova").controller("MasterController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-    $scope.jump = jump;
+angular.module("nova").controller("MasterController", ["$scope", "$rootScope", "$os", function ($scope, $rootScope, $os) {
+    $rootScope.os = $os.os;
+    $rootScope.osVersion = $os.osVersion;
+    $rootScope.lowerOs = $os.lowerOs;
+    
+    $rootScope.jump = jump;
     
     var listeners = {};
     
