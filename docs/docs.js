@@ -6,6 +6,9 @@ window.docsPages = [{
     header: "HELLO WORLD",
     url: "hello-world",
     references: [{
+        header: "Downloading nova",
+        url: "download({ '#': 'downloads' })"
+    }, {
         header: "Installing nova",
         url: "download({ '#': 'installation' })"
     }, {
