@@ -238,6 +238,19 @@ a {
     font-family: 'Roboto Mono', sans-serif;
     
     word-break: break-word;
+
+    padding: 8px 20px;
+
+    border-radius: 10px;
+}
+
+.code,
+.code p {
+    font-size: 14px;
+}
+
+.code-container {
+    display: inline-block;
 }
 
 #downloads > .downloads {
