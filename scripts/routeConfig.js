@@ -98,6 +98,12 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     docsPages.forEach(function (p) {
         addDoc(p, { name: "docs", url: "docs" });
     });
+    
+    $stateProvider.state("docs.hello-world", {
+        url: '/getting-started/hello-world',
+        redirectTo: "docs.getting-started.hello-world",
+        parent: "docs"
+    });
 }]).run(['$rootScope', function ($rootScope) {
     function urlUpdated() {
         updateQueryParams();

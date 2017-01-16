@@ -58,19 +58,23 @@ window.docsPages = [{
         }]
     }]
 }, {
-    header: "Hello world",
-    url: "hello-world",
-    references: [{
-        header: "Downloading nova",
-        url: "download({ '#': 'downloads' })"
-    }, {
-        header: "Installing nova",
-        url: "download({ '#': 'installation' })"
-    }, {
-        header: "Setting environment variables",
-        url: "download({ '#': 'environment-variables' })"
-    }],
-    children: []
+    header: "Getting started",
+    url: "getting-started",
+    children: [{
+        header: "Hello world",
+        url: "hello-world",
+        references: [{
+            header: "Downloading nova",
+            url: "download({ '#': 'downloads' })"
+        }, {
+            header: "Installing nova",
+            url: "download({ '#': 'installation' })"
+        }, {
+            header: "Setting environment variables",
+            url: "download({ '#': 'environment-variables' })"
+        }],
+        children: []
+    }]
 }];
 
 angular.module("nova").controller("DocsController", ["$scope", "$rootScope", function ($scope, $rootScope) {
