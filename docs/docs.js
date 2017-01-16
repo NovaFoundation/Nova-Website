@@ -1,5 +1,5 @@
 window.docsPages = [{
-    header: "CLASS TYPES",
+    header: "Class types",
     url: "class-types",
     children: [{
         header: "Somthigs ssssss ssssssssssssn TYPES",
@@ -21,6 +21,7 @@ window.docsPages = [{
         url: "lists"
     }]
 }, {
+    header: "Hello world",
     url: "hello-world",
     references: [{
         header: "Downloading nova",

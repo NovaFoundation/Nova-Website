@@ -24,8 +24,8 @@
                 <table>
                     <tr>
                         <td>
-                            <h1 class="content-header" ng-bind="page.header"></h1>
-                            <h2 class="content-subheader" ng-bind="page.subheader" ng-if="page.subheader"></h2>
+                            <h1 class="content-header" ng-bind="page.header | uppercase"></h1>
+                            <h2 class="content-subheader" ng-bind="page.subheader | uppercase" ng-if="page.subheader"></h2>
                         </td>
                         <td class="export-options">
                             <h2 class="share-link nowrap" ng-click="sharePage(page)">SHARE PAGE <img class="share" src="/Shared/Images/share.svg" /></h2>
@@ -41,7 +41,7 @@
                     <h2>References</h2>
                     <ul class="references-list">
                         <li ng-repeat="ref in page.references">
-                            <a ui-sref="{{ref.url}}" ng-bind="ref.header"></a>
+                            <a ui-sref="{{ref.url}}" ng-bind="ref.header | uppercase"></a>
                         </li>
                     </ul>
                 </div>
