@@ -61,6 +61,12 @@ window.docsPages = [{
     header: "Getting started",
     url: "getting-started",
     children: [{
+        header: "Configure environment",
+        url: "configure-environment",
+        controller: "ConfigureEnvironmentController",
+        references: [],
+        children: []
+    }, {
         header: "Hello world",
         url: "hello-world",
         references: [{

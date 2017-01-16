@@ -1,0 +1,43 @@
+<hr>
+<div id="windows">
+    <h1>Configuring a Windows environment</h1>
+    <h4 ng-if="lowerOs == 'windows'" class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
+    
+    <p>From the start menu, click the settings gear:</p>
+    <img style="max-width: 450px;" src="/content/images/windows-step1.png" />
+    
+    <p>Next, in the Settings search box, type in "environment variables" and select "Edit the system environment variables".</p>
+    <img style="max-width: 450px;" src="/content/images/windows-step2.png" />
+    
+    <p>A "System Properties dialog will pop up. Click the "Environment Variables..." button at the bottom.</p>
+    <img style="max-width: 450px;" src="/content/images/windows-step3.png" />
+    
+    <p>On the new dialog, click the "Edit..." button.</p>
+    <img style="max-width: 450px;" src="/content/images/windows-step4.png" />
+    
+    <p>Next, click the "New" button in the top right corner.</p>
+    <img style="max-width: 450px;" src="/content/images/windows-step5.png" />
+    
+    <p>After having clicked the "New" button, it will allow you to type the new environment variable value. Add the path to the bin folder where nova was installed.</p>
+    <div class="note">If you don't know where it was installed, it was most likely installed to "C:\Program Files\nova\bin" or "C:\Program Files (x86)\nova\bin"</div>
+    <img style="max-width: 450px;" src="/content/images/windows-step6.png" />
+    
+    <p>Finally, just click OK on all of the open dialogs to save the changes.</p>
+    <img style="max-width: 40%; margin-right: 5%" src="/content/images/windows-step7.png" />
+    <img style="max-width: 40%;" src="/content/images/windows-step8.png" />
+    <div class="note">After setting the environment variables, you will need to restart any open command prompts or IDEs for the changes to take effect.</div>
+</div>
+<hr>
+<div id="mac">
+    <h1>Configuring a Mac OS X environment</h1>
+    <h4 ng-if="lowerOs == 'mac'" class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
+    
+    
+</div>
+<hr>
+<div id="linux">
+    <h1>Configuring a Linux environment</h1>
+    <h4 ng-if="lowerOs == 'linux'" class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
+    
+    
+</div>
