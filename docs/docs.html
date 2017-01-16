@@ -32,15 +32,7 @@
                     </tr>
                 </table>
             </div>
-            <div ng-show="page" class="content-view" ui-view></div>
-            <div ng-if="!page" class="default-view">
-                <h1>DOCUMENTATION</h1>
-                <hr>
-                <h2>QUICK LINKS</h2>
-                <ul>
-                    <li><a ui-sref="docs.hello-world">"Hello, world!" program</a></li>
-                </ul>
-            </div>
+            <div class="content-view" ng-class="{ home: !page }" ui-view></div>
         </div>
     </div>
 </body>
