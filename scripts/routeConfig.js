@@ -5,7 +5,8 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
             requireBase : false
         }).hashPrefix('');
         
-        window.history.replaceState(null, null, window.location.pathname.replace(/\/$/, ""));
+        window.originalPathname = window.originalPathname.replace(/\/$/, "");
+        window.history.replaceState(null, null, window.originalPathname + window.originalQueryString);
     }
     
     $urlRouterProvider.otherwise("home");
