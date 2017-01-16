@@ -2,6 +2,38 @@ window.docsPages = [{
     header: "Class types",
     url: "class-types",
     children: [{
+        header: "Classes",
+        url: "classes",
+        references: [{
+            header: "Traits",
+            url: "docs.class-types.traits"
+        }, {
+            header: "Interfaces",
+            url: "docs.class-types.interfaces"
+        }],
+        children: []
+    }, {
+        header: "Interfaces",
+        url: "interfaces",
+        references: [{
+            header: "Traits",
+            url: "docs.class-types.traits"
+        }, {
+            header: "Classes",
+            url: "docs.class-types.classes"
+        }],
+        children: []
+    }, {
+        header: "Traits",
+        url: "traits",
+        references: [{
+            header: "Classes",
+            url: "docs.class-types.classes"
+        }, {
+            header: "Interfaces",
+            url: "docs.class-types.interfaces"
+        }],
+        children: []
     }]
 }, {
     header: "Data structures",
