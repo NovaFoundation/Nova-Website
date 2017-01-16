@@ -83,7 +83,8 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
             templateUrl: '/docs/' + templatePrefix + page.url + '.html',
             controller: page.controller,
             data: {
-                page: page
+                page: page,
+                css: page.css
             },
             parent: "docs"
         });
