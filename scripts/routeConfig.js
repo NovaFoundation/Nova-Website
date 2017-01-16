@@ -110,10 +110,14 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         $rootScope.$broadcast("stateUpdated");
     });
     
-    $rootScope.$on("$viewContentLoaded", function (e, state, params, fromState, fromParams) {
-        var hash = window.originalHash || window.location.hash;
+    $rootScope.$on("$viewContentLoaded", function () {
+        $rootScope.stateParams = $rootScope.stateParams || {};
+        
+        var hash = $rootScope.stateParams["#"] || window.originalHash || window.location.hash;
         
         if (hash) {
+            hash = hash[0] != '#' ? "#" + hash : hash
+            
             var element = document.getElementById(hash.substring(1));
             
             if (element) {
