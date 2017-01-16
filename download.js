@@ -1,4 +1,4 @@
-angular.module("nova").controller("DownloadController", ["$scope", function ($scope) {
+angular.module("nova").controller("DownloadController", ["$scope", "$stateParams", function ($scope, $stateParams) {
     $scope.os = jscd.os;
     $scope.osVersion = jscd.osVersion;
     $scope.lowerOs = $scope.os.toLowerCase();
@@ -18,18 +18,15 @@ angular.module("nova").controller("DownloadController", ["$scope", function ($sc
         });
     };
     
-    $scope.addEventListener("urlUpdated", function () {
-        console.log("searhching ", queryParams);
-        if (queryParams.version) {
-            var index = queryParams.version.indexOf(':');
-            index = index < 0 ? queryParams.version.length : index;
-            
-            $scope.build = queryParams.version.substring(0, index);
-            $scope.buildVersion = queryParams.version.substring(index);
-            
-            jump($scope.build, false);
-        }
-    })();
+    if ($stateParams.version) {
+        var index = $stateParams.version.indexOf(':');
+        index = index < 0 ? $stateParams.version.length : index;
+        
+        $scope.build = $stateParams.version.substring(0, index);
+        $scope.buildVersion = $stateParams.version.substring(index);
+        
+        jump($scope.build, false);
+    }
     
     $scope.download = function () {
         alert("Havent added downloads yet.");
