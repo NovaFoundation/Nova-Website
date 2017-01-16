@@ -1,32 +1,10 @@
 <h1>CREATING A HELLO WORLD PROGRAM</h1>
 <p></p>
 
-<div class="code-container">
-    <div class="code dark-background indent-children">
-        <div class="from-invisible time04">
-            <p><span class="type">let</span> <span class="identifier">tree</span> = <span class="modifier">new</span> <span class="type">BinaryTree</span>([<span class="text">"F"</span>, <span class="text">"B"</span>, <span class="text">"A"</span>, <span class="text">"D"</span>, <span class="text">"C"</span>, <span class="text">"E"</span>, <span class="text">"G"</span>, <span class="text">"I"</span>, <span class="text">"H"</span>])</p><br>
-        </div>
-        <div class="from-invisible time04 delay01">
-            <p><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Preorder: #{</span><span class="identifier">tree</span>.<span class="identifier">preorder</span>().<span class="identifier">join</span>(<span class="text">", "</span>)<span class="text">}"</span>)</p>
-            <p class="comment">// Preorder: [F, B, A, D, C, E, G, I, H]</p>
-        </div>
-        <div class="from-invisible time04 delay02">
-            <p><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Inorder: #{</span><span class="identifier">tree</span>.<span class="identifier">inorder</span>().<span class="identifier">join</span>(<span class="text">", "</span>)<span class="text">}"</span>)</p>
-            <p class="comment">// Inorder: [A, B, C, D, E, F, G, H, I]</p>
-        </div>
-        <div class="from-invisible time04 delay03">
-            <p><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Postorder: #{</span><span class="identifier">tree</span>.<span class="identifier">postorder</span>().<span class="identifier">join</span>(<span class="text">", "</span>)<span class="text">}"</span>)</p>
-            <p class="comment">// Postorder: [A, C, E, D, B, H, I, G, F]</p>
-        </div>
-        <div class="from-invisible time04 delay04">
-            <p><span class="type">Console</span>.<span class="identifier">writeLine</span>(<span class="text">"Levelorder: #{</span><span class="identifier">tree</span>.<span class="identifier">levelorder</span>().<span class="identifier">join</span>(<span class="text">", "</span>)<span class="text">}"</span>)</p>
-            <p class="comment">// Levelorder: [F, B, G, A, D, I, C, E, H]</p>
-        </div>
-    </div>
-
-	<div hljs class="javascript">
-		function x() {
-			return x++;
-		}
-	</div>
+<div hljs language="java">
+    class HelloWorld {
+        public static main() {
+            Console.writeLine("Hello, world!")
+        }
+    }
 </div>
