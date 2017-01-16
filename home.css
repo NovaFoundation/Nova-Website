@@ -342,6 +342,16 @@ pre {
 	color: white;
 }
 
+#code-comparisons .code h4 {
+	margin: 0;
+	margin-left: 25px;
+	margin-bottom: 10px;
+}
+
+#code-comparisons .code {
+	border-radius: 0;
+}
+
 #code-comparisons .code hr {
 	width: 80%;
 	margin: auto;
