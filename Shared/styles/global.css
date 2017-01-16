@@ -453,3 +453,75 @@ code.hljs,
 .secondary4-background {
     background-color: #9bcb3c;
 }
+
+.tree-item a {
+    color: #f5f5f5;
+    
+    text-decoration: none;
+}
+
+.tree-item.selected a.selected {
+    font-weight: bold;
+    
+    color: #f15d3b;
+}
+
+tree-browser {
+    display: block;
+}
+
+.tree-browser {
+    text-align: left;
+}
+
+.sub-tree-browser {
+    margin-left: 20px;
+}
+
+.tree-browser .link-container {
+    padding-left: 7px;
+}
+
+.tree-browser td {
+    vertical-align: top;
+}
+
+.tree-browser .arrow {
+    margin-top: 5px;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+
+    border-left: 6px solid #f5f5f5;
+    
+    display: inline-block;
+    
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+    
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    
+    transform: rotate(0deg);
+}
+
+.arrow.down {
+    transform: rotate(90deg);
+}
+
+.arrow.invisible {
+    opacity: 0;
+}
