@@ -82,16 +82,22 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
     
     $scope.pages = docsPages;
     
-    function close(page) {
-        page.selected = false;
-        page.open = false;
-        
-        if (page.children) {
-            page.children.forEach(close);
+    function recursiveApply(func) {
+        function action(page) {
+            func(page);
+            
+            if (page.children) {
+                page.children.forEach(action);
+            }
         }
+        
+        $scope.pages.forEach(action);
     }
     
-    $scope.pages.forEach(close);
+    recursiveApply(function (page) {
+        page.selected = false;
+        page.open = false;
+    });
     
     function stateUpdated() {
         var url = $rootScope.state.url.substring(1);
@@ -101,6 +107,10 @@ angular.module("nova").controller("DocsController", ["$scope", "$rootScope", fun
         var current = $scope.page;
         
         if (current) {
+            recursiveApply(function (page) {
+                page.selected = false;
+            });
+    
             current.selected = true;
             
             while (current) {
