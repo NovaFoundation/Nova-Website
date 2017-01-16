@@ -1,9 +1,9 @@
 <div class="tree-browser" ng-class="{ root: isRoot }">
     <div ng-repeat="item in data | orderBy:'-children.length'" class="tree-item" ng-class="{ selected: item.selected, children: item.children && item.children.length > 0, open: item.open }">
-        <table>
+        <table ng-click="toggle(item, false)">
             <tr>
                 <td class="arrow-container">
-                    <div ng-click="toggle(item, false)" class="arrow" ng-class="{ down: item.open, invisible: !item.children || item.children.length == 0 }"></div>
+                    <div class="arrow" ng-class="{ down: item.open, invisible: !item.children || item.children.length == 0 }"></div>
                 </td>
                 <td class="link-container">
                     <a ng-click="toggle(item, true)" class="link" ng-class="{ selected: item.selected }" ui-sref="{{urlPrefix}}{{item.fullUrl}}" ng-bind="item.header"></a>
