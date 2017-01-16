@@ -233,14 +233,15 @@
 	background-position: left;
 }
 
-#code-example .indent-children p {
-    margin-left: 38px;
-    text-indent: -38px;
+pre {
+    padding: 0;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
 }
 
-#code-example .indent {
-    margin-left: 38px;
-    text-indent: -38px;
+.code {
+    color: #fff;
 }
 
 #code-example p {

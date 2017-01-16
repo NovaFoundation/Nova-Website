@@ -233,8 +233,12 @@ a {
     margin-bottom: 50px;
 }
 
+pre {
+    margin: 0;
+}
+
+code.hljs,
 .code {
-    color: white;
     font-family: 'Roboto Mono', sans-serif;
     
     word-break: break-word;
@@ -242,14 +246,32 @@ a {
     padding: 8px 20px;
 
     border-radius: 10px;
+    
+    background-color: #1f122d;
 }
 
+code.hljs *:not(span) {
+    margin-left: 38px;
+    text-indent: -38px;
+}
+
+code.hljs,
 .code,
 .code p {
     font-size: 14px;
 }
 
 .code-container {
+    display: inline-block;
+}
+
+.code-container,
+.code,
+.hljs {
+    max-width: 100%;
+}
+
+.hljs {
     display: inline-block;
 }
 
@@ -301,6 +323,7 @@ a {
     color: #f5f5f5;
 }
 
+.hljs,
 .pure-white {
     color: #fff;
 }
@@ -333,19 +356,24 @@ a {
     color: #f92672
 }
 
+.hljs-title,
+.hljs-built_in,
 .type {
     color: #4da4db;
     font-weight: bold;
 }
 
+/*.hljs,*/
 .identifier {
     color: #9bcb3c;
 }
 
+.hljs-string,
 .text {
     color: #ffd95d;
 }
 
+.hljs-keyword,
 .modifier {
     color: #f92672;
 }
