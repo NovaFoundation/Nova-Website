@@ -219,7 +219,11 @@ function getQueryString(params) {
     return url;
 }
 
-var queryParams = getQueryParams();
+function updateQueryParams() {
+    window.queryParams = getQueryParams();
+}
+
+updateQueryParams();
 
 function jump(h, changeUrl) {
     if (changeUrl !== false) {
