@@ -221,10 +221,17 @@ function getQueryString(params) {
 
 var queryParams = getQueryParams();
 
-function jump(h) {
-    var url = location.href;               //Save down the URL without hash.
-    location.href = "#"+h;                 //Go to the target element.
-    history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+function jump(h, changeUrl) {
+    if (changeUrl !== false) {
+        var url = location.href;               //Save down the URL without hash.
+        location.href = "#" + h;                 //Go to the target element.
+        history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+    } else {
+        document.getElementById(h).scrollIntoView(true);
+    }
+    
+    flash(h);
+}
 
 function flash(id) {
     var element = document.getElementById(id);
