@@ -475,6 +475,10 @@ tree-browser {
     text-align: left;
 }
 
+.tree-browser.root {
+    position: relative;
+}
+
 .sub-tree-browser {
     margin-left: 20px;
 }
@@ -485,6 +489,29 @@ tree-browser {
 
 .tree-browser td {
     vertical-align: top;
+}
+
+.tree-browser .tree-item {
+    position: relative;
+}
+
+.tree-browser .tree-item.selected.children.open:before {
+    content: '';
+    
+    position: absolute;
+    
+    border-radius: 10px;
+    
+    width: 2px;
+    
+    left: -12px;
+    top: 8px;
+    bottom: 3px;
+    
+    -webkit-filter: drop-shadow(0px 0px 4px #f15d3b);
+    filter: drop-shadow(0px 0px 4px #f15d3b);
+    
+    background-color: #f5f5f5;
 }
 
 .tree-browser .arrow {
