@@ -64,6 +64,7 @@ window.docsPages = [{
         header: "Configure environment",
         url: "configure-environment",
         controller: "ConfigureEnvironmentController",
+        css: "/docs/getting-started/configure-environment.css",
         references: [],
         children: []
     }, {
