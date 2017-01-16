@@ -6,7 +6,7 @@
                     <div class="arrow" ng-class="{ down: item.open, invisible: !item.children || item.children.length == 0 }"></div>
                 </td>
                 <td class="link-container">
-                    <a ng-click="toggle(item, true)" class="link" ng-class="{ selected: item.selected }" ui-sref="{{urlPrefix}}{{item.fullUrl}}" ng-bind="item.header"></a>
+                    <a ng-click="toggle(item, true); $event.stopPropagation();" class="link" ng-class="{ selected: item.selected }" ui-sref="{{urlPrefix}}{{item.fullUrl}}" ng-bind="item.header"></a>
                 </td>
             </tr>
         </table>
