@@ -1,5 +1,5 @@
 window.docsPages = [{
-    header: "Class Types",
+    header: "CLASS TYPES",
     url: "class-types",
     children: []
 }, {
