@@ -124,7 +124,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     };
     
     $rootScope.$on("$stateChangeStart", function (e, state, params, fromState, fromParams) {
-        $rootScope.state = {name: state.templateUrl.substring(1, state.templateUrl.length - 5), url: state.url, state: state};//state;
+        $rootScope.state = {name: state.templateUrl ? state.templateUrl.substring(1, state.templateUrl.length - 5) : null, url: state.url, state: state};//state;
         $rootScope.stateParams = params;
     });
     
