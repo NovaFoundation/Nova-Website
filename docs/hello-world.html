@@ -1,5 +1,5 @@
 <h1>CREATING A HELLO WORLD PROGRAM</h1>
-<p></p>
+<p>After having <a ui-sref="download({ '#': 'installation' })">installed Nova</a>, enter the following code into a file named HelloWorld.nova</p>
 
 <div hljs language="java">
     class HelloWorld {
@@ -7,4 +7,25 @@
             Console.writeLine("Hello, world!")
         }
     }
+</div>
+
+<p>Then from command line, or terminal, run the following command:</p>
+
+<div hljs language="bash">
+    novac HelloWorld.nova -o HelloWorld
+</div>
+
+<p>If you see an error that looks something like: "'novac' is not recognized as an internal or external command, operable program or batch file.", follow the instructions explained <a ui-sref="download({ '#': 'environment-variables' })">here</a>.</p>
+
+<p>You should see a new executable file outputted in the folder that you ran <span class="pre">novac</span> in.</p>
+<p>From the same command prompt window, you can run the HelloWorld program:</p>
+
+<div hljs language="bash">
+    ./HelloWorld
+</div>
+
+<p>And you should see:</p>
+
+<div hljs language="bash">
+    Hello, world!
 </div>
