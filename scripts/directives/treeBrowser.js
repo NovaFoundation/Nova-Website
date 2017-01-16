@@ -9,6 +9,8 @@ angular.module("nova").directive("treeBrowser", [function () {
         link: function (scope, elements, attributes) {
             scope.urlPrefix = scope.urlPrefix || "";
             
+            scope.isRoot = !scope.root;
+            
             if (!scope.root) {
                 scope.root = {};
             }
