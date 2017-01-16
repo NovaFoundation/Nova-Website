@@ -10,7 +10,15 @@ window.docsPages = [{
         }]
     }]
 }, {
-    header: "HELLO WORLD",
+    header: "Data structures",
+    url: "data-structures",
+    references: [{
+        header: "Lists",
+        url: "docs.data-structures.lists"
+    }],
+    children: [{
+    }]
+}, {
     url: "hello-world",
     references: [{
         header: "Downloading nova",
