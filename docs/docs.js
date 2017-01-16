@@ -2,12 +2,6 @@ window.docsPages = [{
     header: "Class types",
     url: "class-types",
     children: [{
-        header: "Somthigs ssssss ssssssssssssn TYPES",
-        url: "something",
-        children: [{
-            header: "HYE",
-            url: "hey"
-        }]
     }]
 }, {
     header: "Data structures",
