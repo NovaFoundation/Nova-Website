@@ -22,7 +22,7 @@
         <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
         <div id="stable">
             <h2>STABLE <span class="show-all gray" ng-click="showAll('stable')">show all</span></h2>
-            <button ng-click="download()" ng-repeat="stableOs in stableOses" class="download-button">
+            <button ng-href="/content/downloads/{{ lowerOs }}/stable/{{ os }}Installer{{ osExecutableExtension }}" download="{{ os }}Installer{{ osExecutableExtension }}" target="_blank" ng-repeat="stableOs in stableOses" class="download-button">
                 <table>
                     <tr>
                         <td>
