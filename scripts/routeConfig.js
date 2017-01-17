@@ -49,6 +49,8 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         }
     });
     
+    window.docsPagesMap = {};
+    
     function addDoc(page, parent) {
         if (page.css) {
             page.data = {
@@ -62,13 +64,13 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         var current = parent;
         
         while (current && current.parent) {
-            console.log(current)
             prefix = current.url + "/" + prefix;
             
             current = current.parent;
         }
         
-        page.fullUrl = prefix.replace(/\//g, ".") + page.url;
+        page.httpUrl = prefix + page.url;
+        page.fullUrl = page.httpUrl.replace(/\//g, ".");
         
         var templatePrefix = prefix;
         
@@ -77,8 +79,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         }
         
         page.name = "docs." + prefix.replace(/\//g, ".") + page.url;
-        
-        $stateProvider.state(page.name, {
+        page.route = {
             url: '/' + prefix + page.url,
             templateUrl: '/docs/' + templatePrefix + page.url + '.html',
             controller: page.controller,
@@ -87,7 +88,11 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
                 css: page.css
             },
             parent: "docs"
-        });
+        };
+        
+        window.docsPagesMap[page.httpUrl] = page;
+        
+        $stateProvider.state(page.name, page.route);
         
         if (page.children) {
             page.children.forEach(function (p) {
