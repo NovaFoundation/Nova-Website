@@ -2,6 +2,7 @@ angular.module("nova").controller("MasterController", ["$scope", "$rootScope", "
     $rootScope.os = $os.os;
     $rootScope.osVersion = $os.osVersion;
     $rootScope.lowerOs = $os.lowerOs;
+    $rootScope.osExecutableExtension = $os.osExecutableExtension;
     
     $rootScope.jump = jump;
     
