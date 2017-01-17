@@ -4,58 +4,32 @@ window.docsPages = [{
     children: [{
         header: "Classes",
         url: "classes",
-        references: [{
-            header: "Traits",
-            url: "docs.class-types.traits"
-        }, {
-            header: "Interfaces",
-            url: "docs.class-types.interfaces"
-        }],
+        references: ["traits", "interfaces"],
         children: []
     }, {
         header: "Interfaces",
         url: "interfaces",
-        references: [{
-            header: "Traits",
-            url: "docs.class-types.traits"
-        }, {
-            header: "Classes",
-            url: "docs.class-types.classes"
-        }],
+        references: ["traits", "classes"],
         children: []
     }, {
         header: "Traits",
         url: "traits",
-        references: [{
-            header: "Classes",
-            url: "docs.class-types.classes"
-        }, {
-            header: "Interfaces",
-            url: "docs.class-types.interfaces"
-        }],
+        references: ["classes", "interfaces"],
         children: []
     }]
 }, {
     header: "Data structures",
     url: "data-structures",
-    references: [{
-        header: "Lists",
-        url: "docs.data-structures.lists"
-    }],
+    references: ["data-structures/lists"],
     children: [{
         header: "Lists",
         url: "lists",
-        references: [{
-            header: "Arrays",
-            url: "docs.data-structures.arrays"
-        }]
+        tooltip: "Fundamental collection datatype",
+        references: ["arrays"]
     }, {
         header: "Arrays",
         url: "arrays",
-        references: [{
-            header: "Lists",
-            url: "docs.data-structures.lists"
-        }]
+        references: ["lists"]
     }]
 }, {
     header: "Getting started",
@@ -72,13 +46,13 @@ window.docsPages = [{
         url: "hello-world",
         references: [{
             header: "Downloading nova",
-            url: "download({ '#': 'downloads' })"
+            url: "/download({ '#': 'downloads' })"
         }, {
             header: "Installing nova",
-            url: "download({ '#': 'installation' })"
+            url: "/download({ '#': 'installation' })"
         }, {
             header: "Setting environment variables",
-            url: "download({ '#': 'environment-variables' })"
+            url: "/download({ '#': 'environment-variables' })"
         }],
         children: []
     }]
