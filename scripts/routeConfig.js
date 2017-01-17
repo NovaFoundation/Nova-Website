@@ -105,6 +105,40 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         addDoc(p, { name: "docs", url: "docs" });
     });
     
+    for (var url in window.docsPagesMap) {
+        var page = window.docsPagesMap[url];
+        
+        if (page.references) {
+            page.references = page.references.map(function (ref) {
+                if (typeof ref === 'string') {
+                    ref = {
+                        url: ref
+                    };
+                }
+                
+                var refPage;
+                
+                if (ref.url[0] == '/') {
+                    refPage = window.docsPagesMap[ref.url.substring(1)];
+                } else {
+                    var prefix = page.parent.fullUrl ? page.parent.fullUrl + "/" : ""
+                    
+                    refPage = window.docsPagesMap[prefix + ref.url];
+                }
+                
+                if (refPage) {
+                    ref.header = ref.header || refPage.header;
+                    ref.tooltip = ref.tooltip || refPage.tooltip;
+                    ref.url = refPage.name;
+                } else if (ref.url[0] == "/") {
+                    ref.url = ref.url.substring(1);
+                }
+                
+                return ref;
+            });
+        }
+    }
+    
     $stateProvider.state("docs.hello-world", {
         url: '/getting-started/hello-world',
         redirectTo: "docs.getting-started.hello-world",
