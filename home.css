@@ -336,6 +336,8 @@ pre {
 #code-comparisons {
 	padding: 0 50px;
 	margin: 0;
+	
+	padding-bottom: 35px;
 }
 
 #code-comparisons h3 {
