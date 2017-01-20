@@ -330,6 +330,11 @@ code.hljs,
     white-space: nowrap;
 }
 
+.note .hljs {
+    min-width: initial;
+    width: 100%;
+}
+
 .note:before {
     content: '';
     
@@ -353,11 +358,17 @@ code.hljs,
     
     box-sizing: border-box;
     
-    font-size: 15px;
-    
     width: 550px;
     
     position: relative;
+}
+
+.note > p:first-child {
+    margin-top: 0;
+}
+
+.note, .note p {
+    font-size: 15px;
 }
 
 .note:after {
