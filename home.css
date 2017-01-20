@@ -16,7 +16,7 @@
 	
 	opacity: 0.15;
 	
-	background-image: url(Shared/Images/code.jpg);
+	background-image: url(content/images/code.jpg);
 	background-size: cover;
 	background-position: left;
 	
@@ -228,7 +228,7 @@
 	
 	background-color: #fff;
 	
-	background-image: url(Shared/Images/code2.png);
+	background-image: url(content/images/code2.png);
 	background-size: cover;
 	background-position: left;
 }
