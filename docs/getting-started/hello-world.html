@@ -3,7 +3,7 @@
 
 <div hljs language="java">
     class HelloWorld {
-        public static main() {
+        public static main(String[] args) {
             Console.writeLine("Hello, world!")
         }
     }
@@ -21,6 +21,12 @@
 <p>From the same command prompt window, you can run the HelloWorld program:</p>
 
 <div hljs language="bash">
+    HelloWorld
+</div>
+
+<p>or on non-windows platforms:</p>
+
+<div hljs language="bash">
     ./HelloWorld
 </div>
 
@@ -28,4 +34,18 @@
 
 <div hljs language="bash">
     Hello, world!
+</div>
+
+<div class="note" style="margin-top: 20px;">
+    <p>If you try to run the program by double click the executable, you will need to add the following line to your program to make it wait for user input before closing the window.</p>
+
+    <div hljs language="java">
+        class HelloWorld {
+            public static main(String[] args) {
+                Console.writeLine("Hello, world!")
+                
+                Console.waitForEnter()
+            }
+        }
+    </div>
 </div>
