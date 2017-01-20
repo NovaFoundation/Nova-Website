@@ -62,31 +62,14 @@
         <ul>
             <li>Java 1.8 or later <span class="why-java gray" ng-init="whyJava = false" ng-click="whyJava = true"><span ng-if="!whyJava">why java?</span><span ng-if="whyJava">The first iteration of the compiler is written in Java.</span></span></li>
         </ul>
-        <table ng-if="false">
+        <p>Now follow the instructions</p>
+        <table style="width: 250px;">
             <tr>
-                <td class="step-number">
-                    <h1 class="secondary1">1</h1>
-                </td>
-                <td class="instructions">
-                    After <a ng-click="jump('downloads', false)">downloading</a> the binaries,
-                </td>
-            </tr>
-            <tr>
-                <td class="step-number">
-                    <h1 class="secondary1">2</h1>
-                </td>
-                <td class="instructions" id="environment-variables">
-                    Setting up environment variables
-                </td>
-            </tr>
-            <tr>
-                <td class="step-number">
-                    <h1 class="secondary1">3</h1>
-                </td>
-                <td class="instructions">
-                    Now you are ready to <a ui-sref="docs.hello-world">write your first program</a>.
-                </td>
+                <td style="width: 49%;"><hr></td>
+                <td style="width: 2%; font-size: 18px; position: relative; bottom: 2px;" class="gray">or</td>
+                <td style="width: 49%;"><hr></td>
             </tr>
         </table>
+        <p>Jump straight to <a ui-sref="docs.hello-world">writing your first program</a>.</p>
     </slide>
 </div>
