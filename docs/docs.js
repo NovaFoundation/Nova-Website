@@ -48,9 +48,6 @@ window.docsPages = [{
             header: "Downloading nova",
             url: "/download({ '#': 'downloads' })"
         }, {
-            header: "Installing nova",
-            url: "/download({ '#': 'installation' })"
-        }, {
             header: "Setting environment variables",
             url: "/download({ '#': 'environment-variables' })"
         }],
