@@ -72,6 +72,10 @@
     cursor: pointer;
 }
 
+.why-java {
+    font-size: 12px;
+}
+
 #installation {
     margin-top: 50px;
 }
