@@ -21,8 +21,8 @@
         <hr>
         <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
         <div id="stable">
-            <h2>STABLE <span class="show-all gray" ng-click="showAll('stable')">show all</span></h2>
-            <a ng-href="/content/downloads/{{ lowerOs }}/stable/NovaInstaller{{ osExecutableExtension }}" download="NovaInstaller{{ osExecutableExtension }}" target="_blank">
+            <h2>STABLE v{{ stableVersion }} <span class="show-all gray" ng-click="showAll('stable')">show all</span></h2>
+            <a ng-href="/content/downloads/{{ lowerOs }}/{{stableVersion}}/NovaInstaller{{ osExecutableExtension }}" download="NovaInstaller{{ osExecutableExtension }}" target="_blank">
                 <button ng-repeat="stableOs in stableOses" class="download-button">
                     <table>
                         <tr>
@@ -38,19 +38,21 @@
             </a>
         </div>
         <div id="beta">
-            <h2>BETA <span class="show-all gray" ng-click="showAll('beta')">show all</span></h2>
-            <button ng-click="download()" ng-repeat="betaOs in betaOses" class="download-button">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="icon-container"><img ng-src="/Shared/Images/{{betaOs}}.svg" /></div>
-                        </td>
-                        <td>
-                            {{ betaOs | capitalize }} build
-                        </td>
-                    </tr>
-                </table>
-            </button>
+            <h2>BETA v{{ betaVersion }} <span class="show-all gray" ng-click="showAll('beta')">show all</span></h2>
+            <a ng-href="/content/downloads/{{ lowerOs }}/{{betaVersion}}/NovaInstaller{{ osExecutableExtension }}" download="NovaInstaller{{ osExecutableExtension }}" target="_blank">
+                <button ng-repeat="betaOs in betaOses" class="download-button">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="icon-container"><img ng-src="/Shared/Images/{{betaOs}}.svg" /></div>
+                            </td>
+                            <td>
+                                {{ betaOs | capitalize }} build
+                            </td>
+                        </tr>
+                    </table>
+                </button>
+            </a>
         </div>
     </slide>
     <slide id="installation">
