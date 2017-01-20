@@ -2,15 +2,15 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
     $scope.stableVersion = "0.3.0";
     $scope.betaVersion = "0.3.0";
     
-    var validOses = ["windows", "mac", "linux"];
-    
     // clean here
     
-    $scope.stableOses = [$scope.lowerOs];
-    $scope.betaOses = [$scope.lowerOs];
+    $scope.stableOses = [$scope.currentOs];
+    $scope.betaOses = [$scope.currentOs];
     
     $scope.showAll = function (type) {
-        validOses.forEach(function (os) {
+        Object.keys($scope.oses).forEach(function (name) {
+            var os = $scope.oses[name];
+            
             if ($scope[type + "Oses"].indexOf(os) < 0) {
                 $scope[type + "Oses"].push(os);
             }
@@ -26,8 +26,4 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         
         jump($scope.build, false);
     }
-    
-    $scope.download = function () {
-        alert("Havent added downloads yet.");
-    };
 }]);
