@@ -3,6 +3,8 @@ angular.module("nova").service("$os", [function () {
     this.osVersion = jscd.osVersion;
     this.lowerOs = this.os.toLowerCase();
     
+    if (this.lowerOs.indexOf("mac") == 0) {
+        this.lowerOs = "mac";
     }
     
     this.oses = {
