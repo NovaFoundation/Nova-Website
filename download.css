@@ -10,23 +10,29 @@
     
 }
 
+#downloads a.download-button {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
 .slide {
     max-width: 1000px;
     margin: auto;
     padding: 0 20px;
 }
 
-#stable .download-button {
+#stable .download-button button {
     background-color: #9bcb3c;
     border-color: #6b8b0c;
 }
 
-#beta .download-button {
+#beta .download-button button {
     background-color: #f15d3b;
     border-color: #c12d0b;
 }
 
-.download-button {
+.download-button button {
     cursor: pointer;
     
     border: 2px solid;
@@ -34,10 +40,9 @@
     border-radius: 125px;
     
     padding-right: 10px;
-    margin-right: 10px;
 }
 
-.download-button .icon-container {
+.download-button button .icon-container {
     width: 25px;
     height: 25px;
     
@@ -50,7 +55,7 @@
     overflow: hidden;
 }
 
-.download-button img {
+.download-button button img {
     width: 70%;
     
     position: relative;
