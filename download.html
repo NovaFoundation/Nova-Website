@@ -22,7 +22,7 @@
         <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
         <div id="stable">
             <h2>STABLE v{{ stableVersion }} <span class="show-all gray" ng-click="showAll('stable')">show all operating systems</span></h2>
-            <a ng-repeat="stableOs in stableOses" ng-href="/content/downloads/{{ stableOs.key }}/{{stableVersion}}/Nova{{ stableOs.extension }}" download="NovaInstaller{{ stableOs.extension }}" target="_blank" class="download-button">
+            <a ng-repeat="stableOs in stableOses" ng-href="/content/downloads/{{ stableOs.key }}/{{stableVersion}}/Nova{{ stableOs.extension }}" download="Nova{{ stableOs.extension }}" target="_blank" class="download-button">
                 <button>
                     <table>
                         <tr>
@@ -39,7 +39,7 @@
         </div>
         <div id="beta">
             <h2>BETA v{{ betaVersion }} <span class="show-all gray" ng-click="showAll('beta')">show all operating systems</span></h2>
-            <a ng-repeat="betaOs in betaOses" ng-href="/content/downloads/{{ betaOs.key }}/{{betaVersion}}/Nova{{ betaOs.extension }}" download="NovaInstaller{{ betaOs.extension }}" target="_blank" class="download-button">
+            <a ng-repeat="betaOs in betaOses" ng-href="/content/downloads/{{ betaOs.key }}/{{betaVersion}}/Nova{{ betaOs.extension }}" download="Nova{{ betaOs.extension }}" target="_blank" class="download-button">
                 <button>
                     <table>
                         <tr>
