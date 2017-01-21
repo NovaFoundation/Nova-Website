@@ -16,7 +16,7 @@ angular.module("nova").service("$os", [function () {
         mac: {
             name: "Mac OS X",
             key: "mac",
-            extension: ""
+            extension: ".dmg"
         }, 
         linux: {
             name: "Linux",
