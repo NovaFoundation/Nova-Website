@@ -49,7 +49,7 @@ window.docsPages = [{
             url: "/download({ '#': 'downloads' })"
         }, {
             header: "Setting environment variables",
-            url: "/download({ '#': 'environment-variables' })"
+            url: "configure-environment"
         }],
         children: []
     }]
