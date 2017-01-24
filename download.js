@@ -1,6 +1,17 @@
 angular.module("nova").controller("DownloadController", ["$scope", "$stateParams", function ($scope, $stateParams) {
-    $scope.stableVersion = "0.3.0";
-    $scope.betaVersion = "0.3.0";
+    function getAllVersions(type) {
+        var versions = [];
+        
+        $scope.osArray.forEach(function (os) {
+            os[type].forEach(function (version) {
+                versions.pushUnique(version);
+            });
+        });
+        
+        return versions.sort(function (a, b) {
+            return b - a;
+        });
+    }
     
     // clean here
     
