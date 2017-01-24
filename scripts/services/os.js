@@ -1,4 +1,6 @@
 angular.module("nova").service("$os", [function () {
+    var self = this;
+    
     this.os = jscd.os;
     this.osVersion = jscd.osVersion;
     this.lowerOs = this.os.toLowerCase();
@@ -26,4 +28,8 @@ angular.module("nova").service("$os", [function () {
     };
     
     this.currentOs = this.oses[this.lowerOs];
+    
+    this.osArray = Object.keys(this.oses).map(function (key) {
+        return self.oses[key];
+    });
 }]);
