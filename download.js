@@ -13,10 +13,15 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         });
     }
     
-    // clean here
+    $scope.stable = {
+        version: $scope.currentOs.stableVersions.last(),
+        versions: getAllVersions("stableVersions")
+    };
     
-    $scope.stableOses = [$scope.currentOs];
-    $scope.betaOses = [$scope.currentOs];
+    $scope.beta = {
+        version: $scope.currentOs.betaVersions.last(),
+        versions: getAllVersions("betaVersions")
+    };
     
     $scope.showAll = function (type) {
         Object.keys($scope.oses).forEach(function (name) {
