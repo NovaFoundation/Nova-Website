@@ -20,39 +20,43 @@
         <div><h1 class="primary">DOWNLOAD</h1></div>
         <hr>
         <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
-        <div id="stable">
-            <h2>STABLE v{{ stableVersion }} <span class="show-all gray" ng-click="showAll('stable')">show all operating systems</span></h2>
-            <a ng-repeat="stableOs in stableOses" ng-href="/content/downloads/{{ stableOs.key }}/{{stableVersion}}/Nova{{ stableOs.extension }}" download="Nova{{ stableOs.extension }}" target="_blank" class="download-button">
-                <button>
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="icon-container"><img ng-src="/content/images/{{stableOs.key}}.svg" /></div>
-                            </td>
-                            <td>
-                                {{ stableOs.name }} build
-                            </td>
-                        </tr>
-                    </table>
-                </button>
-            </a>
+        <div id="stable" ng-if="stable.version">
+            <h2>STABLE v{{ stable.version }} <span class="show-all gray" ng-click="showAll('stable')">show all</span></h2>
+            <div ng-repeat="version in stable.versions | orderBy:'-'">
+                <a ng-repeat="stableOs in osArray" ng-href="{{ !disabled ? '/content/downloads/' + stableOs.key + '/' + version + '/Nova' + stableOs.extension : undefined }}" ng-attr-download="{{ !disabled ? 'Nova' + stableOs.extension : undefined }}" target="_blank" class="download-button" ng-if="version == stable.version || stable.showAll" ng-init="disabled = stableOs.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
+                    <button>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="icon-container"><img ng-src="/content/images/{{stableOs.key}}.svg" /></div>
+                                </td>
+                                <td>
+                                    {{ stableOs.name }} <span ng-if="stable.showAll">v{{ version }}</span> build
+                                </td>
+                            </tr>
+                        </table>
+                    </button>
+                </a>
+            </div>
         </div>
         <div id="beta">
-            <h2>BETA v{{ betaVersion }} <span class="show-all gray" ng-click="showAll('beta')">show all operating systems</span></h2>
-            <a ng-repeat="betaOs in betaOses" ng-href="/content/downloads/{{ betaOs.key }}/{{betaVersion}}/Nova{{ betaOs.extension }}" download="Nova{{ betaOs.extension }}" target="_blank" class="download-button">
-                <button>
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="icon-container"><img ng-src="/content/images/{{betaOs.key}}.svg" /></div>
-                            </td>
-                            <td>
-                                {{ betaOs.name }} build
-                            </td>
-                        </tr>
-                    </table>
-                </button>
-            </a>
+            <h2>BETA v{{ beta.version }} <span class="show-all gray" ng-click="showAll('beta')">show all</span></h2>
+            <div ng-repeat="version in beta.versions | orderBy:'-'">
+                <a ng-repeat="betaOs in osArray" ng-href="{{ !disabled ? '/content/downloads/' + betaOs.key + '/' + version + '/Nova' + betaOs.extension : undefined }}" ng-attr-download="{{ !disabled ? 'Nova' + betaOs.extension : undefined }}" target="_blank" class="download-button" ng-if="version == beta.version || beta.showAll" ng-init="disabled = betaOs.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
+                    <button>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="icon-container"><img ng-src="/content/images/{{betaOs.key}}.svg" /></div>
+                                </td>
+                                <td>
+                                    {{ betaOs.name }} <span ng-if="beta.showAll">v{{ version }}</span> build
+                                </td>
+                            </tr>
+                        </table>
+                    </button>
+                </a>
+            </div>
         </div>
     </slide>
     <slide id="installation">
