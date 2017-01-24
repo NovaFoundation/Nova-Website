@@ -356,3 +356,11 @@ if (!Array.prototype.last){
         return this[this.length - 1];
     };
 };
+
+if (!Array.prototype.pushUnique){
+    Array.prototype.pushUnique = function (value) {
+        if (this.indexOf(value) < 0) {
+            return this.push(value);
+        }
+    };
+};
