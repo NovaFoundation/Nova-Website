@@ -24,13 +24,7 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
     };
     
     $scope.showAll = function (type) {
-        Object.keys($scope.oses).forEach(function (name) {
-            var os = $scope.oses[name];
-            
-            if ($scope[type + "Oses"].indexOf(os) < 0) {
-                $scope[type + "Oses"].push(os);
-            }
-        });
+        $scope[type].showAll = true;
     };
     
     if ($stateParams.version) {
