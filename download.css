@@ -14,6 +14,7 @@
     text-decoration: none;
     display: inline-block;
     margin-right: 10px;
+    margin-bottom: 12px;
 }
 
 .slide {
@@ -30,6 +31,17 @@
 #beta .download-button button {
     background-color: #f15d3b;
     border-color: #c12d0b;
+    
+    outline: none;
+}
+
+.download-button.disabled button {
+    /*background-color: #ccc !important;
+    border-color: #aaa !important;*/
+    
+    opacity: 0.5;
+    
+    cursor: default;
 }
 
 .download-button button {
@@ -40,6 +52,8 @@
     border-radius: 125px;
     
     padding-right: 10px;
+    
+    outline: none;
 }
 
 .download-button button .icon-container {
