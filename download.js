@@ -49,7 +49,9 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
             $scope.build = $stateParams.version.substring(0, index);
             $scope.buildVersion = $stateParams.version.substring(index);
             
-            jump($scope.build, false);
+            if (jump($scope.build, false)) {
+                $scope.loaded = function () {};
+            }
         }
     };
 }]);
