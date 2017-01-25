@@ -13,19 +13,17 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         });
     }
     
-    $scope.stable = {
+    $scope.downloadTypes = [{
+        id: 'stable',
+        name: 'Stable',
         version: $scope.currentOs.stableVersions.last(),
         versions: getAllVersions("stableVersions")
-    };
-    
-    $scope.beta = {
+    }, {
+        id: 'beta',
+        name: 'Beta',
         version: $scope.currentOs.betaVersions.last(),
         versions: getAllVersions("betaVersions")
-    };
-    
-    $scope.showAll = function (type) {
-        $scope[type].showAll = true;
-    };
+    }];
     
     if ($stateParams.version) {
         var index = $stateParams.version.indexOf(':');
