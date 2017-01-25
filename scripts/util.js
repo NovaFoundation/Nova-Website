@@ -243,7 +243,7 @@ function jump(h, changeUrl) {
         }
     }
     
-    flash(h);
+    return flash(h);
 }
 
 function flash(id) {
@@ -256,6 +256,8 @@ function flash(id) {
             element.classList.add("flash");
         });
     }
+    
+    return element;
 }
 
 window.addEventListener("load", function () {
