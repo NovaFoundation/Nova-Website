@@ -25,6 +25,22 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         versions: getAllVersions("betaVersions")
     }];
     
+    $scope.toggleShowAll = function (type, showAll) {
+        showAll = typeof showAll !== 'undefined' ? showAll : !type.showAll;
+        
+        type.showAll = showAll;
+        
+        if (showAll) {
+            type.oses = $scope.osArray;
+        } else {
+            type.oses = [$scope.currentOs];
+        }
+    };
+    
+    $scope.downloadTypes.forEach(function (type) {
+        $scope.toggleShowAll(type, false);
+    });
+    
     $scope.loaded = function () {
         if ($stateParams.version) {
             var index = $stateParams.version.indexOf(':');
