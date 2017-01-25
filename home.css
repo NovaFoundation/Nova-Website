@@ -109,6 +109,51 @@
 	border-bottom-left-radius: 0;
 }
 
+.download {
+	height: 100px;
+	
+	border-radius: 0;
+	
+	position: relative;
+}
+
+.download table {
+	margin: auto;
+}
+
+.download table p {
+	color: #fff;
+	
+	text-decoration: none;
+}
+
+.download table p {
+	margin: 4px 0;
+}
+
+.download div {
+	display: inline-block;
+	
+	border-radius: 5px;
+	
+	padding: 12px;
+	
+	background-color: #f15d3b;
+	
+	border: 1.5px solid #fff;
+	box-shadow: 0 0 0 8px #f15d3b;
+	
+	line-height: 0.8;
+	
+	margin: 8px;
+	
+	color: #fff;
+}
+
+.download img {
+	height: 82px;
+}
+
 #aspects {
 	white-space: nowrap;
 	
