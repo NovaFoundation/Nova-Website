@@ -25,13 +25,15 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         versions: getAllVersions("betaVersions")
     }];
     
-    if ($stateParams.version) {
-        var index = $stateParams.version.indexOf(':');
-        index = index < 0 ? $stateParams.version.length : index;
-        
-        $scope.build = $stateParams.version.substring(0, index);
-        $scope.buildVersion = $stateParams.version.substring(index);
-        
-        jump($scope.build, false);
-    }
+    $scope.loaded = function () {
+        if ($stateParams.version) {
+            var index = $stateParams.version.indexOf(':');
+            index = index < 0 ? $stateParams.version.length : index;
+            
+            $scope.build = $stateParams.version.substring(0, index);
+            $scope.buildVersion = $stateParams.version.substring(index);
+            
+            jump($scope.build, false);
+        }
+    };
 }]);
