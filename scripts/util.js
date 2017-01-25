@@ -236,7 +236,11 @@ function jump(h, changeUrl) {
         location.href = "#" + h;                 //Go to the target element.
         history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
     } else {
-        document.getElementById(h).scrollIntoView(true);
+        var element = document.getElementById(h);
+        
+        if (element) {
+            element.scrollIntoView(true);
+        }
     }
     
     flash(h);
@@ -245,11 +249,13 @@ function jump(h, changeUrl) {
 function flash(id) {
     var element = document.getElementById(id);
     
-    element.classList.remove("flash");
-    
-    element.timeoutId = setTimeout(function () {
-        element.classList.add("flash");
-    });
+    if (element) {
+        element.classList.remove("flash");
+        
+        element.timeoutId = setTimeout(function () {
+            element.classList.add("flash");
+        });
+    }
 }
 
 window.addEventListener("load", function () {
