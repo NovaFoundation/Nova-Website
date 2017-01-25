@@ -403,28 +403,34 @@ code.hljs,
     color: #aaa;
 }
 
+/* orange */
 .primary {
     color: #f15d3b;
 }
 
+/* blue */
 .secondary1 {
     color: #4da4db;
 }
 
+/* aqua */
 .secondary2 {
     color: #4dc0b3;
 }
 
+/* yellow */
 .secondary3 {
     color: #ffd95d;
 }
 
-.secondary4 {
+/* green */
+.secondary4  {
     color: #9bcb3c;
 }
 
+/* red */
 .secondary5 {
-    color: #f92672
+    color: #f92672;
 }
 
 .hljs-title,
