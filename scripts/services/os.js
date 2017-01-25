@@ -15,14 +15,14 @@ angular.module("nova").service("$os", [function () {
             key: "windows",
             extension: ".exe",
             stableVersions: [],
-            betaVersions: ["0.3.0"]
+            betaVersions: ["0.3.0", "0.3.3"]
         }, 
         mac: {
             name: "Mac OS X",
             key: "mac",
             extension: ".dmg",
             stableVersions: [],
-            betaVersions: ["0.3.2"]
+            betaVersions: ["0.3.2", "0.3.3"]
         }, 
         linux: {
             name: "Linux",
