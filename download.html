@@ -21,7 +21,7 @@
         <hr>
         <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
         <div ng-repeat="type in downloadTypes" id="{{ type.id }}" ng-if="type.version">
-            <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="type.showAll = !type.showAll">show all</span></h2>
+            <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="type.showAll = !type.showAll">show {{ type.showAll ? 'latest' : 'all' }}</span></h2>
             <div ng-repeat="version in type.versions | orderBy:'-'">
                 <a ng-repeat="os in osArray" ng-href="{{ !disabled ? '/content/downloads/' + os.key + '/' + version + '/Nova' + os.extension : undefined }}" ng-attr-download="{{ !disabled ? 'Nova' + os.extension : undefined }}" target="_blank" class="download-button" ng-if="version == type.version || type.showAll" ng-init="disabled = os.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
                     <button>
