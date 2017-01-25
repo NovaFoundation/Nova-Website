@@ -595,3 +595,73 @@ pre {
 #downloads > .downloads {
 	width: 500px;
 }
+
+#target-benefits {
+	padding-left: 6%;
+	padding-right: 6%;
+}
+
+.component-container {
+	width: 100%;
+	
+	display: flex;
+}
+
+.component-container:nth-of-type(odd) .component:first-of-type {
+	width: 60%;
+	
+	order: 1;
+}
+.component-container:nth-of-type(odd) .component:last-of-type {
+	width: 40%;
+	
+	order: 2;
+}
+
+.component-container:nth-of-type(even) .component:first-of-type {
+	width: 60%;
+	
+	order: 2;
+}
+.component-container:nth-of-type(even) .component:last-of-type {
+	width: 40%;
+	
+	order: 1;
+}
+
+.component-container h1,
+.component-container h2,
+.component-container h3,
+.component-container h4,
+.component-container h5,
+.component-container h6 {
+	text-align: center;
+}
+
+@media (max-width: 1100px) {
+	.component-container {
+		flex-direction: column;
+	}
+	
+	.component-container:nth-of-type(even) .component:first-of-type,
+	.component-container:nth-of-type(even) .component:last-of-type,
+	.component-container:nth-of-type(odd) .component:first-of-type,
+	.component-container:nth-of-type(odd) .component:last-of-type {
+		width: 100%;
+	}
+
+	.component:nth-of-type(1) {
+		order: 1;
+	}
+
+	.component:nth-of-type(2) {
+		order: 2;
+	}
+	
+	.component-container:nth-of-type(even) .component:first-of-type {
+		order: 1;
+	}
+	.component-container:nth-of-type(even) .component:last-of-type {
+		order: 2;
+	}
+}
