@@ -8,19 +8,11 @@
         <h4 class="motto">A multi-paradigm language built for <span class="bold">speed</span> and <span class="bold">ease of use</span></h4>
         <div class="download">
             <a ui-sref="download({ version: 'beta' })">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="/content/images/download.svg" />
-                        </td>
-                        <td>
-                            <div>
-                                <p>DOWNLOAD</p>
-                                <p><span class="bold">BETA BUILD</span> <span class="version"><span ng-if="currentOs.betaVersions.length > 0">v{{ currentOs.betaVersions.last() }}</span></span></p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <img src="/content/images/download-square.svg" /><!--
+                --><div>
+                    <p>DOWNLOAD</p>
+                    <p><span class="bold">BETA BUILD</span> <span class="version"><span ng-if="currentOs.betaVersions.length > 0">v{{ currentOs.betaVersions.last() }}</span></span></p>
+                </div>
             </a>
         </div>
     </div>

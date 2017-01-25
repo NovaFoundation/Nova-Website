@@ -134,24 +134,31 @@
 .download div {
 	display: inline-block;
 	
-	border-radius: 5px;
+	border-radius: 10px;
+	
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
 	
 	padding: 12px;
+	padding-right: 20px;
 	
 	background-color: #f15d3b;
 	
-	border: 1.5px solid #fff;
-	box-shadow: 0 0 0 8px #f15d3b;
-	
 	line-height: 0.8;
 	
-	margin: 8px;
-	
 	color: #fff;
+	
+	vertical-align: top;
+	
+	height: 82px;
+	
+	box-sizing: border-box;
 }
 
 .download img {
 	height: 82px;
+	
+	display: inline-block;
 }
 
 #aspects {
