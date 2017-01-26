@@ -13,17 +13,21 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         });
     }
     
-    $scope.downloadTypes = [{
-        id: 'stable',
-        name: 'Stable',
-        version: $scope.currentOs.stableVersions.last(),
-        versions: getAllVersions("stableVersions")
-    }, {
-        id: 'beta',
-        name: 'Beta',
-        version: $scope.currentOs.betaVersions.last(),
-        versions: getAllVersions("betaVersions")
-    }];
+    if ($scope.currentOs) {
+        $scope.downloadTypes = [{
+            id: 'stable',
+            name: 'Stable',
+            version: $scope.currentOs.stableVersions.last(),
+            versions: getAllVersions("stableVersions")
+        }, {
+            id: 'beta',
+            name: 'Beta',
+            version: $scope.currentOs.betaVersions.last(),
+            versions: getAllVersions("betaVersions")
+        }];
+    } else {
+        $scope.downloadTypes = [];
+    }
     
     $scope.toggleShowAll = function (type, showAll) {
         showAll = typeof showAll !== 'undefined' ? showAll : !type.showAll;
