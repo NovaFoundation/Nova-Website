@@ -153,12 +153,26 @@
 	height: 82px;
 	
 	box-sizing: border-box;
+	
+	z-index: -1;
+	
+	position: relative;
+	
+	right: 1px;
 }
 
 .download img {
 	height: 82px;
 	
 	display: inline-block;
+	
+	transform: scale(1.011);
+}
+
+.download a {
+	display: block;
+	
+	overflow: hidden;
 }
 
 #aspects {
