@@ -22,7 +22,7 @@ angular.module("nova").service("$os", [function () {
             key: "mac",
             extension: ".dmg",
             stableVersions: [],
-            betaVersions: ["0.3.2", "0.3.3"]
+            betaVersions: ["0.3.2", "0.3.3", "0.3.4"]
         }, 
         linux: {
             name: "Linux",
