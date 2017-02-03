@@ -15,7 +15,7 @@ angular.module("nova").service("$os", [function () {
             key: "windows",
             extension: ".exe",
             stableVersions: [],
-            betaVersions: ["0.3.0", "0.3.3"]
+            betaVersions: ["0.3.0", "0.3.3", "0.3.4"]
         }, 
         mac: {
             name: "Mac OS X",
