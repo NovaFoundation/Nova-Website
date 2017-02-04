@@ -27,7 +27,7 @@ angular.module("nova").service("$os", [function () {
         linux: {
             name: "Linux",
             key: "linux",
-            extension: "",
+            extension: ".deb",
             stableVersions: [],
             betaVersions: ["0.3.5"]
         }
