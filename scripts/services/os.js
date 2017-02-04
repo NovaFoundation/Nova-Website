@@ -29,7 +29,7 @@ angular.module("nova").service("$os", [function () {
             key: "linux",
             extension: "",
             stableVersions: [],
-            betaVersions: []
+            betaVersions: ["0.3.5"]
         }
     };
     
