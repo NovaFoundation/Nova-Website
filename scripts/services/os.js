@@ -18,6 +18,7 @@ angular.module("nova").service("$os", [function () {
             name: "Windows",
             key: "windows",
             extension: ".exe",
+            filename: "NovaInstaller",
             stableVersions: [],
             betaVersions: ["0.3.0", "0.3.3", "0.3.4", "0.3.5"]
         }, 
@@ -25,6 +26,7 @@ angular.module("nova").service("$os", [function () {
             name: "Mac OS X",
             key: "mac",
             extension: ".dmg",
+            filename: "Nova",
             stableVersions: [],
             betaVersions: ["0.3.2", "0.3.3", "0.3.4", "0.3.5"]
         }, 
@@ -32,6 +34,7 @@ angular.module("nova").service("$os", [function () {
             name: "Linux",
             key: "linux",
             extension: ".deb",
+            filename: "nova",
             stableVersions: [],
             betaVersions: ["0.3.5"]
         }

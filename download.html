@@ -24,7 +24,7 @@
         <div ng-repeat="type in downloadTypes" id="{{ type.id }}" ng-if="type.version">
             <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="toggleShowAll(type)">show {{ type.showAll ? 'latest' : 'all' }}</span></h2>
             <div ng-repeat="version in type.versions | orderBy:'-'">
-                <a ng-repeat="os in type.oses" ng-href="{{ !disabled ? '/content/downloads/' + os.key + '/' + version + '/Nova' + os.extension : undefined }}" ng-attr-download="{{ !disabled ? 'Nova' + os.extension : undefined }}" target="_blank" class="download-button" ng-if="version == type.version || type.showAll" ng-init="disabled = os.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
+                <a ng-repeat="os in type.oses" ng-href="{{ !disabled ? '/content/downloads/' + os.key + '/' + version + '/' + os.filename + os.extension : undefined }}" ng-attr-download="{{ !disabled ? os.filename + os.extension : undefined }}" target="_blank" class="download-button" ng-if="version == type.version || type.showAll" ng-init="disabled = os.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
                     <button>
                         <table>
                             <tr>
