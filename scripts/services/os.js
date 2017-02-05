@@ -6,7 +6,7 @@ angular.module("nova").service("$os", [function () {
     this.lowerOs = this.os.toLowerCase();
     
     if (!this.osHeader) {
-        this.osHeader = this.os + (this.osVersion.trim() ? this.osVersion : "");
+        this.osHeader = this.os + (this.osVersion.trim() ? " " + this.osVersion : "");
     }
     
     if (this.lowerOs.indexOf("mac") == 0) {
