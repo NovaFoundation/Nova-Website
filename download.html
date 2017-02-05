@@ -19,7 +19,7 @@
     <slide id="downloads">
         <div><h1 class="primary">DOWNLOAD</h1></div>
         <hr>
-        <h4 class="gray">We think you are running {{ os }} {{ osVersion }}</h4>
+        <h4 class="gray">We think you are running {{ osHeader }}</h4>
         <p ng-if="!currentOs">{{ os }} is not currently supported by Nova.</p>
         <div ng-repeat="type in downloadTypes" id="{{ type.id }}" ng-if="type.version">
             <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="toggleShowAll(type)">show {{ type.showAll ? 'latest' : 'all' }}</span></h2>
