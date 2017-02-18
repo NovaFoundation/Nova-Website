@@ -33,7 +33,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         templateUrl: '/docs/docs.html',
         controller: 'DocsController',
         data: {
-            css: '/docs/docs.css'
+            css: ['/docs/docs.css', '/Shared/styles/blog-styles.css']
         }
     }).state('docs.home', {
         url: '',
