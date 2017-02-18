@@ -40,6 +40,22 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         templateUrl: '/docs/home.html',
     });
     
+    $stateProvider.state('blog', {
+        url: '/blog',
+        abstract: true,
+        templateUrl: '/blog/blog.html',
+        controller: 'BlogController',
+        data: {
+            css: ['/blog/blog.css', '/Shared/styles/blog-styles.css']
+        }
+    }).state('blog.home', {
+        url: '',
+        templateUrl: '/blog/home.html',
+        data: {
+            css: '/blog/home.css'
+        }
+    });
+    
     $stateProvider.state('download', {
         url: '/download?version',
         templateUrl: '/download.html',
@@ -143,6 +159,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     }
     
     addPages("docs", window.docsPages);
+    addPages("blog", window.blogPages);
     
     $stateProvider.state("docs.hello-world", {
         url: '/getting-started/hello-world',
