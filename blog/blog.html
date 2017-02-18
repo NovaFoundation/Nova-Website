@@ -1,0 +1,37 @@
+<div class="white-background">
+    <div class="container">
+        <div class="content">
+            <div class="content-header-container dark-border" ng-if="page">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="header-container">
+                                <h1 class="content-header" ng-bind="page.header | uppercase"></h1>
+                                <h2 class="content-subheader" ng-bind="page.subheader | uppercase" ng-if="page.subheader"></h2>
+                                <p class="info" ng-if="page.author || page.date">
+                                    <span class="author" ng-bind="page.author"></span><span ng-if="page.author && page.date"> - </span><span class="date" ng-bind="page.date"></span>
+                                </p>
+                            </div>
+                        </td>
+                        <td class="export-options">
+                            <h2 class="share-link nowrap" ng-click="sharePage(page)">SHARE PAGE <img class="share" src="/content/images/share.svg" /></h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-view-container">
+                <div class="content-view">
+                    <div class="view" ng-class="{ home: !page }" ui-view></div>
+                </div>
+                <div class="references dark-border" ng-if="page.references && page.references.length > 0">
+                    <h2>References</h2>
+                    <ul class="references-list">
+                        <li ng-repeat="ref in page.references">
+                            <a ui-sref="{{ref.url}}" ng-bind="ref.header" ng-attr-title="{{ ref.tooltip }}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
