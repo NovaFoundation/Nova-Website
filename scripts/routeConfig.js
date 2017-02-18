@@ -49,95 +49,100 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         }
     });
     
-    window.docsPagesMap = {};
-    
-    function addDoc(page, parent) {
-        if (page.css) {
-            page.data = {
-                css: page.css
-            };
-        }
+    function addPages(type, pages) {
+        var pageMap = {};
+        window[type + "PagesMap"] = pageMap;
         
-        page.parent = parent;
-        
-        var prefix = "";
-        var current = parent;
-        
-        while (current && current.parent) {
-            prefix = current.url + "/" + prefix;
+        function addPage(page, parent) {
+            if (page.css) {
+                page.data = {
+                    css: page.css
+                };
+            }
             
-            current = current.parent;
-        }
-        
-        page.httpUrl = prefix + page.url;
-        page.fullUrl = page.httpUrl.replace(/\//g, ".");
-        
-        var templatePrefix = prefix;
-        
-        if (page.children && page.children.length > 0) {
-            templatePrefix += page.url + "/";
-        }
-        
-        page.name = "docs." + prefix.replace(/\//g, ".") + page.url;
-        page.route = {
-            url: '/' + prefix + page.url,
-            templateUrl: '/docs/' + templatePrefix + page.url + '.html',
-            controller: page.controller,
-            data: {
-                page: page,
-                css: page.css
-            },
-            parent: "docs"
-        };
-        
-        window.docsPagesMap[page.httpUrl] = page;
-        
-        $stateProvider.state(page.name, page.route);
-        
-        if (page.children) {
-            page.children.forEach(function (p) {
-                addDoc(p, page);
-            });
-        }
-    }
-    
-    docsPages.forEach(function (p) {
-        addDoc(p, { name: "docs", url: "docs" });
-    });
-    
-    for (var url in window.docsPagesMap) {
-        var page = window.docsPagesMap[url];
-        
-        if (page.references) {
-            page.references = page.references.map(function (ref) {
-                if (typeof ref === 'string') {
-                    ref = {
-                        url: ref
-                    };
-                }
+            page.parent = parent;
+            
+            var prefix = "";
+            var current = parent;
+            
+            while (current && current.parent) {
+                prefix = current.url + "/" + prefix;
                 
-                var refPage;
-                
-                if (ref.url[0] == '/') {
-                    refPage = window.docsPagesMap[ref.url.substring(1)];
-                } else {
-                    var prefix = page.parent.fullUrl ? page.parent.fullUrl + "/" : ""
+                current = current.parent;
+            }
+            
+            page.httpUrl = prefix + page.url;
+            page.fullUrl = page.httpUrl.replace(/\//g, ".");
+            
+            var templatePrefix = prefix;
+            
+            if (page.children && page.children.length > 0) {
+                templatePrefix += page.url + "/";
+            }
+            
+            page.name = type + "." + prefix.replace(/\//g, ".") + page.url;
+            page.route = {
+                url: '/' + prefix + page.url,
+                templateUrl: '/' + type + '/' + templatePrefix + page.url + '.html',
+                controller: page.controller,
+                data: {
+                    page: page,
+                    css: page.css
+                },
+                parent: type
+            };
+            
+            pageMap[page.httpUrl] = page;
+            
+            $stateProvider.state(page.name, page.route);
+            
+            if (page.children) {
+                page.children.forEach(function (p) {
+                    addPage(p, page);
+                });
+            }
+        }
+        
+        pages.forEach(function (p) {
+            addPage(p, { name: type, url: type });
+        });
+        
+        for (var url in pageMap) {
+            var page = pageMap[url];
+            
+            if (page.references) {
+                page.references = page.references.map(function (ref) {
+                    if (typeof ref === 'string') {
+                        ref = {
+                            url: ref
+                        };
+                    }
                     
-                    refPage = window.docsPagesMap[prefix + ref.url];
-                }
-                
-                if (refPage) {
-                    ref.header = ref.header || refPage.header;
-                    ref.tooltip = ref.tooltip || refPage.tooltip;
-                    ref.url = refPage.name;
-                } else if (ref.url[0] == "/") {
-                    ref.url = ref.url.substring(1);
-                }
-                
-                return ref;
-            });
+                    var refPage;
+                    
+                    if (ref.url[0] == '/') {
+                        refPage = pageMap[ref.url.substring(1)];
+                    } else {
+                        var prefix = page.parent.fullUrl ? page.parent.fullUrl + "/" : ""
+                        
+                        refPage = pageMap[prefix + ref.url];
+                    }
+                    
+                    if (refPage) {
+                        ref.header = ref.header || refPage.header;
+                        ref.tooltip = ref.tooltip || refPage.tooltip;
+                        ref.url = refPage.name;
+                    } else if (ref.url[0] == "/") {
+                        ref.url = ref.url.substring(1);
+                    }
+                    
+                    return ref;
+                });
+            }
         }
     }
+    
+    addPages("docs", window.docsPages);
     
     $stateProvider.state("docs.hello-world", {
         url: '/getting-started/hello-world',
