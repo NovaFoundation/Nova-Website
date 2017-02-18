@@ -24,8 +24,10 @@
                 <table>
                     <tr>
                         <td>
-                            <h1 class="content-header" ng-bind="page.header | uppercase"></h1>
-                            <h2 class="content-subheader" ng-bind="page.subheader | uppercase" ng-if="page.subheader"></h2>
+                            <div class="header-container">
+                                <h1 class="content-header" ng-bind="page.header | uppercase"></h1>
+                                <h2 class="content-subheader" ng-bind="page.subheader | uppercase" ng-if="page.subheader"></h2>
+                            </div>
                         </td>
                         <td class="export-options">
                             <h2 class="share-link nowrap" ng-click="sharePage(page)">SHARE PAGE <img class="share" src="/content/images/share.svg" /></h2>
