@@ -665,6 +665,12 @@ tree-browser {
     -webkit-transition-property: opacity, transform;
     transition-property: opacity, transform;
     
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    
     opacity: 0;
     
     pointer-events: none;
