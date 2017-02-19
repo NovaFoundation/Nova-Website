@@ -166,7 +166,9 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         redirectTo: "docs.getting-started.hello-world",
         parent: "docs"
     });
-}]).run(['$rootScope', function ($rootScope) {
+}]).run(['$rootScope', '$http', '$templateCache', function ($rootScope, $http, $templateCache) {
+    $http.get('/content/templates/share.html', {cache:$templateCache});
+    
     function urlUpdated() {
         updateQueryParams();
         console.log("updateing " + window.location.href);
