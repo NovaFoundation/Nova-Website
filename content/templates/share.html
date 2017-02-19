@@ -14,7 +14,7 @@
             <td><a ng-click="fbShare(url, '', '', 520, 350)"><img src="/content/images/facebook.svg" /></a></td>
             <td><a ng-click="twitterShare(url, '', '', 520, 350)"><img src="/content/images/twitter.svg" /></a></td>
             <td><a ng-click="linkedinShare(url, '', '', 520, 350)"><img src="/content/images/linkedin.svg" /></a></td>
-            <td><a href="mailto:?&subject=Nova programming language&body=Check%20out%20this%20page%20on%20the%20Nova%20programming%20language%20site%3A%20http%3A//localhost%3A8080/blog/compiler-design"><img src="/content/images/email.svg" /></td>
+            <td><a ng-href="mailto:?&subject=Nova programming language&body=Check%20out%20this%20page%20on%20the%20Nova%20programming%20language%20site%3A%20{{url}}"><img src="/content/images/email.svg" /></td>
         </tr>
     </table>
 </div>
