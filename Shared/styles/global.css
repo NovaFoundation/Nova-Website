@@ -657,7 +657,7 @@ tree-browser {
     
     transform: translate(-50%, -100vh);
     
-    background-color: rgba(31, 18, 45, 0.8);
+    background-color: rgba(31, 18, 45, 0.95);
     
     -webkit-transition: 0.2s linear all;
     transition: 0.2s linear all;
