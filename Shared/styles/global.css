@@ -331,7 +331,7 @@ code.hljs,
     margin: 0 10px;
 }
 
-#footer .social svg {
+#footer .social img {
     width: 40px;
 }
 
@@ -642,4 +642,74 @@ tree-browser {
 
 .arrow.invisible {
     opacity: 0;
+}
+
+.share-modal {
+    width: 400px;
+    
+    position: fixed;
+    
+    border-radius: 25px;
+    padding: 20px;
+    
+    left: 50%;
+    top: 50%;
+    
+    transform: translate(-50%, -100vh);
+    
+    background-color: rgba(31, 18, 45, 0.8);
+    
+    -webkit-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+    
+    -webkit-transition-property: opacity, transform;
+    transition-property: opacity, transform;
+    
+    opacity: 0;
+    
+    pointer-events: none;
+}
+
+.share-modal.active {
+    opacity: 1;
+    
+    pointer-events: all;
+    
+    transform: translate(-50%, -50%);
+}
+
+.share-modal table {
+    width: 100%;
+    
+    table-layout: fixed;
+    
+    text-align: center;
+}
+
+.share-modal img {
+    height: 40px;
+}
+
+.share-modal h1 {
+    color: white;
+    
+    font-size: 25px;
+    
+    text-align: left;
+    
+    margin-bottom: 10px;
+}
+
+.share-modal input {
+    width: 100%;
+    
+    font-size: 15px;
+    
+    margin-bottom: 25px;
+    
+    text-align: center;
+    
+    border: 0;
+    border-radius: 5px;
+    background-color: white;
 }
