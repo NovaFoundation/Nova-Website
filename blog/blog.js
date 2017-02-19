@@ -7,12 +7,6 @@ window.blogPages = [{
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-    $scope.sharePage = function (page) {
-        page = page || $scope.page;
-        
-        alert("sharing " + page.header);
-    };
-    
     $scope.pages = blogPages;
     
     function recursiveApply(func) {

@@ -56,12 +56,6 @@ window.docsPages = [{
 }];
 
 angular.module("nova").controller("DocsController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-    $scope.sharePage = function (page) {
-        page = page || $scope.page;
-        
-        alert("sharing " + page.header);
-    };
-    
     $scope.pages = docsPages;
     
     function recursiveApply(func) {
