@@ -93,6 +93,8 @@
 
 .share-link {
     cursor: pointer;
+    
+    margin-bottom: 12px;
 }
 
 .share {
