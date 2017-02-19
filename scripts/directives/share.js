@@ -40,6 +40,16 @@ angular.module("nova").directive("share", ['$templateCache', '$compile', functio
                 
                 window.open('http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + descr + '&p[url]=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
             };
+            
+            scope.twitterShare = function(url, title, descr, winWidth, winHeight) {
+                var winTop = (screen.height / 2) - (winHeight / 2);
+                var winLeft = (screen.width / 2) - (winWidth / 2);
+                
+                title = title || "";
+                descr = descr || "";
+                
+                window.open('https://twitter.com/home?status=Check%20out%20this%20Nova%20post%20' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight)
+            };
         }
     }
 }]);
