@@ -184,14 +184,16 @@ a {
     font-family: 'Roboto Mono', sans-serif;
 }
 
-.documentation-link {
+.home-navigation {
     position: absolute;
     
     margin: 0;
     
     right: 30px;
     top: 18px;
-    
+}
+
+.home-navigation > a {
     color: #fff;
     
     font-size: 1.4em;
@@ -201,6 +203,7 @@ a {
     border: 2px solid #fff;
     
     padding: 5px 10px;
+    margin: 0 10px;
 }
 
 .centered {
