@@ -201,7 +201,7 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         
         $rootScope.$broadcast("stateUpdated");
         
-        $rootScope.currentUrl = window.location.origin + "/" + state.name.replace(".", "/");
+        $rootScope.currentUrl = window.location.origin + "/" + state.name.replace(/[.]/g, "/");
     });
     
     $rootScope.$on("$viewContentLoaded", function () {
