@@ -1,8 +1,9 @@
 window.blogPages = [{
     header: "Nova Compiler Design",
     url: "compiler-design",
+    css: "/blog/compiler-design.css",
     date: "2/18/2017",
-    author: "Braden Steffaniak"
+    // author: "Braden Steffaniak"
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
