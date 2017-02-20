@@ -16,7 +16,10 @@
     <p>
         You feed your source code into a compiler, and that compiler transforms it into an executable or shared library of some sort. You go from a high-level source code file, to a binary executable or shared library <footnote id="gcc-asm"></footnote>. Generally, this is how it has been done for a long time. 
     </p>
-    <table class="flow-container" style="margin: auto;">
+    <p>
+        The Nova compiler works a little different. It supports outputting to any of the implemented output sources. For example: C, Java, and C# are depicted in the chart below. 
+    </p>
+    <table class="flow-container" style="margin: 40px auto;">
         <tr>
             <td colspan="3">
                 <p style="white-space: nowrap;">SOURCE CODE</p>
@@ -35,8 +38,7 @@
             </td>
             <td>
                 <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
-                <div class="flow-stage" style="min-width: 80px;"><p>JAVA</p></div><br>
-                
+                <div class="flow-stage" style="min-width: 80px;"><p>JAVA</p></div>
             </td>
             <td>
                 <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(-45deg);" /><br>
@@ -58,13 +60,230 @@
             </td>
         </tr>
     </table>
+    <p>
+        The end result of the compilation process is the same as the traditional compilation process, except that you get multiple executables. The significance of generating multiple executables is explained later in the <a href="#benefits">benefits</a> section. You can choose which output targets to compile to. 
+    </p>
+    <table class="flow-container" style="margin: 40px auto;">
+        <tr>
+            <td colspan="3">
+                <p style="white-space: nowrap;">SOURCE CODE</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage"><p>COMPILER</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="disabled">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(45deg);" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>C</p></div>
+            </td>
+            <td class="disabled">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>JAVA</p></div>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(-45deg);" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>C#</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td class="disabled">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+            <td class="disabled">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+        </tr>
+    </table>
 </div>
 
 <div id="benefits">
     <h1>BENEFITS OF MULTIPLE COMPILATION TARGETS</h1>
     <p>
-        When you have more targets available to compile to, you have more data points on the performance of your programs from different perspectives. This allows for a whole new area of performance analysis that has not been touched. The ability to compare performance of a program from different languages gives insite comparable to adding a whole new dimension to the field. For example, 
+        When you have more targets available to compile to, you have more data points on the performance of your programs from different perspectives. This allows for a whole new area of performance analysis that has not been touched. The ability to compare performance of a program from different languages gives insite comparable to adding a whole new dimension to the field. Building off of the previous example, consider the following compilation process:
     </p>
+    <table class="flow-container" style="margin: 40px auto;">
+        <tr>
+            <td colspan="3">
+                <p style="white-space: nowrap;">SOURCE CODE</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage"><p>COMPILER</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(45deg);" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>C</p></div>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>JAVA</p></div>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(-45deg);" /><br>
+                <div class="flow-stage" style="min-width: 80px;"><p>C#</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <p style="white-space: nowrap;">EXECUTABLE</p>
+            </td>
+        </tr>
+    </table>
+    <p>
+        Now say that you time the execution speed of each of the outputted executables:
+    </p>
+    <table class="flow-container" style="margin: 40px auto;">
+        <tr>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>C - 120ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>JAVA - 210ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>C# - 220ms</p></div>
+            </td>
+        </tr>
+    </table>
+    <p>
+        The top level execution speed is only so helpful, so looking at each of the executable's function calls might give some extra insite to where the timing discrepencies are coming from:
+    </p>
+    <table class="flow-container" style="margin: 40px auto;">
+        <tr>
+            <td style="vertical-align: top;">
+                <div class="flow-stage" style="min-width: 120px;"><p>C - 120ms</p></div><br>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 30ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 40ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 50ms</p></div>
+            </td>
+            <td style="vertical-align: top;">
+                <div class="flow-stage" style="min-width: 120px;"><p>JAVA - 210ms</p></div><br>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 35ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 45ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 130ms</p></div>
+            </td>
+            <td style="vertical-align: top;">
+                <div class="flow-stage" style="min-width: 120px;"><p>C# - 220ms</p></div><br>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 35ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 45ms</p></div><br>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 140ms</p></div>
+            </td>
+        </tr>
+    </table>
+    <p>
+        So with a deeper look, you can see that the discrepency is largely caused by function c(). This gives you information that you would not have had otherwise if you had only been analyzing the performance based off of a single executable. With this information you can pinpoint with more certainty what parts of your software are bottlenecks created by the algorithms they use, or whether it is caused by the language architecture itself.
+    </p>
+    <div id="bottleneck-types" style="margin-left: 25px; margin-bottom: 20px;">
+        <h4>Algorithmic bottlenecks</h4>
+        <p>
+            Algorithmic bottlenecks are caused by the <i>program's</i> implementation in contrast to the <i>language's</i> implementation. These bottlenecks would detect areas of code that might use <a href="https://en.wikipedia.org/wiki/Bubble_sort">bubble sort</a> instead of a faster sorting algorithm like <a href="https://en.wikipedia.org/wiki/Quicksort">quicksort</a>.
+        </p>
+        <h4>Language architecture bottlenecks</h4>
+        <p>
+           Language architecture bottlenecks are caused by how the <i>language</i> was implemented that code was compiled by. For example, Java and C# are not as good at dealing with numbers and computation compared to C. You cannot get around the fact that crunching numbers in Java and C# are going to be slower than in C, and this is a language architecture bottleneck.
+        </p>
+    </div>
+    <p>
+        The ability to tell the difference between the types of bottlenecks is extremely helpful when analyzing the performance of the program. You are able to see if it is user error (algorithmic), or if it is out of your ability to address (language architecture), well <i>only sometimes</i>. When you find language architecture bottlenecks, you could try other language constructs that allow you to do the same job and see if it performs better.
+    </p>
+    <p>
+        A lot of the time, these language architecture bottlenecks can have simple solutions. For example, in java using primitive arrays instead of ArrayLists can give a significant performance boost, especially if the ArrayList is autoboxing each operation that it is involved in. Simply converting that code to use a primitive array can speed the code up significantly.
+    </p>
+    <p>
+        And the ability to see what areas of the language have performance issues compared to the areas that do not can be automated with the aforementioned benchmarker. By taking the greated absolute runtime difference from each function between the executables, you are able to see which areas are more likely to be caused by language architecture bottlenecks. The higher the time difference, the more likely it is to be caused by the language architecture:
+    </p>
+    <table class="flow-container" style="margin: 40px auto;">
+        <tr>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>C - 120ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>JAVA - 210ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>C# - 220ms</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" />
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" />
+            </td>
+            <td>
+                <img class="down-arrow" src="/content/images/down-arrow.svg" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 30ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 35ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>a() - 35ms</p></div>
+            </td>
+            <td>
+                <p>35ms - 30ms = <span style="color: green;">5ms</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 40ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 45ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>b() - 45ms</p></div>
+            </td>
+            <td>
+                <p>45ms - 40ms = <span style="color: green;">5ms</span></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 50ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 130ms</p></div>
+            </td>
+            <td>
+                <div class="flow-stage" style="min-width: 120px;"><p>c() - 140ms</p></div>
+            </td>
+            <td>
+                <p>140ms - 50ms = <span style="color: red;">90ms</span></p>
+            </td>
+        </tr>
+    </table>
 </div>
 
 <div id="drawbacks">
