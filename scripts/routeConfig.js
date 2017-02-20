@@ -205,6 +205,18 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
         
         $rootScope.$broadcast("stateUpdated");
         
+        if (state.data && state.data.page && state.data.page.header) {
+            var title = state.data.page.header;
+            
+            if (!$rootScope.originalTitle) {
+                $rootScope.originalTitle = document.title;
+            }
+            
+            document.title = title + " - " + $rootScope.originalTitle;
+        } else if ($rootScope.originalTitle) {
+            document.title = $rootScope.originalTitle;
+        }
+        
         $rootScope.currentUrl = window.location.origin + "/" + state.name.replace(/[.]/g, "/");
     });
     
