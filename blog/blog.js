@@ -1,7 +1,7 @@
 window.blogPages = [{
     header: "Nova Compiler Design",
     url: "compiler-design",
-    css: "/blog/compiler-design.css",
+    css: "/Shared/styles/flow-boxes.css",
     date: "2/18/2017",
     // author: "Braden Steffaniak"
 }];

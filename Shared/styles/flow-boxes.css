@@ -1,4 +1,4 @@
-.compiler-stage {
+.flow-stage {
     min-width: 180px;
     height: 60px;
     
@@ -10,20 +10,20 @@
     display: inline-block;
 }
 
-.compiler-stage p {
+.flow-stage p {
     text-align: center;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.compilation-process {
+.flow-container {
     text-align: center;
     
     margin: 35px 0;
 }
 
-.compilation-process p {
+.flow-container p {
     margin: 0;
 }
 
