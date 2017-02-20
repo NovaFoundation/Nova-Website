@@ -27,6 +27,10 @@
     margin: 0;
 }
 
+.flow-container .disabled {
+    opacity: 0.25;
+}
+
 .down-arrow {
     height: 25px;
     
