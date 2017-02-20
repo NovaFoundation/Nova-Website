@@ -4,6 +4,12 @@ window.blogPages = [{
     css: "/Shared/styles/flow-boxes.css",
     date: "2/18/2017",
     // author: "Braden Steffaniak"
+}, {
+    header: "Multiple Targets",
+    url: "multiple-targets",
+    css: "/Shared/styles/flow-boxes.css",
+    date: "2/19/2017",
+    // author: "Braden Steffaniak"
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {

@@ -1,0 +1,24 @@
+<div id="meaning">
+    <h1>What Does Compiling to Multiple Targets Really Mean?</h1>
+    <p>
+        If you have not programmed in a language that allows compilation to multiple different compilation targets, then you probably are unaware of the benefits (and possible drawbacks) of using a language that offers this feature. Furthermore, you might not even know what exactly compiling to multiple targets means.
+    </p>
+    <p>
+        When you think of traditional programming languages, there is a common process that you go through when compiling the source code that looks something like this:
+    </p>
+    <div class="flow-container">
+        <p style="white-space: nowrap;">SOURCE CODE</p>
+        <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+        <div class="flow-stage"><p>COMPILER</p></div><br>
+        <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
+        <p style="white-space: nowrap;">EXECUTABLE or SHARED LIBRARY</p>
+    </div>
+    <p>
+        You feed your source code into a compiler, and that compiler transforms it into an executable or shared library of some sort. You go from a high-level source code file, to a binary executable or shared library <a ng-click="jump('gcc-asm')" class="footnote">1</a>. Generally, this is how it has been done for a long time. 
+    </p>
+</div>
+
+<div id="footnotes">
+    <p class="header">Footnotes:</p>
+    <p id="gcc-asm">1. Some compilers, <a href="http://stackoverflow.com/questions/137038/how-do-you-get-assembler-output-from-c-c-source-in-gcc">like GCC</a>, allow output of equivalent assembly code.</p>
+</div>
