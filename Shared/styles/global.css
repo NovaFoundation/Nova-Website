@@ -265,6 +265,8 @@ code.hljs,
     border-radius: 10px;
     
     background-color: #1f122d;
+    
+    text-align: left;
 }
 
 code.hljs *:not(span) {
