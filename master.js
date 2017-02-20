@@ -7,8 +7,6 @@ angular.module("nova").controller("MasterController", ["$scope", "$rootScope", "
     $rootScope.osArray = $os.osArray;
     $rootScope.osHeader = $os.osHeader;
     
-    $rootScope.jump = jump;
-    
     var listeners = {};
     
     $rootScope.addEventListener = function (type, callback, fireOnAdd) {

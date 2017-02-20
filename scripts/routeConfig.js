@@ -171,6 +171,8 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     $http.get('/content/templates/footnote-reference.html', {cache:$templateCache});
     $http.get('/content/templates/footnote-content.html', {cache:$templateCache});
     
+    $rootScope.jump = window.jump;
+    
     function urlUpdated() {
         updateQueryParams();
         console.log("updateing " + window.location.href);
