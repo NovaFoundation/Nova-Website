@@ -168,6 +168,8 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     });
 }]).run(['$rootScope', '$http', '$templateCache', function ($rootScope, $http, $templateCache) {
     $http.get('/content/templates/share.html', {cache:$templateCache});
+    $http.get('/content/templates/footnote-reference.html', {cache:$templateCache});
+    $http.get('/content/templates/footnote-content.html', {cache:$templateCache});
     
     function urlUpdated() {
         updateQueryParams();
