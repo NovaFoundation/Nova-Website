@@ -539,7 +539,11 @@ p.footnote {
 #footnotes > .header {
 }
 
-#footnotes > :not(.header) {
+#footnotes > footnote {
+    display: block;
+}
+
+#footnotes > footnote > p {
     font-size: 14px;
 }
 
