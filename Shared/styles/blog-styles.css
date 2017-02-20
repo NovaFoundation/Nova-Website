@@ -32,7 +32,8 @@
 
 .content-header-container .info {
     font-size: 15px;
-    text-align: right;
+    /*text-align: right;*/
+    margin-left: 3px;
     margin-top: -30px;
     color: #cacaca;
 }
