@@ -375,10 +375,10 @@ header, footer {
     padding: 10px;
     padding-top: 37px;
     
-    background-color: #fffaf5;
+    /*background-color: #fffaf5;*/
     
     border: 2px solid #1f122d;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     
     box-sizing: border-box;
     
