@@ -23,8 +23,8 @@
     margin: 35px 0;
 }
 
-.flow-container p {
-    margin: 0;
+.flow-container.wrap-friendly .flow-stage {
+    max-width: 250px;
 }
 
 .flow-container .disabled {
