@@ -61,7 +61,7 @@
         </tr>
     </table>
     <p>
-        The end result of the compilation process is the same as the traditional compilation process, except that you get multiple executables. The significance of generating multiple executables is explained later in the <a href="#benefits">benefits</a> section. You can choose which output targets to compile to. 
+        The end result of the compilation process is the same as the traditional compilation process, except that you get multiple executables. The significance of generating multiple executables is explained later in the <a href="#benefits">benefits</a> section. You can choose which output targets to compile to depending on your needs.
     </p>
     <table class="flow-container" style="margin: 40px auto;">
         <tr>
@@ -378,8 +378,11 @@
     </div>
     <div id="better-compatibility">
         <h3>Better compatibility</h3>
-        <p>  
-            Compiling to multiple targets gives you better compatiblity. You gain the ability to integrate all of your Nova code with the target language. This is extremely powerful when it comes to writing general libraries in Nova. Any library you write is accessible from any of the available target languages. Here is an illustration of this point:
+        <p>
+            Compiling to multiple targets gives you better compatiblity. You are able to access all of the compatibility that the target language has. You can run your programs on low-level micro controllers that C can compile to, use Nova code coupled with microsoft code with ASP.NET, and much more.
+        </p>
+        <p>
+            You gain the ability to integrate all of your Nova code with the target language. This is extremely powerful when it comes to writing general libraries in Nova. Any library you write is accessible from any of the available target languages. Here is an illustration of this point:
         </p>
         <div hljs language="java" hljs-no-escape style="text-align: center; margin-top: 40px;">
             class SomeLibrary {
@@ -407,20 +410,6 @@
                 <td>
                     <img class="down-arrow" src="/content/images/down-arrow.svg" style="transform: rotate(-45deg);" /><br>
                     <div class="flow-stage" style="min-width: 80px;"><p>C#</p></div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
-                    <p style="white-space: nowrap;">EXECUTABLE</p>
-                </td>
-                <td>
-                    <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
-                    <p style="white-space: nowrap;">EXECUTABLE</p>
-                </td>
-                <td>
-                    <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
-                    <p style="white-space: nowrap;">EXECUTABLE</p>
                 </td>
             </tr>
         </table>
@@ -460,12 +449,15 @@
     <p>
         When you deal with multiple targets, you can add the complexity of each language along with it. The Nova language is designed to make this as cheap as possible, but there is always going to be some work required when adding another compilation target, especially if the target language is a considerably different paradigm.
     </p>
+    <p>
+        Aside from the compiler implementation of the target language, you may need to code special functionality for a specific language target to work as needed. An example of this is multi-threaded programs with Javascript. Javascript does not natively support multi-threading. For this reason, any programs that are heavily based upon multi-threading need some special attention in order for the Javascript target to work. A simple solution to this is to have threads run synchronously, but this can create undesirable results from a program that is expected to run in parallel. To deal with this you can: not compile to Javascript altogether; use a non-standard multi-threading library for Javascript (<a href="http://keithwhor.github.io/multithread.js">multithread.js</a> maybe?).
+    </p>
 </div>
 
 <div id="conclusion">
     <h2>Conclusion</h2>
     <p>
-        With both sides of the argument given, I believe that the benefits greatly outweigh the possible drawbacks. The extra dimension that multiple targets adds alone is something worth investigating. 
+        With both sides of the argument given, I believe that the benefits greatly outweigh the possible drawbacks. The extra dimension that multiple targets adds to performance analysis alone is something worth investigating. Time will tell if multiple targets is as useful in practice as it is in theory.
     </p>
 </div>
 
