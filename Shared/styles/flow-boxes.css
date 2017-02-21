@@ -1,10 +1,10 @@
 .flow-stage {
     min-width: 180px;
-    height: 60px;
+    /*min-height: 60px;*/
     
     border: 2px solid black;
     
-    padding: 0 10px;
+    padding: 15px 10px;
     margin: 5px 10px;
     
     display: inline-block;
