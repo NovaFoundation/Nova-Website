@@ -1,56 +1,45 @@
 <div class="white-background">
-    <table id="header">
-        <tr>
-            <td>
-                <a ui-sref="home">
-                    <img class="logo" src="/content/images/white-logo.svg" />
-                </a>
-            </td>
-            <td>
-                <div class="nova-text-container">
-                    <a ui-sref="home">
-                        <h1 class="nova-text" style="color: rgba(0,0,0,0);">NOVA</h1>
-                        <h1 class="nova-text">NOVA</h1>
-                    </a>
+    <div class="page-container">
+        <header></header>
+        <div class="content-container">
+            <slide id="downloads">
+                <div><h1 class="primary">DOWNLOAD</h1></div>
+                <hr>
+                <h4 class="gray">We think you are running {{ osHeader }}</h4>
+                <p ng-if="!currentOs">{{ os }} is not currently supported by Nova.</p>
+                <div ng-repeat="type in downloadTypes" id="{{ type.id }}" ng-if="type.version">
+                    <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="toggleShowAll(type)">show {{ type.showAll ? 'latest' : 'all' }}</span></h2>
+                    <div ng-repeat="version in type.versions | orderBy:'-'">
+                        <a ng-repeat="os in type.oses" ng-href="{{ !disabled ? '/content/downloads/' + os.key + '/' + version + '/' + os.filename + os.extension : undefined }}" ng-attr-download="{{ !disabled ? os.filename + os.extension : undefined }}" target="_blank" class="download-button" ng-if="version == type.version || type.showAll" ng-init="disabled = os.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
+                            <button>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="icon-container"><img ng-src="/content/images/{{os.key}}.svg" /></div>
+                                        </td>
+                                        <td>
+                                            {{ os.name }} <span ng-if="type.showAll">v{{ version }}</span> build
+                                        </td>
+                                    </tr>
+                                </table>
+                            </button>
+                        </a>
+                    </div>
                 </div>
-            </td>
-        </tr>
-    </table>
-    <slide id="downloads">
-        <div><h1 class="primary">DOWNLOAD</h1></div>
-        <hr>
-        <h4 class="gray">We think you are running {{ osHeader }}</h4>
-        <p ng-if="!currentOs">{{ os }} is not currently supported by Nova.</p>
-        <div ng-repeat="type in downloadTypes" id="{{ type.id }}" ng-if="type.version">
-            <h2>{{ type.name | uppercase }} v{{ type.version }} <span class="show-all gray" ng-click="toggleShowAll(type)">show {{ type.showAll ? 'latest' : 'all' }}</span></h2>
-            <div ng-repeat="version in type.versions | orderBy:'-'">
-                <a ng-repeat="os in type.oses" ng-href="{{ !disabled ? '/content/downloads/' + os.key + '/' + version + '/' + os.filename + os.extension : undefined }}" ng-attr-download="{{ !disabled ? os.filename + os.extension : undefined }}" target="_blank" class="download-button" ng-if="version == type.version || type.showAll" ng-init="disabled = os.betaVersions.indexOf(version) < 0" ng-class="{ disabled: disabled }" ng-disabled="disabled">
-                    <button>
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="icon-container"><img ng-src="/content/images/{{os.key}}.svg" /></div>
-                                </td>
-                                <td>
-                                    {{ os.name }} <span ng-if="type.showAll">v{{ version }}</span> build
-                                </td>
-                            </tr>
-                        </table>
-                    </button>
-                </a>
-            </div>
+            </slide>
+            <slide id="installation" ng-if="currentOs">
+                <div><h1 class="primary">INSTALLATION</h1></div>
+                <hr>
+                <h4>Pre-requisites</h4>
+                <ul>
+                    <li>Java 1.8 or later <span class="why-java gray" ng-init="whyJava = false" ng-click="whyJava = true"><span ng-if="!whyJava">why java?</span><span ng-if="whyJava">The first iteration of the compiler is written in Java.</span></span></li>
+                    <li>GCC compiler <span class="why-java gray" ng-init="whyGcc = false" ng-click="whyGcc = true"><span ng-if="!whyGcc">why gcc?</span><span ng-if="whyGcc">C is the most mature compilation target currently, and is the only language that comes pre-packaged with the installation.</span></span></li>
+                </ul>
+                <p>After the installer has finished, you are ready to <a ui-sref="docs.hello-world">write your first program</a>.</p>
+            </slide>
         </div>
-    </slide>
-    <slide id="installation" ng-if="currentOs">
-        <div><h1 class="primary">INSTALLATION</h1></div>
-        <hr>
-        <h4>Pre-requisites</h4>
-        <ul>
-            <li>Java 1.8 or later <span class="why-java gray" ng-init="whyJava = false" ng-click="whyJava = true"><span ng-if="!whyJava">why java?</span><span ng-if="whyJava">The first iteration of the compiler is written in Java.</span></span></li>
-            <li>GCC compiler <span class="why-java gray" ng-init="whyGcc = false" ng-click="whyGcc = true"><span ng-if="!whyGcc">why gcc?</span><span ng-if="whyGcc">C is the most mature compilation target currently, and is the only language that comes pre-packaged with the installation.</span></span></li>
-        </ul>
-        <p>After the installer has finished, you are ready to <a ui-sref="docs.hello-world">write your first program</a>.</p>
-    </slide>
+        <footer></footer>
+    </div>
 </div>
 
 {{loaded()}}
