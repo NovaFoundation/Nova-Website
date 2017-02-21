@@ -309,6 +309,19 @@ code.hljs,
     width: 500px;
 }
 
+.page-container {
+    display: table;
+    
+    width: 100%;
+    min-height: 100%;
+}
+
+header, footer {
+    display: table-row;
+    
+    height: 1%;
+}
+
 #footer {
     padding: 120px 100px;
     
