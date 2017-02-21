@@ -10,7 +10,24 @@ window.blogPages = [{
     css: "/Shared/styles/flow-boxes.css",
     date: "2/19/2017",
     // author: "Braden Steffaniak"
-}];
+}, {
+    header: "Writing Target Specific Code",
+    url: "target-specific-code",
+    date: "2/20/2017",
+    // author: "Braden Steffaniak"
+}/*{
+    header: "Zero-cost Primitive Generics",
+    url: "zero-cost-primitive-generics",
+    css: "/Shared/styles/flow-boxes.css",
+    date: "2/21/2017",
+    // author: "Braden Steffaniak"
+}*//*{
+    header: "Automated API Importing",
+    url: "automated-api-importing",
+    css: "/Shared/styles/flow-boxes.css",
+    date: "2/20/2017",
+    // author: "Braden Steffaniak"
+}*/];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
     $scope.pages = blogPages;
