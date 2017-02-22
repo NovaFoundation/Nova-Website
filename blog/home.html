@@ -1,8 +1,17 @@
 <div ng-if="!page" class="default-view" ng-init="limit = 3">
+    <table>
+        <tr>
+            <td>
                 <h1>RECENT POSTS <span class="show-all" ng-click="limit = false">Show all</span></h1>
+            </td>
+            <td>
+                <input type="text" ng-model="searchValue" />
+            </td>
+        </tr>
+    </table>
     <hr>
     <ul>
-        <li ng-repeat="page in pages | orderBy:'-date' | limitTo: 5">
+        <li ng-repeat="page in pages | filter:search(searchValue, ['header']) | orderBy:'-date' | limitTo:limit">
             <a ui-sref="{{page.name}}"><span ng-bind="page.header"></span></a> - <span class="date" ng-bind="page.date"></span>
         </li>
     </ul>
