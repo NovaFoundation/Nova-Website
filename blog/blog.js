@@ -16,10 +16,16 @@ window.blogPages = [{
     date: "2/20/2017",
     // author: "Braden Steffaniak"
 }, {
-    header: "Zero-cost Primitive Generics",
+    header: "Zero-Cost Primitive Generics",
     url: "zero-cost-primitive-generics",
     css: "/Shared/styles/flow-boxes.css",
     date: "2/21/2017",
+    // author: "Braden Steffaniak"
+}, {
+    header: "Thread-Local Storage",
+    url: "thread-local-storage",
+    css: "/Shared/styles/flow-boxes.css",
+    date: "2/22/2017",
     // author: "Braden Steffaniak"
 }/*{
     header: "Automated API Importing",
