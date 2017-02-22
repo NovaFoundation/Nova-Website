@@ -9,3 +9,22 @@ li {
 .show-all {
     font-size: 14px;
 }
+
+.recent-posts-header {
+    width: 100%;
+}
+
+.recent-posts-header .search {
+    text-align: right;
+}
+
+.recent-posts-header .search input {
+    border: 2px solid #f15d3b;
+    border-radius: 10px;
+    
+    width: 250px;
+    
+    padding: 4px 10px;
+    
+    font-size: 18px;
+}
