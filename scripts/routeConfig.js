@@ -173,6 +173,12 @@ angular.module("nova").config(['$stateProvider', '$urlRouterProvider', '$locatio
     
     $rootScope.jump = window.jump;
     
+    $rootScope.search = function (searchValue, columns) {
+        return function (input) {
+            return fuzzySearch(input, searchValue, columns);
+        };
+    };
+    
     function urlUpdated() {
         updateQueryParams();
         console.log("updateing " + window.location.href);
