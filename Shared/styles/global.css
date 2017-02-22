@@ -545,6 +545,8 @@ a.footnote {
     position: relative;
     
     top: 1px;
+    
+    text-decoration: none;
 }
 
 p.footnote {
