@@ -1,5 +1,5 @@
-<div ng-if="!page" class="default-view">
-    <h1>RECENT POSTS</h1>
+<div ng-if="!page" class="default-view" ng-init="limit = 3">
+                <h1>RECENT POSTS <span class="show-all" ng-click="limit = false">Show all</span></h1>
     <hr>
     <ul>
         <li ng-repeat="page in pages | orderBy:'-date' | limitTo: 5">
