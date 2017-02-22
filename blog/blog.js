@@ -11,7 +11,7 @@ window.blogPages = [{
     date: "2/19/2017",
     // author: "Braden Steffaniak"
 }, {
-    header: "Writing Target Specific Code",
+    header: "Writing Target-Specific Code",
     url: "target-specific-code",
     date: "2/20/2017",
     // author: "Braden Steffaniak"
