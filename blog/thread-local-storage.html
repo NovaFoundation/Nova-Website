@@ -77,7 +77,7 @@
         <p>
             <a href="https://gist.github.com/kristopherjohnson/6f14a50006127424faf3">Swift's implementation</a> uses a dictionary called <span class="pre">threadDictionary</span>.
         </p>
-        <div hljs language="swift" hljs-no-escape style="text-align: center; margin: 40px 0;">
+        <div hljs language="javascript" hljs-no-escape style="text-align: center; margin: 40px 0;">
             public func checkThreadLocal&lt;T: AnyObject&gt;(key: String, create: () -> T) -> T {
                 let threadDictionary = NSThread.currentThread().threadDictionary
                 
@@ -112,7 +112,7 @@
         <p>
             However, if you were to run <span class="pre">getFormatter()</span> once again in a new thread, you would create a separate instance of the NSDateFormatter:
         </p>
-        <div hljs swift" hljs-no-escape style="text-align: center; margin: 40px 0;">
+        <div hljs language="javascript" hljs-no-escape style="text-align: center; margin: 40px 0;">
             let x1 = getFormatter() // NEW INSTANCE CREATED!!
             let x2 = getFormatter() // References the instance created by x1
             let x3 = getFormatter() // References the instance created by x1
