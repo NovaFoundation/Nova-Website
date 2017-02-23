@@ -11,22 +11,22 @@
         <div hljs language="csharp" hljs-no-escape style="text-align: center; margin: 40px 0;">
             static void Main(string[] args)
             {
-                foreach (int fib in Fibs(6)) // 1, 5
+                foreach (int fib in Fibs(6))
                 {
-                    Console.WriteLine(fib + " "); // 4, 10
+                    Console.WriteLine(fib + " ");
                 }
             }
 
             static IEnumerable&lt;int&gt; Fibs(int fibCount)
             {
-                for (int i = 0, prevFib = 0, currFib = 1; i < fibCount; i++) // 2
+                for (int i = 0, prevFib = 0, currFib = 1; i < fibCount; i++)
                 {
-                    yield return prevFib; // 3, 9
+                    yield return prevFib;
                     
-                    int newFib = prevFib + currFib; // 6
+                    int newFib = prevFib + currFib;
                     
-                    prevFib = currFib; // 7
-                    currFib = newFib; // 8
+                    prevFib = currFib;
+                    currFib = newFib;
                 }
             }
         </div>
@@ -38,8 +38,8 @@
         </p>
         <div hljs language="java" hljs-no-escape style="text-align: center; margin: 40px 0;">
             public static main(String[] args) {
-                for (fib in fibs(6)) { // 1, 5
-                    Console.writeLine("#fib ") // 4, 10
+                for (fib in fibs(6)) {
+                    Console.writeLine("#fib ")
                 }
             }
 
@@ -63,9 +63,9 @@
         <div hljs language="csharp" hljs-no-escape style="text-align: center; margin: 40px 0;">
             static void Main(string[] args)
             {
-                foreach (int fib in Fibs(6)) // 1, 5
+                foreach (int fib in Fibs(6))
                 {
-                    Console.WriteLine(fib + " "); // 4, 10
+                    Console.WriteLine(fib + " ");
                 }
             }
             
@@ -164,8 +164,8 @@
     </p>
     <div hljs language="java" hljs-no-escape style="text-align: center; margin: 40px 0;">
         public static main(String[] args) {
-            for (fib in fibs(6)) { // 1, 5
-                Console.writeLine("#fib ") // 4, 10
+            for (fib in fibs(6)) {
+                Console.writeLine("#fib ")
             }
         }
 
@@ -219,8 +219,8 @@
     </p>
     <div hljs language="java" hljs-no-escape style="text-align: center; margin: 40px 0;">
         public static main(String[] args) {
-            for (fib in fibs(6)) { // 1, 5
-                Console.writeLine("#fib ") // 4, 10
+            for (fib in fibs(6)) {
+                Console.writeLine("#fib ")
             }
         }
 
@@ -248,8 +248,8 @@
     </p>
     <div hljs language="java" hljs-no-escape style="text-align: center; margin: 40px 0;">
         public static main(String[] args) {
-            for (fib in new FibsIterator(6)) { // 1, 5
-                Console.writeLine("#fib ") // 4, 10
+            for (fib in new FibsIterator(6)) {
+                Console.writeLine("#fib ")
             }
         }
         
