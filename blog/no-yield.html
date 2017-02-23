@@ -292,6 +292,9 @@
     <p>
         While in C#, using the yield keyword can give a performance boost based on less allocation, if the compiler could optimize out the allocation in the first place, there would be no need for such a keyword. Adding a keyword adds complexity to the language, and as stated before, the only benefit the yield keyword gives is performance. Because Nova can optimize out map and filter calls to the same performance of having used the yield keyword, there is no point in adding it to the language. This is why there will never be a yield keyword in Nova.
     </p>
+    <p>
+        And as a side note, there are even more optimizations that will be made to Iterators in the future to where the next and hasNext accessor properties will be inlined inside of the calling code. This will give another significant performance boost that even the C# state-machine cannot replicate. The point is, map and filter functionality can run <i>really</i> fast without having to introduce some special keyword that puts burden on the programmer to have to use in order to receive the performance boost.
+    </p>
 </div>
 
 <div id="footnotes">
