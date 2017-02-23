@@ -2,7 +2,7 @@
     <table class="recent-posts-header">
         <tr>
             <td>
-                <h1>RECENT POSTS <span class="show-all" ng-click="limit = false">Show all</span></h1>
+                <h1>{{ limit ? 'RECENT' : 'ALL' }} POSTS <span ng-show="limit" class="show-all" ng-click="limit = false">Show all</span></h1>
             </td>
             <td class="search">
                 <input type="text" ng-model="searchValue" placeholder="SEARCH POSTS" />
