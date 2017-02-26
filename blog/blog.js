@@ -33,6 +33,12 @@ window.blogPages = [{
     css: "/Shared/styles/flow-boxes.css",
     date: "2/23/2017",
     // author: "Braden Steffaniak"
+}, {
+    header: "Nova Exception Handling",
+    url: "exception-handling",
+    css: "/Shared/styles/flow-boxes.css",
+    date: "2/24/2017",
+    // author: "Braden Steffaniak"
 }/*{
     header: "Automated API Importing",
     url: "automated-api-importing",
