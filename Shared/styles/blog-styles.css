@@ -102,6 +102,10 @@
     height: 20px;
 }
 
+.hljs {
+    width: 100%;
+}
+
 @media (max-width: 900px) {
     .content-header-container .content-header {
         font-size: 45px;
