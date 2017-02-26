@@ -59,13 +59,12 @@
                 typedef void (*funcReference)(void*, nova_Nova_String*);
                 
                 void my_external_func(funcReference ref) {
-                    // Passing 0 as first argument for the 'this' parameter of the function because
-                    // the myFancyFunc is static and does not use the reference parameter.
+                    // No need for passing a second 0
                     ref(0, nova_Nova_String_1_Nova_construct(0, "Hello, world"));
                 }
             </div>
             <p>
-                This approach is cleaner and <b>safer</b>. Because the exceptionData variable is referenced from TLS by Nova generated code, in instances such as the previous code, where external code is calling Nova generated code, the ExceptionData is always available. In the previous code, if an exception was thrown somewhere insided the funcReference function call, there would have been a segmentation fault. This is because we were passing in 0 as the ExceptionData. Referencing it from TLS removes the responsibility from the user to pass ExceptionData in external code.
+                This approach is cleaner and <b>safer</b>. Because the exceptionData variable is referenced from TLS by Nova generated code, in instances such as the previous code where external code is calling Nova generated code, the ExceptionData is always available. In the previous code, if an exception was thrown somewhere insided the funcReference function call, there would have been a segmentation fault. This is because we were passing in 0 as the ExceptionData. Referencing it from TLS removes the responsibility from the user to pass ExceptionData in external code.
             </p>
         </div>
         <div id="bug-fixes" class="release-note">
