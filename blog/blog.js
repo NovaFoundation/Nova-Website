@@ -48,7 +48,9 @@ window.blogPages = [{
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
-    $scope.pages = blogPages;
+    $scope.pages = blogPages.filter(function (page) {
+        return page.visible !== false;
+    });
     
     function recursiveApply(func) {
         function action(page) {
