@@ -1,0 +1,1 @@
+<span>[Issue <span ng-repeat="issue in values">{{!$first ? ', ' : ''}}<a ng-href="https://github.com/{{issue.user || 'NovaFoundation'}}/{{issue.repo}}/issues/{{issue.number}}" ng-bind="'#' + issue.number"></a></span>]</span>
