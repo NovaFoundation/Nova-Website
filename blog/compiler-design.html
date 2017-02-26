@@ -29,22 +29,30 @@
         <img class="down-arrow" src="/content/images/down-arrow.svg" /><br>
         <p style="white-space: nowrap;">EXECUTABLE</p>
     </div>
-    <h3>Parser</h3>
-    <p>
-        The parser's job is to parse the source code, from an <i>input language</i>, to an AST (Abstract Syntax Tree). "Input language" is italicised to bring attention to the fact that the compiler is not restricted to Nova code only. Any language can be compiled with the Nova compiler if a parser is written for that language. Because all of the parsing code is separated out into the parse phase, the parser is the <i>only</i> component that needs to be written to add support for an additional input language. For example, if you want to add support for compiling Swift code with the Nova compiler, the only component you need to write is the parser.
-    </p>
-    <h3>Code inspector</h3>
-    <p>
-        The code inspector is where type validation for the code is done. This is where most compile-time errors and warnings are generated. This phase makes sure the code is valid before handing it off to the code optimizer.
-    </p>
-    <h3>Code optimizer</h3>
-    <p>
-        This is the phase where the AST (Abstract Syntax Tree) is transformed. There are many reasons you would want to transform the AST including to: improve performance, obfuscate code (to help keep proprietary code private), minify code, inject custom functionality (e.g. benchmarking timers), and much more.
-    </p>
-    <h3>Code generator</h3>
-    <p>
-        The code generator is the inverse of the parser. This phase takes the AST (Abstract Syntax Tree) and writes it to a specified target language. In the same way that when you write a new parser you gain access to all of the libraries written in the language that is being parsed, when writing a new code generator for a specified language, that language gains access to all of <i>Nova's</i> libraries. This is great because it means that all code that you write in Nova is not only usable in a Nova project, it also can be used in the specified target language. For example, if you write a Swift code generator, then you can use any code written in Nova natively in a Swift project.
-    </p>
+    <div id="parser">
+        <h3>Parser</h3>
+        <p>
+            The parser's job is to parse the source code, from an <i>input language</i>, to an AST (Abstract Syntax Tree). "Input language" is italicised to bring attention to the fact that the compiler is not restricted to Nova code only. Any language can be compiled with the Nova compiler if a parser is written for that language. Because all of the parsing code is separated out into the parse phase, the parser is the <i>only</i> component that needs to be written to add support for an additional input language. For example, if you want to add support for compiling Swift code with the Nova compiler, the only component you need to write is the parser.
+        </p>
+    </div>
+    <div id="code-inspector">
+        <h3>Code inspector</h3>
+        <p>
+            The code inspector is where type validation for the code is done. This is where most compile-time errors and warnings are generated. This phase makes sure the code is valid before handing it off to the code optimizer.
+        </p>
+    </div>
+    <div id="code-optimizer">
+        <h3>Code optimizer</h3>
+        <p>
+            This is the phase where the AST (Abstract Syntax Tree) is transformed. There are many reasons you would want to transform the AST including to: improve performance, obfuscate code (to help keep proprietary code private), minify code, inject custom functionality (e.g. benchmarking timers), and much more.
+        </p>
+    </div>
+    <div id="code-generator">
+        <h3>Code generator</h3>
+        <p>
+            The code generator is the inverse of the parser. This phase takes the AST (Abstract Syntax Tree) and writes it to a specified target language. In the same way that when you write a new parser you gain access to all of the libraries written in the language that is being parsed, when writing a new code generator for a specified language, that language gains access to all of <i>Nova's</i> libraries. This is great because it means that all code that you write in Nova is not only usable in a Nova project, it also can be used in the specified target language. For example, if you write a Swift code generator, then you can use any code written in Nova natively in a Swift project.
+        </p>
+    </div>
 </div>
 
 <div id="extensibility">
@@ -56,37 +64,45 @@
     <p>
         Here are some reasons you might want to extend each of the components of the compiler:
     </p>
-    <h3>Parsers</h3>
-    <p>
-        Writing a new parser allows any other language to have <i>all</i> of the functionality that Nova has. Once a parser is written for a language, you get all of the functionality of any existing code inspectors, optimizers, and code generators. You could even use the parser strictly as a translater to Nova by outputting the code with the Nova code generator.
-    </p>
-    <p>
-        The separation of concerns of the parser is incredibly powerful because it allows for rapid development of new input languages. Each new language that can be compiled by the Nova compiler adds to the available libraries for all Nova programs.
-    </p>
-    <h3>Code inspectors</h3>
-    <p>
-        Reasons you would write extensions for this phase is to add more comprehensive, or better, warning and error messages. Examples of extensions that could be added include:
-        <div style="margin-left: 25px;">
-            <h4>Spell checkers</h4>
-            <p>Spell check comments, identifiers, etc.</p>
-            <h4>Formatting convention validation</h4>
-            <p>You could throw compilation errors whenever a program does not fulfill a specified formatting convention. This is helpful when writing software in teams.</p>
-        </div>
-    </p>
-    <h3>Code optimizers</h3>
-    <p>
-        There are many reasons to write code optimizers. The ability to choose which optimizers you do or do not want to run during compilation gives fine tuned control to the user on how they want their program to be built. Some common reasons to write optimizer components include:
-        <div style="margin-left: 25px;">
-            <h4>Improving performance</h4>
-            <p>Inlining functions, unrolling loops, removing dead code, etc.</p>
-            <h4>Profiling code</h4>
-            <p>You could add timers sections of the code to observe the performance of those areas.</p>
-        </div>
-    </p>
-    <h3>Code generators</h3>
-    <p>
-        Implementing a code generator means adding support for Nova on a new platform. As mentioned before, you can write code generators to other languages to give that language full support of any libraries written in Nova. Adding new language targets also adds the ability for Nova programs to run on any of the platforms and architectures that the target language can run on. For example, if you generate the code to the Javascript language, you can run all of your Nova code in the browser. You can also interact with the generated Nova code from any existing Javascript libraries.
-    </p>
+    <div id="parser-uses">
+        <h3>Parsers</h3>
+        <p>
+            Writing a new parser allows any other language to have <i>all</i> of the functionality that Nova has. Once a parser is written for a language, you get all of the functionality of any existing code inspectors, optimizers, and code generators. You could even use the parser strictly as a translater to Nova by outputting the code with the Nova code generator.
+        </p>
+        <p>
+            The separation of concerns of the parser is incredibly powerful because it allows for rapid development of new input languages. Each new language that can be compiled by the Nova compiler adds to the available libraries for all Nova programs.
+        </p>
+    </div>
+    <div id="code-inspector-uses">
+        <h3>Code inspectors</h3>
+        <p>
+            Reasons you would write extensions for this phase is to add more comprehensive, or better, warning and error messages. Examples of extensions that could be added include:
+            <div style="margin-left: 25px;">
+                <h4>Spell checkers</h4>
+                <p>Spell check comments, identifiers, etc.</p>
+                <h4>Formatting convention validation</h4>
+                <p>You could throw compilation errors whenever a program does not fulfill a specified formatting convention. This is helpful when writing software in teams.</p>
+            </div>
+        </p>
+    </div>
+    <div id="code-optimizer-uses">
+        <h3>Code optimizers</h3>
+        <p>
+            There are many reasons to write code optimizers. The ability to choose which optimizers you do or do not want to run during compilation gives fine tuned control to the user on how they want their program to be built. Some common reasons to write optimizer components include:
+            <div style="margin-left: 25px;">
+                <h4>Improving performance</h4>
+                <p>Inlining functions, unrolling loops, removing dead code, etc.</p>
+                <h4>Profiling code</h4>
+                <p>You could add timers sections of the code to observe the performance of those areas.</p>
+            </div>
+        </p>
+    </div>
+    <div id="code-generator-uses">
+        <h3>Code generators</h3>
+        <p>
+            Implementing a code generator means adding support for Nova on a new platform. As mentioned before, you can write code generators to other languages to give that language full support of any libraries written in Nova. Adding new language targets also adds the ability for Nova programs to run on any of the platforms and architectures that the target language can run on. For example, if you generate the code to the Javascript language, you can run all of your Nova code in the browser. You can also interact with the generated Nova code from any existing Javascript libraries.
+        </p>
+    </div>
 </div>
 
 <div id="simplicity">
