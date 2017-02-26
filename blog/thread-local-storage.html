@@ -196,12 +196,12 @@
             }
         </div>
         <p>
-            They are nearly identical. However, this is not the only way that Nova allows you to declare thread locals. With a little syntax sugar from the <span class="pre">thread</span> modifier (or <span class="pre">[ThreadLocal]</span> annotation), you are able to achieve the same result with minimal change to how you would program it if it were not necessary to be local to the thread:
+            They are nearly identical. However, this is not the only way that Nova allows you to declare thread locals. With a little syntax sugar from the <span class="pre">thread_local</span> modifier (or <span class="pre">[ThreadLocal]</span> annotation), you are able to achieve the same result with minimal change to how you would program it if it were not necessary to be local to the thread:
         </p>
         <div hljs language="java" hljs-no-escape style="text-align: center; margin: 40px 0;">
             class ThreadLocalExample {
                 static class MyRunnable extends Thread {
-                    static thread Int threadLocal
+                    static thread_local Int threadLocal
                     
                     public run() {
                         threadLocal = (Int)(Math.random() * 100)
@@ -224,7 +224,7 @@
             }
         </div>
         <p>
-            Nova's <span class="pre">thread</span> modifier will be available in version 0.3.7 and up.
+            The thread_local modifier also allows for more platform specific optimizations to take place. For instance, when compiled to C, the compiler will output the thread_local fields using the <a href="https://gcc.gnu.org/onlinedocs/gcc-3.3/gcc/Thread-Local.html">__thread</a> modifier, which offers a performance boost. Nova's <span class="pre">thread_local</span> modifier will be available in version 0.3.7 and up.
         </p>
     </div>
 </div>
@@ -232,7 +232,7 @@
 <div id="conclusion">
     <h1>Conclusion</h1>
     <p>
-        Considering the different approaches that the different languages in this article showcased, Nova decided to use a ThreadLocal data structure because of its clean implementation with the <span class="pre">thread</span> modifier. There needed to be a seamless way to define thread-local data without using some sort of key/value pair to keep track of it. Instead of requiring you to keep track of the thread ID <i>and</i> the variable itself, the <span class="pre">thread</span> modifier consolidates the user's focus on the variable itself.
+        Considering the different approaches that the different languages in this article showcased, Nova decided to use a ThreadLocal data structure because of its clean implementation with the <span class="pre">thread_local</span> modifier. There needed to be a seamless way to define thread-local data without using some sort of key/value pair to keep track of it. Instead of requiring you to keep track of the thread ID <i>and</i> the variable itself, the <span class="pre">thread_local</span> modifier consolidates the user's focus on the variable itself.
     </p>
 </div>
 
