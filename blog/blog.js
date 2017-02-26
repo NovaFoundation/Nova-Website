@@ -45,6 +45,12 @@ window.blogPages = [{
     css: "/Shared/styles/flow-boxes.css",
     date: "2/25/2017",
     // author: "Braden Steffaniak"
+}, {
+    header: "v0.3.7 Release Notes",
+    url: "v0_3_7-release-notes",
+    date: "2/26/2017",
+    visible: false,
+    // author: "Braden Steffaniak"
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
