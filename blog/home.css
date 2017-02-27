@@ -12,6 +12,8 @@ li {
 
 .recent-posts-header {
     width: 100%;
+    
+    margin-left: 8px;
 }
 
 .recent-posts-header .search {
@@ -27,4 +29,29 @@ li {
     padding: 4px 10px;
     
     font-size: 18px;
+}
+
+.post-list {
+    padding-left: 15px;
+}
+
+.post h1,
+.post h2,
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+    margin: 5px 0;
+}
+
+.post {
+    margin-bottom: 10px;
+}
+
+.post a {
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
 }
