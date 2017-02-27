@@ -13,6 +13,8 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
         });
     }
     
+    $scope.versionTimeText = "latest";
+    
     if ($scope.currentOs) {
         $scope.downloadTypes = [{
             id: 'stable',
@@ -51,7 +53,19 @@ angular.module("nova").controller("DownloadController", ["$scope", "$stateParams
             index = index < 0 ? $stateParams.version.length : index;
             
             $scope.build = $stateParams.version.substring(0, index);
-            $scope.buildVersion = $stateParams.version.substring(index);
+            $scope.buildVersion = $stateParams.version.substring(index + 1);
+            
+            if ($scope.buildVersion) {
+                $scope.downloadTypes.forEach(function (type) {
+                    if (type.version && type.version != $scope.buildVersion) {
+                        type.version = $scope.buildVersion;
+                        
+                        $scope.versionTimeText = "v" + $scope.buildVersion;
+                    }
+                    
+                    $scope.toggleShowAll(type, type.showAll);
+                });
+            }
             
             if (jump($scope.build, false)) {
                 $scope.loaded = function () {};
