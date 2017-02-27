@@ -49,7 +49,6 @@ window.blogPages = [{
     header: "v0.3.7 Release Notes",
     url: "v0_3_7-release-notes",
     date: "2/26/2017",
-    visible: false,
     // author: "Braden Steffaniak"
 }];
 
