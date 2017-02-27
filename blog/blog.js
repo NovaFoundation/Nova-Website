@@ -50,6 +50,12 @@ window.blogPages = [{
     url: "v0_3_7-release-notes",
     date: "2/26/2017",
     // author: "Braden Steffaniak"
+}, {
+    header: "v0.3.8 Release Notes",
+    url: "v0_3_8-release-notes",
+    date: "3/5/2017",
+    visible: false,
+    // author: "Braden Steffaniak"
 }];
 
 angular.module("nova").controller("BlogController", ["$scope", "$rootScope", function ($scope, $rootScope) {
