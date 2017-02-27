@@ -20,7 +20,7 @@ angular.module("nova").service("$os", [function () {
             extension: ".exe",
             filename: "NovaInstaller",
             stableVersions: [],
-            betaVersions: ["0.3.0", "0.3.3", "0.3.4", "0.3.5", "0.3.6"]
+            betaVersions: ["0.3.0", "0.3.3", "0.3.4", "0.3.5", "0.3.6", "0.3.7"]
         }, 
         mac: {
             name: "Mac OS X",
@@ -28,7 +28,7 @@ angular.module("nova").service("$os", [function () {
             extension: ".dmg",
             filename: "Nova",
             stableVersions: [],
-            betaVersions: ["0.3.2", "0.3.3", "0.3.4", "0.3.5", "0.3.6"]
+            betaVersions: ["0.3.2", "0.3.3", "0.3.4", "0.3.5", "0.3.6", "0.3.7"]
         }, 
         linux: {
             name: "Linux",
@@ -36,7 +36,7 @@ angular.module("nova").service("$os", [function () {
             extension: ".deb",
             filename: "nova",
             stableVersions: [],
-            betaVersions: ["0.3.5", "0.3.6"]
+            betaVersions: ["0.3.5", "0.3.6", "0.3.7"]
         }
     };
     
