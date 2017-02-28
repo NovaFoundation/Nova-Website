@@ -169,90 +169,102 @@
 
 <div id="use-cases">
     <h1>USE CASES IN NOVA</h1>
-    <p>
-        First-class functions have an important role in loading modules at runtime. When you load a module at runtime you can access fields and functions. Accessing fields is pretty self explanatory; you are returned the value of the field. Functions on the other hand require a function reference to be returned in order to be useful.
-    </p>
-    <p>
-        Functional coding also has a inherent need for first-class functions. When programming in the functional paradigm, you expect functions to behave like variables because thats essentially what the paradigm is built off of.
-    </p>
-    <p>
-        First-class functions can reduce the amount of code to perform tasks. This is an important point considering one of the founding principles of Nova is <i>speed of development</i>. When you reduce the amount of code to solve a problem, you often times are reducing the time it takes to complete the task. For example, there is a design pattern called the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> that essentially is used when you want to run different algorithms based off of different conditions, <i>at runtime</i>. To illustrate this, lets suppose that you want to enforce a specific pricing algorithm depending on the type of the day. With the strategy pattern you could do this:
-    </p>
-    <div hljs language="java" hljs-no-escape>
-        interface Billable {
-            calculatePrice(Double originalPrice)
-        }
-        
-        class NormalHours implements Billable {
-            calculatePrice(Double originalPrice) => originalPrice
-        }
-        
-        class HappyHour implements Billable {
-            calculatePrice(Double originalPrice) => originalPrice / 2
-        }
-        
-        class SurgeHour implements Billable {
-            calculatePrice(Double originalPrice) => originalPrice * 2
-        }
-        
-        class Customer {
-            Billable billStrategy = new NormalHours()
-            
-            Double sum = 0
-            
-            public charge() {
-                sum += billStrategy.calculatePrice(5)
-            }
-        }
-        
-        public static main(String[] args) {
-            let c1 = new Customer()
-            
-            c1.charge() // 5
-            
-            //surge hour
-            c1.billStrategy = new SurgeHour()
-            c1.charge() // 10
-            
-            // happy hour
-            c1.billStrategy = new HappyHour()
-            c1.charge() // 2.5
-            c1.charge() // 2.5
-        }
+    <div id="runtime-module-loading">
+        <h3>RUNTIME MODULE LOADING</h3>
+        <p>
+            First-class functions have an important role in loading modules at runtime. When you load a module at runtime you can access fields and functions from that module dynamically. Accessing fields is pretty self explanatory; you are returned the value of the field. Functions on the other hand require a function reference to be returned in order to be useful.
+        </p>
     </div>
-    <p>
-        The customer would leave with a bill of $20. This same process could be done with first-class functions like this:
-    </p>
-    <div hljs language="java" hljs-no-escape>
-        class Customer {
-            var billStrategy(Double) -> Double = x => x
-            
-            Double sum = 0
-            
-            public charge() {
-                sum += billStrategy(5)
-            }
-        }
-        
-        public static main(String[] args) {
-            let c1 = new Customer()
-            
-            c1.charge() // 5
-            
-            //surge hour
-            c1.billStrategy = x => x * 2
-            c1.charge() // 10
-            
-            // happy hour
-            c1.billStrategy = x => x / 2
-            c1.charge() // 2.5
-            c1.charge() // 2.5
-        }
+    <div id="functional-paradigm">
+        <h3>FUNCTIONAL PARADIGM</h3>
+        <p>
+            Functional coding also has a inherent need for first-class functions. When programming in the functional paradigm, you expect functions to behave like variables because thats essentially what the paradigm is built off of.
+        </p>
     </div>
-    <p>
-        This code is much shorter and accomplishes the same result. The first-class function method reduces the amount of allocation required to complete the task, as well as the amount of code. However, some people might argue that the strategy pattern is more readable and scalable. If you are well versed with first-class functions, then the first implication of the argument is false, however the the scalability of the strategy pattern is a valid point. If you need to add extra fields to a specific billing algorithm, then the strategy pattern might be best. But for simple routine function abstract algorithms, first-class functions is often a better choice.
-    </p>
-    <p>
-        First-class functions that can be returned by a function, assigned to a variable, and stored in collections, will be added in the v0.3.8 release. The target release date for v0.3.8 is next week on 3/5/2017. If you are seeing this after v0.3.8 has been released, then you can see the release notes <a ui-sref="blog.v0_3_8-release-notes">here</a>. Otherwise that link will be a broken link.
-    </p>
+    <div id="concise">
+        <h3>MORE CONCISE CODE</h3>
+        <p>
+            First-class functions can reduce the amount of code to perform tasks. This is an important point considering one of the founding principles of Nova is <i>speed of development</i>. When you reduce the amount of code to solve a problem, you often times are reducing the time it takes to complete the task.
+        </p>
+        <p>
+            This can be demonstrated with the <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy pattern</a> design pattern. This pattern is used when you want to run different algorithms based off of different conditions, <i>at runtime</i>. To illustrate this, lets suppose that you want to enforce a specific pricing algorithm depending on the type of the day. With the strategy pattern you could do this:
+        </p>
+        <div hljs language="java" hljs-no-escape>
+            interface Billable {
+                calculatePrice(Double originalPrice)
+            }
+            
+            class NormalHours implements Billable {
+                calculatePrice(Double originalPrice) => originalPrice
+            }
+            
+            class HappyHour implements Billable {
+                calculatePrice(Double originalPrice) => originalPrice / 2
+            }
+            
+            class SurgeHour implements Billable {
+                calculatePrice(Double originalPrice) => originalPrice * 2
+            }
+            
+            class Customer {
+                Billable billStrategy = new NormalHours()
+                
+                Double sum = 0
+                
+                public charge() {
+                    sum += billStrategy.calculatePrice(5)
+                }
+            }
+            
+            public static main(String[] args) {
+                let c1 = new Customer()
+                
+                c1.charge() // 5
+                
+                //surge hour
+                c1.billStrategy = new SurgeHour()
+                c1.charge() // 10
+                
+                // happy hour
+                c1.billStrategy = new HappyHour()
+                c1.charge() // 2.5
+                c1.charge() // 2.5
+            }
+        </div>
+        <p>
+            The customer would leave with a bill of $20. This same process could be done with first-class functions like this:
+        </p>
+        <div hljs language="java" hljs-no-escape>
+            class Customer {
+                var billStrategy(Double) -> Double = x => x
+                
+                Double sum = 0
+                
+                public charge() {
+                    sum += billStrategy(5)
+                }
+            }
+            
+            public static main(String[] args) {
+                let c1 = new Customer()
+                
+                c1.charge() // 5
+                
+                //surge hour
+                c1.billStrategy = x => x * 2
+                c1.charge() // 10
+                
+                // happy hour
+                c1.billStrategy = x => x / 2
+                c1.charge() // 2.5
+                c1.charge() // 2.5
+            }
+        </div>
+        <p>
+            This code is much shorter and accomplishes the same result. The first-class function method reduces the amount of allocation required to complete the task, as well as the amount of code. However, some people might argue that the strategy pattern is more readable and scalable. If you are well versed with first-class functions, then the first implication of the argument is false, however the the scalability of the strategy pattern is a valid point. If you need to add extra fields to a specific billing algorithm, then the strategy pattern might be best. But for simple routine function abstract algorithms, first-class functions is often a better choice.
+        </p>
+        <p>
+            First-class functions that can be returned by a function, assigned to a variable, and stored in collections, will be added in the v0.3.8 release. The target release date for v0.3.8 is next week on 3/5/2017. If you are seeing this after v0.3.8 has been released, then you can see the release notes <a ui-sref="blog.v0_3_8-release-notes">here</a>. Otherwise that link will be a broken link.
+        </p>
+    </div>
 </div>
