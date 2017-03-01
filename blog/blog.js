@@ -56,6 +56,11 @@ window.blogPages = [{
     date: "2/27/2017",
     // author: "Braden Steffaniak"
 }, {
+    header: "Runtime Module Loading",
+    url: "runtime-module-loading",
+    date: "2/28/2017",
+    // author: "Braden Steffaniak"
+}, {
     header: "v0.3.8 Release Notes",
     url: "v0_3_8-release-notes",
     date: "3/5/2017",
