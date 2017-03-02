@@ -61,6 +61,12 @@ window.blogPages = [{
     date: "2/28/2017",
     // author: "Braden Steffaniak"
 }, {
+    header: "Scalable Compiler Components",
+    url: "scalable-compiler-components",
+    css: ["/Shared/styles/flow-boxes.css", "/blog/scalable-compiler-components.css"],
+    date: "3/1/2017",
+    // author: "Braden Steffaniak"
+}, {
     header: "v0.3.8 Release Notes",
     url: "v0_3_8-release-notes",
     date: "3/5/2017",

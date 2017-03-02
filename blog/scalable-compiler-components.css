@@ -1,0 +1,48 @@
+#compiler-structure .flow-container > tbody > tr > td:first-of-type {
+    border-right: 2px solid #d0d0d0;
+}
+
+#compiler-structure .flow-container > tbody > tr > td:first-of-type p {
+    padding: 25px 0;
+}
+
+#compiler-structure .flow-container > tbody > tr > :first-child {
+    padding-right: 30px;
+}
+
+#compiler-structure .flow-container > tbody > tr > :nth-child(2) {
+    padding-left: 30px;
+}
+
+#compiler-structure .flow-container > tbody > tr > td:not(:first-child) {
+    /*white-space: nowrap;*/
+    
+    text-align: left;
+}
+
+#compiler-structure .flow-container > tbody > tr > td:not(:first-child) .flow-stage {
+    font-size: 16px;
+    
+    padding: 4px 5px;
+    
+    margin: 5px 1.5%;
+    
+    width: 27%;
+    
+    min-width: unset;
+    
+    text-align: center;
+}
+
+table.horizontal-bordered {
+    width: 100%;
+}
+
+table.horizontal-bordered td:nth-of-type(odd) {
+    width: 49%;
+}
+table.horizontal-bordered td:nth-of-type(even) {
+    width: 1%;
+    
+    padding: 0 10px;
+}
