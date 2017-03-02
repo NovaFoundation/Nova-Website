@@ -1,0 +1,182 @@
+<div id="road-map">
+    <h1>NOVA'S ROAD MAP</h1>
+    <p>
+        The current road map for Nova looks something like this:
+    </p>
+    <table class="path-forward drilled-down flow-container" style="margin-left: auto; margin-right: auto;" cellspacing="0">
+        <tr>
+            <th style="padding-bottom: 20px;">
+                STAGE
+            </th>
+            <th style="padding-bottom: 20px; padding-right: 2.6%;">
+                TASKS
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <p class="flow-stage">BUILD NEW COMPILER</p>
+            </td>
+            <td>
+                <p class="flow-stage">RUNTIME MODULE LOADING</p>
+                <p class="flow-stage">SEPARATION OF CONCERNS</p>
+                <p class="flow-stage">WRITTEN IN NOVA</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="99">
+                <table class="horizontal-bordered">
+                    <tr>
+                        <td><hr></td>
+                        <td><img class="down-arrow" src="/content/images/down-arrow.svg" /></td>
+                        <td><hr></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="flow-stage">FIND PEOPLE TO WORK ON COMPILER</p><br>
+            </td>
+            <td>
+                <p class="flow-stage">WRITE MORE TARGETS</p>
+                <p class="flow-stage">WRITE MORE PARSERS</p>
+                <p class="flow-stage">BUILD OUT MORE COMPONENTS</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="99">
+                <table class="horizontal-bordered">
+                    <tr>
+                        <td><hr></td>
+                        <td><img class="down-arrow" src="/content/images/down-arrow.svg" /></td>
+                        <td><hr></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="flow-stage">BUILD PERFORMANCE ANALYSIS TOOLKIT</p><br>
+            </td>
+            <td>
+                <p class="flow-stage">STAND-ALONE WEBSITE</p>
+                <p class="flow-stage">AUTOMATE ANALYSIS</p>
+                <p class="flow-stage">VISUALIZE ANALYTICS</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="99">
+                <table class="horizontal-bordered">
+                    <tr>
+                        <td><hr></td>
+                        <td><img class="down-arrow" src="/content/images/down-arrow.svg" /></td>
+                        <td><hr></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="flow-stage">FINALIZE SYNTAX / RELEASE 1.0</p><br>
+            </td>
+            <td>
+                <p class="flow-stage">RESOLVE ISSUES CONCERNING SYNTAX</p>
+                <p class="flow-stage">ADD MISSING SYNTAX FEATURES</p>
+                <p class="flow-stage">STABILIZE COMPILER</p>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="99">
+                <table class="horizontal-bordered">
+                    <tr>
+                        <td><hr></td>
+                        <td><img class="down-arrow" src="/content/images/down-arrow.svg" /></td>
+                        <td><hr></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="flow-stage">BUILD OUT STANDARD LIBRARY</p><br>
+            </td>
+            <td>
+                <p class="flow-stage">COMPLETE UNFINISHED INTERFACES</p>
+                <p class="flow-stage">ADD GENERAL HELPFUL LIBRARIES</p>
+                <p class="flow-stage">BUILD COMMON LANGUAGE BINDINGS</p>
+            </td>
+        </tr>
+    </table>
+    <p>
+        Many of these tasks will be carried out in parallel, and sometimes even out of order. But this is the general flow of what the road map on the development of Nova looks like.
+    </p>
+</div>
+
+<div id="build-new-compiler">
+    <h1>BUILD NEW COMPILER</h1>
+    <p>
+        The Nova compiler is going to be the variable on the speed in which the rest of Nova is developed. The better the design will directly correlate to the speed in which the rest of the tasks on the road map can be carried out. This is why so much emphasis has been placed on the scalability of it. Getting the compiler right is pivotal in completing the tasks on the road map in a timely manner.
+    </p>
+    <p>
+        The tasks that need to be completed to check this stage off of the road map are that the components must be loaded at runtime, there must be a logical separation of concerns, and it must be written in Nova.
+    </p>
+    <div id="runtime-module-loading">
+        <h3>COMPONENTS LOADED AT RUNTIME</h3>
+        <p>
+            This, also, has been preached on many times in previous blog posts. The compiler needs to have a few foundational components (Abstract Syntax Tree model, component pipeline model), and some default supplementary components (default Nova code parser, default type validators, default optimizers, default generators). The rest of the components are included and loaded by the will of the user.
+        </p>
+    </div>
+    <div id="separation-of-concerns">
+        <h3>SEPARATION OF CONCERNS</h3>
+        <p>
+            Anyone who works on the compiler shouldn't have to understand the whole compiler's design in detail to be able to contribute. In the same way that <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC</a> separates concerns into the Model, View and Controller, the compiler needs to be separated into distinct components. The components for the compiler are the top-level stages that the compiler goes through: Parser, Code Inspector, Code Optimizer, Code Generator. Someone writing a parser shouldn't have to understand how to write code inspectors, and so forth.
+        </p>
+    </div>
+    <div id="written-in-nova">
+        <h3>MUST BE WRITTEN IN NOVA</h3>
+        <p>
+            The compiler itself must be written in Nova. Nova must be the only dependency that is required to run the compiler. Currently, the compiler is written in Java and requires Java to be installed in order to run the compiler.
+        </p>
+    </div>
+</div>
+
+<div id="find-contributers">
+    <h1>FIND PEOPLE TO WORK ON COMPILER</h1>
+    <p>
+        Once the compiler is written, developing for the language is going to be much easier. The current compiler is all-in-one instead of having the nice separation of concerns.
+    </p>
+    <p>
+        This stage will probably be performed in parallel with the "Build performance analysis toolkit" stage. Finding people to work on the compiler is also pivotal for speeding up the development of the compiler. The separation of concerns not only makes it easier to learn how to develop for the compiler, it also makes it quicker to develop for the compiler. The less communication that is required between the components is key for rapid development when working with other developers. The more communication required between developers and components, the slower the components are developed, and with more chance of bugs caused by bad communication. The best solution to this is to keep the communication to a minimum.
+    </p>
+    <p>
+        By the way, I am not completely sure how I am going to find these mythical developers, so if you are reading this and you are not a bot, the repositories are open-source and you can fork them <a href="https://github.com/NovaFoundation">here</a>. Up until this point I have been the only developer on this project. The idea is to build out the framework to be extremely conducive to open-source development and then beg my friends to work on it.
+    </p>
+</div>
+
+<div id="performance-analysis">
+    <h1>PERFORMANCE ANALYSIS TOOLKIT</h1>
+    <p>
+        The performance analysis in Nova, <a ui-sref="blog.multiple-targets({ '#': 'performance-analysis' })">as explained here</a>, has some serious potential. The performance perspective that multiple-targets allows for is a big white-space in the performance analysis field.
+    </p>
+    <p>
+        This is the area where I think some profitability is possible. Because of this, I am sprinting toward this component as fast as possible.
+    </p>
+</div>
+
+<div id="finalize-syntax">
+    <h1>FINALIZE SYNTAX</h1>
+    <p>
+        
+    </p>
+</div>
+
+<div id="build-standard-library">
+    <h1>BUILD OUT STANDARD LIBRARY</h1>
+    <p>
+        
+    </p>
+</div>

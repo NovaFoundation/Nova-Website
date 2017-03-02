@@ -67,6 +67,12 @@ window.blogPages = [{
     date: "3/1/2017",
     // author: "Braden Steffaniak"
 }, {
+    header: "Nova Path Forward",
+    url: "path-forward",
+    css: ["/Shared/styles/flow-boxes.css", "/blog/path-forward.css"],
+    date: "3/2/2017",
+    author: "Braden Steffaniak"
+}, {
     header: "v0.3.8 Release Notes",
     url: "v0_3_8-release-notes",
     date: "3/5/2017",
