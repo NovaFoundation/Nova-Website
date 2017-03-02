@@ -263,7 +263,7 @@
             This class has the targetTypes array just like the CodeInspector class. The method used to perform the transformation is called "transform". An example optimizer for <a href="https://en.wikipedia.org/wiki/Loop_unrolling">unrolling simple loops</a> might look like this:
         </p>
         <div hljs language="java" hljs-no-escape>
-            class TreeTransformer {
+            class LoopUnrollTransformer extends TreeTransformer {
                 visible Class[] targetTypes => [ForEachLoop]
                 
                 public transform(Node node) {
