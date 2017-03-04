@@ -73,6 +73,12 @@ window.blogPages = [{
     date: "3/2/2017",
     author: "Braden Steffaniak"
 }, {
+    header: "Nova Unit Testing",
+    url: "nova-unit-testing",
+    css: ["/Shared/styles/flow-boxes.css"],
+    date: "3/3/2017",
+    author: "Braden Steffaniak"
+}, {
     header: "v0.3.8 Release Notes",
     url: "v0_3_8-release-notes",
     date: "3/5/2017",
