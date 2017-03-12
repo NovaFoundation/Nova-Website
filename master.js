@@ -36,4 +36,8 @@ angular.module("nova").controller("MasterController", ["$scope", "$rootScope", "
             $scope.$apply(fn);
         }
     };
+    
+        return function (value) {
+        };
+    };
 }]);
