@@ -37,7 +37,9 @@ angular.module("nova").controller("MasterController", ["$scope", "$rootScope", "
         }
     };
     
+    $rootScope.momentDate = function (column, descending) {
         return function (value) {
+            return (descending ? -1 : 1) * moment(value[column], "M/D/YYYY", 'en');
         };
     };
 }]);
