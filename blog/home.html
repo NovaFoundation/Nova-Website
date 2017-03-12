@@ -11,7 +11,7 @@
     </table>
     <hr>
     <div class="post-list">
-        <div class="post" ng-repeat="page in pages | filter:search(searchValue, ['header']) | orderBy:'-date' | limitTo:limit">
+        <div class="post" ng-repeat="page in pages | filter:search(searchValue, ['header']) | orderBy:momentDate('date', true) | limitTo:limit">
             <h3><a ui-sref="{{page.name}}"><span ng-bind="page.header"></span></a></h3>
             <h6><span class="date" ng-bind="page.date"></span></h6>
         </div>
